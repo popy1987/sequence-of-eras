@@ -18,7 +18,8 @@ alwaysApply: true
 ```bash
 python db/build_db.py
 python db/export_web_data.py
-cd web && python -m http.server 8080
+# 一键导出并重启预览（系统浏览器）：见 AGENTS.md
+python scripts/restart_preview.py
 ```
 
 ## 产品约定

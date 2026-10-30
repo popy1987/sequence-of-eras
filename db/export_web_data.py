@@ -513,6 +513,63 @@ def export() -> None:
             marker["note"] = row["note"]
         kofun_markers.append(marker)
 
+    # Historical events (Asuka / Nara / Heian spine + wars).
+    import re as _re
+
+    events = []
+    for row in conn.execute(
+        """
+        SELECT e.id, e.kind, e.importance, e.timeline_policy, e.short_note, e.alignment,
+               e.query_from, e.query_to, e.open_ended,
+               ts.preferred_year AS from_year,
+               COALESCE(te.preferred_year, ts.preferred_year) AS to_year,
+               g.label_lon AS lon, g.label_lat AS lat,
+               mf.style_json
+        FROM event e
+        JOIN time_point ts ON ts.id = e.start_time_id
+        LEFT JOIN time_point te ON te.id = e.end_time_id
+        LEFT JOIN event_place ep ON ep.event_id = e.id AND ep.role='primary'
+        LEFT JOIN geometry g ON g.id = ep.geometry_id
+        LEFT JOIN map_feature mf ON mf.object_id = e.id AND mf.layer_id='layer.events'
+        ORDER BY ts.preferred_year, e.importance, e.id
+        """
+    ):
+        note = row["short_note"] or ""
+        cc = None
+        m = _re.search(r"\[conflict:([^\]]+)\]", note)
+        if m:
+            cc = m.group(1)
+            note = _re.sub(r"\[conflict:[^\]]+\]\s*", "", note).strip()
+        style = {}
+        if row["style_json"]:
+            try:
+                style = json.loads(row["style_json"])
+            except json.JSONDecodeError:
+                style = {}
+        if not cc:
+            cc = style.get("conflict_class")
+        item = {
+            "id": row["id"],
+            "kind": row["kind"],
+            "conflict_class": cc,
+            "importance": row["importance"],
+            "timeline_policy": row["timeline_policy"],
+            "alignment": row["alignment"],
+            "from_year": row["from_year"],
+            "to_year": row["to_year"],
+            "names": names_for(conn, "event", row["id"]),
+            "short_note": note,
+            "query_from": row["query_from"],
+            "query_to": None if row["open_ended"] else row["query_to"],
+            "open_ended": bool(row["open_ended"]),
+            "parent_id": style.get("parent_id"),
+            "period": style.get("period"),
+        }
+        if row["lon"] is not None and row["lat"] is not None:
+            item["lon"] = row["lon"]
+            item["lat"] = row["lat"]
+        events.append(item)
+
     phases = [dict(ph) for ph in PHASES]
     for ph in phases:
         ph["query_from"] = ordinal(ph["from_year"], 1, 1)
@@ -530,9 +587,9 @@ def export() -> None:
     atlas = {
         "meta": {
             "title": {"zh_hans": "时代序列 · 日本历史地图", "ja": "時代序列 · 日本歴史地図", "en": "Sequence of Eras"},
-            "version": "0.1.1",
+            "version": "0.1.2",
             "source_db": "db/sequence_of_eras.sqlite",
-            "note": "疆域几何为示意复原，用于前端联调；精确边界后续替换。古坟标记年代为维基築造／埋入区间，非出土年。",
+            "note": "疆域几何为示意复原；古坟为築造／埋入区间；飞鸟–平安事件含内战与平乱，争议年份用区间。",
             "year_min": -38000,
             "year_max": 2026,
             # Align first viewport with Xia–Shang–Zhou horizon (~2000 BCE).
@@ -540,6 +597,7 @@ def export() -> None:
             "default_year": -2000,
             "default_year_reason": "对齐中国夏商周年代视野；此时日本仍处绳文，考古证据稀少。",
             "kofun_burial_count": len(kofun_markers),
+            "event_count": len(events),
         },
         "coastline": JAPAN_LAND,
         "periods": periods,
@@ -550,6 +608,7 @@ def export() -> None:
         "layers": layers,
         "phases": phases,
         "kofun_burials": kofun_markers,
+        "events": events,
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
@@ -558,9 +617,11 @@ def export() -> None:
     kofun_on_phase = sum(
         1 for ph in phases if ph["id"] == "phase.kofun" for m in ph["markers"] if m.get("kind") == "kofun"
     )
+    wars = sum(1 for e in events if e.get("conflict_class"))
     print(
         f"phases={len(phases)} periods={len(periods)} disputes={len(disputes)} "
-        f"kofun_burials={len(kofun_markers)} kofun_on_phase.kofun={kofun_on_phase}"
+        f"kofun_burials={len(kofun_markers)} kofun_on_phase.kofun={kofun_on_phase} "
+        f"events={len(events)} conflict_tagged={wars}"
     )
     conn.close()
 

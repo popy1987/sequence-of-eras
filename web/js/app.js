@@ -179,6 +179,21 @@ async function boot() {
         if (data.confidence) {
           lines.push(t("inspect.kofunConfidence", { confidence: data.confidence }));
         }
+      } else if (data.kind === "event") {
+        body = data.short_note || t("inspect.eventBody");
+        const from = data.from_year;
+        const to = data.to_year;
+        lines.unshift(
+          from === to
+            ? t("inspect.eventYear", { year: from })
+            : t("inspect.eventRange", { from, to })
+        );
+        if (data.conflict_class) {
+          lines.push(t(`conflict.${data.conflict_class}`));
+        }
+        if (data.event_kind) {
+          lines.push(t("inspect.eventKind", { kind: data.event_kind }));
+        }
       }
       openInspector(pickName(data.names), data.kind, body, lines);
     } else if (kind === MAP_SELECT_KIND.DISPUTE) {

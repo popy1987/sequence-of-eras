@@ -246,6 +246,11 @@ button, input { font: inherit; }
 .marker.capital circle { fill: var(--accent); }
 .marker.castle circle { fill: #6b4e71; }
 .marker.kofun circle { fill: #8b5a2b; }
+.marker.event circle { fill: #a33b2b; }
+.marker.event[data-conflict="civil_war"] circle,
+.marker.event[data-conflict="coup"] circle { fill: #b33a3a; }
+.marker.event[data-conflict="pacification"] circle { fill: #8a5a2b; }
+.marker.event[data-conflict="external_war"] circle { fill: #5a4a8a; }
 .marker text {
   font-family: var(--serif);
   font-size: 11px;

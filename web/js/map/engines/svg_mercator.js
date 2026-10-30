@@ -169,10 +169,12 @@ export function createSvgMercatorEngine(host, options = {}) {
     clearGroup(markerG);
     (markers || []).forEach((m) => {
       const [x, y] = project(m.lon, m.lat);
-      const g = el("g", {
+      const attrs = {
         class: `marker ${m.kind || "site"}`,
         transform: `translate(${x} ${y})`,
-      });
+      };
+      if (m.conflict_class) attrs["data-conflict"] = m.conflict_class;
+      const g = el("g", attrs);
       const c = el("circle", {
         r: m.kind === "capital" ? 0.22 : 0.16,
         transform: `scale(${1 / scale})`,

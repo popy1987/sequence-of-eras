@@ -767,6 +767,12 @@ def seed(b: Builder) -> None:
     n_kofun = seed_kofun_into(b)
     print(f"seeded kofun tombs: {n_kofun}")
 
+    # Asuka / Nara / Heian events (incl. civil wars & pacification campaigns).
+    from seed_asuka_nara_heian_events import seed_into as seed_anh_events_into
+
+    n_anh = seed_anh_events_into(b)
+    print(f"seeded asuka/nara/heian events: {n_anh}")
+
 
 def verify(conn: sqlite3.Connection) -> None:
     tables = conn.execute(

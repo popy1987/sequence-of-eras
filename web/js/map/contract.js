@@ -49,4 +49,5 @@ export const MAP_SELECT_KIND = Object.freeze({
   POLITY: "polity",
   MARKER: "marker",
   DISPUTE: "dispute",
+  EVENT: "event",
 });

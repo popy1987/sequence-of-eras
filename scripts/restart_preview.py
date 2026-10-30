@@ -18,6 +18,7 @@ import os
 import signal
 import subprocess
 import sys
+import threading
 import time
 import webbrowser
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
@@ -110,7 +111,7 @@ def free_port(port: int) -> None:
     time.sleep(0.4)
 
 
-def serve(port: int) -> None:
+def serve(port: int, open_url: str | None = None) -> None:
     os.chdir(WEB)
 
     class GzipHandler(SimpleHTTPRequestHandler):
@@ -148,12 +149,23 @@ def serve(port: int) -> None:
             super().do_GET()
 
     httpd = ThreadingHTTPServer(("127.0.0.1", port), GzipHandler)
-    print(f">> serving {WEB} (gzip on)")
-    print(f">> http://127.0.0.1:{port}/  (Ctrl+C to stop)")
+    print(f">> serving {WEB} (gzip on)", flush=True)
+    print(f">> http://127.0.0.1:{port}/  (Ctrl+C to stop)", flush=True)
+    if open_url:
+        # Open after bind; never block the server thread on the browser.
+        def _open() -> None:
+            time.sleep(0.3)
+            print(f">> open {open_url}", flush=True)
+            try:
+                webbrowser.open(open_url)
+            except Exception as exc:  # noqa: BLE001
+                print(f">> browser open failed: {exc}", flush=True)
+
+        threading.Thread(target=_open, daemon=True).start()
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:
-        print("\n>> stopped")
+        print("\n>> stopped", flush=True)
     finally:
         httpd.server_close()
 
@@ -167,6 +179,12 @@ def main() -> None:
     parser.add_argument("--year", type=int, default=None, help="optional ?year=")
     parser.add_argument("--lang", choices=("zh", "ja", "en"), default=None)
     args = parser.parse_args()
+
+    # Unbuffered-ish logs when piped by the agent terminal.
+    try:
+        sys.stdout.reconfigure(line_buffering=True)
+    except Exception:
+        pass
 
     if args.rebuild:
         run_py(ROOT / "db" / "build_db.py")
@@ -184,11 +202,7 @@ def main() -> None:
     if q:
         url += "?" + "&".join(q)
 
-    if not args.no_open:
-        print(f">> open {url}")
-        webbrowser.open(url)
-
-    serve(args.port)
+    serve(args.port, open_url=None if args.no_open else url)
 
 
 if __name__ == "__main__":

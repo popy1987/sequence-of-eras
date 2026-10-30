@@ -13,8 +13,9 @@
   --hairline: rgba(21, 34, 56, 0.12);
   --shadow: 0 12px 40px rgba(21, 34, 56, 0.12);
   --radius: 18px;
-  --serif: "Shippori Mincho", "Hiragino Mincho ProN", "Songti SC", serif;
-  --sans: "Zen Kaku Gothic New", "PingFang SC", "Hiragino Sans", "Microsoft YaHei", sans-serif;
+  /* Local CJK stacks first; optional webfonts (loaded async) sit at the end. */
+  --serif: "Hiragino Mincho ProN", "Yu Mincho", "Songti SC", "SimSun", "Shippori Mincho", serif;
+  --sans: "PingFang SC", "Hiragino Sans", "Yu Gothic UI", "Microsoft YaHei", "Zen Kaku Gothic New", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -35,6 +36,57 @@ body {
 }
 
 button, input { font: inherit; }
+
+#boot-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(900px 480px at 12% -8%, rgba(255, 255, 255, 0.55), transparent 55%),
+    linear-gradient(160deg, var(--bg-0), var(--bg-1));
+}
+
+#boot-overlay[hidden] { display: none; }
+
+.boot-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 36px;
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--hairline);
+}
+
+.boot-seal {
+  display: inline-grid;
+  place-items: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 4px;
+  font-family: var(--serif);
+  font-weight: 700;
+  transform: rotate(-4deg);
+}
+
+#boot-message {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+#boot-overlay.is-error #boot-message {
+  color: var(--accent);
+  max-width: 28rem;
+  text-align: center;
+  white-space: pre-wrap;
+}
 
 #atlas-shell {
   height: 100vh;

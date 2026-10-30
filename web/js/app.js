@@ -69,12 +69,27 @@ function stripPeriodSuffix(name) {
     .trim();
 }
 
+function setBootMessage(text, { error = false } = {}) {
+  const overlay = $("#boot-overlay");
+  const msg = $("#boot-message");
+  if (msg) msg.textContent = text;
+  if (overlay) overlay.classList.toggle("is-error", Boolean(error));
+}
+
+function finishBoot() {
+  const overlay = $("#boot-overlay");
+  if (overlay) overlay.hidden = true;
+}
+
 async function boot() {
   setLocale(resolveInitialLocale(), { persist: true, syncUrl: true });
   applyDocumentLocale();
   bindLanguageSwitcher();
+  setBootMessage(t("boot.loading"));
 
   const atlas = await loadAtlas();
+  setBootMessage(t("boot.rendering"));
+
   const engineId = resolveMapEngineId();
   const host = $("#map-host");
   const map = createMapEngine(engineId, host, {
@@ -300,12 +315,14 @@ async function boot() {
     },
   };
 
+  finishBoot();
+
   console.info(
     `atlasAPI ready (engine=${engineId}, lang=${getLocale()}): atlasAPI.setLang('ja'), atlasAPI.gotoYear(-2000)`
   );
 }
 
 boot().catch((err) => {
-  document.body.innerHTML = `<pre style="padding:24px;color:#b33a2b;white-space:pre-wrap">${err.message}</pre>`;
+  setBootMessage(err.message || t("error.atlasMissing"), { error: true });
   console.error(err);
 });

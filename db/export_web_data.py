@@ -570,24 +570,17 @@ def export() -> None:
             item["lat"] = row["lat"]
         events.append(item)
 
+    # Phase markers stay schematic capitals only; kofun attach at runtime from kofun_burials.
     phases = [dict(ph) for ph in PHASES]
     for ph in phases:
         ph["query_from"] = ordinal(ph["from_year"], 1, 1)
         ph["query_to"] = ordinal(ph["to_year"], 12, 31)
-        base = list(ph.get("markers") or [])
-        # Attach tombs whose burial interval overlaps the phase year span.
-        attached = []
-        for m in kofun_markers:
-            if m["burial_to"] < ph["from_year"] or m["burial_from"] > ph["to_year"]:
-                continue
-            attached.append(m)
-        # Prefer larger / earlier lists already ordered; keep capitals first.
-        ph["markers"] = base + attached
+        ph["markers"] = list(ph.get("markers") or [])
 
     atlas = {
         "meta": {
             "title": {"zh_hans": "时代序列 · 日本历史地图", "ja": "時代序列 · 日本歴史地図", "en": "Sequence of Eras"},
-            "version": "0.1.2",
+            "version": "0.1.3",
             "source_db": "db/sequence_of_eras.sqlite",
             "note": "疆域几何为示意复原；古坟为築造／埋入区间；飞鸟–平安事件含内战与平乱，争议年份用区间。",
             "year_min": -38000,
@@ -612,15 +605,14 @@ def export() -> None:
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps(atlas, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"wrote {OUT} ({OUT.stat().st_size // 1024} KB)")
-    kofun_on_phase = sum(
-        1 for ph in phases if ph["id"] == "phase.kofun" for m in ph["markers"] if m.get("kind") == "kofun"
-    )
+    # Compact JSON for faster first download (preview server may also gzip).
+    payload = json.dumps(atlas, ensure_ascii=False, separators=(",", ":"))
+    OUT.write_text(payload, encoding="utf-8")
+    print(f"wrote {OUT} ({OUT.stat().st_size // 1024} KB compact)")
     wars = sum(1 for e in events if e.get("conflict_class"))
     print(
         f"phases={len(phases)} periods={len(periods)} disputes={len(disputes)} "
-        f"kofun_burials={len(kofun_markers)} kofun_on_phase.kofun={kofun_on_phase} "
+        f"kofun_burials={len(kofun_markers)} "
         f"events={len(events)} conflict_tagged={wars}"
     )
     conn.close()

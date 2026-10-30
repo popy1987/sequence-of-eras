@@ -68,10 +68,26 @@ function eventMarkers(atlas, year) {
   })).filter((m) => m.lon != null && m.lat != null);
 }
 
+/** Kofun whose burial interval overlaps the current schematic phase (not duplicated in phases). */
+export function kofunMarkersForPhase(atlas, phase) {
+  if (!phase) return [];
+  return (atlas.kofun_burials || []).filter(
+    (m) =>
+      m.burial_to >= phase.from_year &&
+      m.burial_from <= phase.to_year &&
+      m.lon != null &&
+      m.lat != null
+  );
+}
+
 /** Build the engine-agnostic render frame for a year. */
 export function buildMapFrame(atlas, year, locale = getLocale()) {
   const phase = phaseForYear(atlas, year);
-  const markers = [...(phase.markers || []), ...eventMarkers(atlas, year)];
+  const markers = [
+    ...(phase.markers || []),
+    ...kofunMarkersForPhase(atlas, phase),
+    ...eventMarkers(atlas, year),
+  ];
   return {
     year,
     locale,

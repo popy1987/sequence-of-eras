@@ -9,5 +9,6 @@ alwaysApply: true
 
 1. **每个新任务开始时**先用 Read 读取 `AGENTS.md`（若本轮尚未读过）。
 2. 执行重建／种子／导出／预览等流程时，优先使用其中「快捷操作」的命令，不要另造一套。
-3. 用户要求增加「快捷操作」时，只改 `AGENTS.md` 对应章节，不必新开规则文件。
-4. 产品目标与设计约定仍以同目录的 `sequence-of-eras.mdc` 为准；二者冲突时以设计语义 + 用户当轮指示为准。
+3. 用户消息里出现对话快捷指令 **`rebuild` / `restart` / `重启`**（意图即此）时：立刻执行 `python scripts/restart_preview.py --rebuild`，细节以 `AGENTS.md` 为准。
+4. 用户要求增加「快捷操作」时，只改 `AGENTS.md` 对应章节，不必新开规则文件。
+5. 产品目标与设计约定仍以同目录的 `sequence-of-eras.mdc` 为准；二者冲突时以设计语义 + 用户当轮指示为准。

@@ -80,6 +80,8 @@ export const MESSAGES = Object.freeze({
     "mode.uncertain": "未定",
     "mode.approximate": "示意",
     "error.atlasMissing": "无法加载 data/atlas.json，请先运行 python db/export_web_data.py",
+    "boot.loading": "加载地图数据…",
+    "boot.rendering": "绘制地图…",
   },
   ja: {
     "meta.title": "時代序列 · 日本歴史地図",
@@ -152,6 +154,8 @@ export const MESSAGES = Object.freeze({
     "mode.uncertain": "未確定",
     "mode.approximate": "示意",
     "error.atlasMissing": "data/atlas.json を読み込めません。先に python db/export_web_data.py を実行してください。",
+    "boot.loading": "地図データを読み込み中…",
+    "boot.rendering": "地図を描画中…",
   },
   en: {
     "meta.title": "Sequence of Eras · Historical Atlas of Japan",
@@ -224,5 +228,7 @@ export const MESSAGES = Object.freeze({
     "mode.uncertain": "uncertain",
     "mode.approximate": "approximate",
     "error.atlasMissing": "Cannot load data/atlas.json. Run python db/export_web_data.py first.",
+    "boot.loading": "Loading map data…",
+    "boot.rendering": "Drawing map…",
   },
 });

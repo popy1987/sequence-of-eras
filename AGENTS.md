@@ -36,6 +36,20 @@
 
 > 以后常用一键流程、校验命令、种子入口都记在本节。Agent 被要求「按手册做 X」时优先查这里。
 
+### 对话快捷指令（整句或单独出现即执行）
+
+用户在对话框里说下面任一词（可带标点／可夹在短句里，意图就是这三种时），Agent **立刻**在仓库根目录执行同一条命令，不必再确认：
+
+| 用户说 | 执行 |
+| --- | --- |
+| `rebuild` | `python scripts/restart_preview.py --rebuild` |
+| `restart` | `python scripts/restart_preview.py --rebuild` |
+| `重启` | `python scripts/restart_preview.py --rebuild` |
+
+含义：全量建库 → 导出 compact atlas → 释放 8080 → 起 gzip 预览 → 用**系统浏览器**打开。前台长跑，Ctrl+C 结束；**不要**开 Cursor Simple Browser。
+
+若用户额外带了参数意图（如只要导出、不要开浏览器、指定 `?year=`），再改用本节下方变体；纯这三个词则固定 `--rebuild`。
+
 ### 全量重建并导出
 
 ```bash
@@ -59,7 +73,7 @@ python db/export_web_data.py
 
 ### 重启预览（一键看最新效果）
 
-导出最新 `atlas.json`、释放 8080、启动静态服务，并用**系统浏览器**打开（不是 IDE 内预览）。前台运行，Ctrl+C 结束。
+导出最新 compact `atlas.json`、释放 8080、启动**带 gzip** 的静态服务，并用**系统浏览器**打开（不是 IDE 内预览）。前台运行，Ctrl+C 结束。
 
 ```bash
 python scripts/restart_preview.py
@@ -83,7 +97,7 @@ python scripts/restart_preview.py --no-open
 
 地址：`http://127.0.0.1:8080/`（脚本已带 query 时直接打开对应页）。
 
-Agent：用户说「重启服务 / 看最新效果」时执行本条；**不要**开 Cursor Simple Browser。
+纯「重启服务 / 看最新效果」且未说 rebuild 时，可用无 `--rebuild` 的默认命令；用户说 **rebuild / restart / 重启** 时一律走上一节的 `--rebuild`。
 
 ### 本地预览（仅起服务，不导出）
 

@@ -150,7 +150,7 @@ PHASES = [
         "markers": [
             {"id": "site.sannai", "lon": 140.7, "lat": 40.8, "names": {"zh_hans": "三内丸山", "ja": "三内丸山", "en": "Sannai-Maruyama"}, "kind": "site"},
         ],
-        "note": "文化分布示意，不是国界。",
+        "note": "文化分布示意，不是国界。约公元前 2000 年可与中国夏商周对照观看，日本列岛此时考古材料仍稀少。",
     },
     {
         "id": "phase.yayoi",
@@ -492,7 +492,10 @@ def export() -> None:
             "note": "疆域几何为示意复原，用于前端联调；精确边界后续替换。",
             "year_min": -38000,
             "year_max": 2026,
-            "default_year": 1600,
+            # Align first viewport with Xia–Shang–Zhou horizon (~2000 BCE).
+            # Japan then is still Jōmon; sparse archaeology is expected.
+            "default_year": -2000,
+            "default_year_reason": "对齐中国夏商周年代视野；此时日本仍处绳文，考古证据稀少。",
         },
         "coastline": JAPAN_LAND,
         "periods": periods,

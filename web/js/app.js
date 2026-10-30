@@ -277,7 +277,7 @@ async function boot() {
   };
 
   console.info(
-    `atlasAPI ready (engine=${engineId}, lang=${getLocale()}): atlasAPI.setLang('ja'), atlasAPI.gotoYear(1600)`
+    `atlasAPI ready (engine=${engineId}, lang=${getLocale()}): atlasAPI.setLang('ja'), atlasAPI.gotoYear(-2000)`
   );
 }
 

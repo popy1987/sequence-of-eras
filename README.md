@@ -19,9 +19,28 @@
 
 ```bash
 python db/build_db.py
+python db/export_web_data.py
 ```
 
 当前种子包含：默认情景、地图图层、列岛通史时代骨架、日本/中国纪年轨、近代日本年号样例、中国主体王朝骨架、以及四条争议地区（北方四岛、竹岛/独岛、尖阁/钓鱼岛、琉球）。详细历史几何与全量年号事件仍待后续录入。
+
+## Web 前端
+
+静态本地页，结构参照[江山时序](https://github.com/DeanChensj/jiangshan-map)：顶栏三行纪年、主地图、底时间轴、图例、点选卡片、`?year=` 深链与 `window.atlasAPI`。
+
+```bash
+python db/export_web_data.py
+cd web
+python -m http.server 8080
+```
+
+浏览器打开 `http://localhost:8080/`。可用 `?year=1600`、`?year=-5000`。控制台：`atlasAPI.inspectYear()`、`atlasAPI.gotoYear(1185)`。
+
+疆域色块目前是示意复原，用于联调交互；精确边界后续用数据库几何替换。
+
+## AI 上下文
+
+Cursor 每次对话会自动载入 `.cursor/rules/sequence-of-eras.mdc`（`alwaysApply: true`）。详细字段与约束仍以 `doc/数据库设计.md` 为准。
 
 ## 许可
 

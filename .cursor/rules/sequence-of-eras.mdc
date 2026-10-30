@@ -1,0 +1,39 @@
+---
+description: sequence-of-eras 项目总上下文（产品目标、目录、数据与前端约定）
+alwaysApply: true
+---
+
+# sequence-of-eras
+
+日本历史时序地图：**Web + 未来 iOS**。用户拨动日期，地图上的势力范围、地点、事件、争议地区随之切换。最小刻度为日；史前保留粗精度，不伪装成精确某日。
+
+## 权威文档与数据流
+
+1. 逻辑设计：`doc/数据库设计.md`（改语义先改这里）
+2. SQLite 单文件库：`db/sequence_of_eras.sqlite`（便于打包进 iOS）
+3. 表结构 / 建库 / 导出：`db/schema.sql`、`db/build_db.py`、`db/export_web_data.py`
+4. Web：`web/` 静态页，数据读 `web/data/atlas.json`
+
+```bash
+python db/build_db.py
+python db/export_web_data.py
+cd web && python -m http.server 8080
+```
+
+## 产品约定
+
+- 史实主轴默认对齐**日文维基**；中文维基作对照；条目正文不入库。
+- 顶栏三行纪年：公元 · 日本年号（空档用天皇在位年）· 中国**主体王朝**纪年（乱世并立政权另轨，不刷进默认参照）。
+- 势力范围的逻辑真相是**控制记录**，不是整幅快照；快照/色块仅服务展示与性能。
+- **争议地区**单独成表：至少含北方四岛/南千岛、竹岛/独岛、尖阁/钓鱼岛、**琉球**。并列各方管理/主张与来源，**不作主权裁决**。
+- 前端结构参照 [jiangshan-map](https://github.com/DeanChensj/jiangshan-map)（时间轴、图例、点选卡、`?year=`、`atlasAPI`），视觉不要抄宣纸黄主题。
+- 当前疆域多为**示意几何**，联调用；精确边界后续替换数据库几何后再导出。
+
+## 改代码时
+
+- 先改设计语义，再改 `schema` / 种子 / 导出 / 前端，保持一致。
+- 不要引入需要常驻服务的数据库；本地继续 SQLite 单文件。
+- 不要把维基正文大段粘进库或前端。
+- 用户未要求时不写无关 markdown。
+- **永远不要主动操作 Git**（含 `status`/`diff`/`log`/`add`/`commit`/`push`/`pull`/`checkout`/`merge`/`rebase`/`branch` 等）。未经用户明确要求就动 Git 容易造成冲突与历史错乱；只有用户明确说要查/提交/推送/切分支时才执行对应命令。
+- **永远不要主动在本 IDE 内打开 Web 预览 / Simple Browser / 内置浏览器预览**（含改完前端后自动预览）。这很耗性能。需要验页面时，只给出本地命令（如 `python -m http.server`）让用户在外部浏览器自行打开；除非用户明确要求，才使用 IDE 内预览或浏览器自动化。

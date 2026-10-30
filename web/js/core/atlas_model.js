@@ -22,13 +22,40 @@ export function phaseForYear(atlas, year) {
   return hit || atlas.phases[atlas.phases.length - 1];
 }
 
-export function periodLabel(atlas, year, locale = getLocale()) {
+/** Main-spine periods only (exclude overlapping side tracks like 南北朝). */
+const PERIOD_TICK_SKIP = new Set([
+  "period.nanbokucho",
+  "period.kemmu",
+]);
+
+export function spinePeriods(atlas) {
+  return (atlas.periods || []).filter(
+    (p) =>
+      !p.region_id &&
+      p.from_year != null &&
+      !PERIOD_TICK_SKIP.has(p.id)
+  );
+}
+
+/** Historiographic period for chrono labels (includes overlapping tracks). */
+export function periodForYear(atlas, year) {
   const ord = ordinal(year, 7, 1);
   const hits = covering(
-    atlas.periods.filter((p) => !p.region_id),
+    (atlas.periods || []).filter((p) => !p.region_id),
     ord
   );
-  const best = hits.sort((a, b) => a.sort_order - b.sort_order).slice(-1)[0];
+  return hits.sort((a, b) => a.sort_order - b.sort_order).slice(-1)[0] || null;
+}
+
+/** Spine period for timeline tick highlight (no overlapping side tracks). */
+export function spinePeriodForYear(atlas, year) {
+  const ord = ordinal(year, 7, 1);
+  const hits = covering(spinePeriods(atlas), ord);
+  return hits.sort((a, b) => a.sort_order - b.sort_order).slice(-1)[0] || null;
+}
+
+export function periodLabel(atlas, year, locale = getLocale()) {
+  const best = periodForYear(atlas, year);
   return best ? pickName(best.names, locale) : "—";
 }
 

@@ -447,26 +447,36 @@ button, input { font: inherit; }
 
 .timeline-track {
   position: relative;
+  padding-bottom: 1.35rem;
 }
 
 #year-slider {
   width: 100%;
   accent-color: var(--accent);
+  margin: 0;
 }
 
 #period-ticks {
-  display: flex;
-  justify-content: space-between;
-  gap: 4px;
-  margin-top: 4px;
-  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1.55rem;
+  height: 1.2rem;
+  pointer-events: none;
 }
 
 .tick {
-  flex: 1;
-  min-width: 0;
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  max-width: 4.5rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  pointer-events: auto;
   text-align: center;
   font-size: 0.62rem;
+  line-height: 1.2;
   color: var(--muted);
   white-space: nowrap;
   overflow: hidden;
@@ -474,7 +484,25 @@ button, input { font: inherit; }
   cursor: pointer;
 }
 
-.tick.is-current { color: var(--accent); font-weight: 700; }
+.tick::before {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 6px;
+  margin: 0 auto 2px;
+  background: var(--hairline);
+}
+
+.tick.is-current {
+  color: var(--accent);
+  font-weight: 700;
+  z-index: 1;
+}
+
+.tick.is-current::before {
+  background: var(--accent);
+  height: 8px;
+}
 
 .timeline-ends {
   display: flex;
@@ -522,5 +550,8 @@ button, input { font: inherit; }
     left: 12px;
     width: auto;
   }
-  .tick:nth-child(n + 8) { display: none; }
+  .tick {
+    max-width: 3.2rem;
+    font-size: 0.58rem;
+  }
 }

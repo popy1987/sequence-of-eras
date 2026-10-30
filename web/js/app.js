@@ -11,11 +11,14 @@ import {
 import {
   pickName,
   periodLabel,
+  spinePeriodForYear,
+  spinePeriods,
   buildMapFrame,
   loadAtlas,
   activeDisputes,
   phaseForYear,
 } from "./core/atlas_model.js";
+import { createTimelineScale } from "./core/timeline_scale.js";
 import { createMapEngine } from "./map/registry.js";
 import { MAP_ENGINE_EVENTS, MAP_SELECT_KIND } from "./map/contract.js";
 import {
@@ -98,6 +101,7 @@ async function boot() {
 
   const yearMin = atlas.meta.year_min;
   const yearMax = atlas.meta.year_max;
+  const scale = createTimelineScale(yearMin, yearMax);
   let year = atlas.meta.default_year;
   let playing = false;
   let playTimer = null;
@@ -105,8 +109,9 @@ async function boot() {
 
   const slider = $("#year-slider");
   const yearInput = $("#year-input");
-  slider.min = String(yearMin);
-  slider.max = String(yearMax);
+  // Slider is warped position space; year input stays calendar years.
+  slider.min = "0";
+  slider.max = String(scale.SLIDER_MAX);
   slider.step = "1";
   yearInput.min = String(yearMin);
   yearInput.max = String(yearMax);
@@ -122,32 +127,40 @@ async function boot() {
   function rebuildTicks() {
     const ticks = $("#period-ticks");
     ticks.innerHTML = "";
-    atlas.periods
-      .filter((p) => !p.region_id && p.from_year != null)
-      .forEach((p) => {
-        const el = document.createElement("button");
-        el.type = "button";
-        el.className = "tick";
-        el.dataset.periodId = p.id;
-        el.textContent = stripPeriodSuffix(pickName(p.names));
-        el.title = `${pickName(p.names)} (${p.from_year}–${p.to_year ?? "…"})`;
-        el.addEventListener("click", () => setYear(p.from_year));
-        ticks.appendChild(el);
-      });
+    const spine = spinePeriods(atlas);
+    let lastPos = -1;
+    const minGap = 0.035;
+    spine.forEach((p) => {
+      const pos = scale.yearToPos(p.from_year);
+      // Drop labels that would collide; keep data alignment with slider.
+      if (lastPos >= 0 && pos - lastPos < minGap) return;
+      lastPos = pos;
+      const el = document.createElement("button");
+      el.type = "button";
+      el.className = "tick";
+      el.dataset.periodId = p.id;
+      el.dataset.fromYear = String(p.from_year);
+      el.style.left = `${(pos * 100).toFixed(3)}%`;
+      el.textContent = stripPeriodSuffix(pickName(p.names));
+      el.title = `${pickName(p.names)} (${p.from_year}–${p.to_year ?? "…"})`;
+      el.addEventListener("click", () => setYear(p.from_year));
+      ticks.appendChild(el);
+    });
   }
 
   function setYear(next, { pushUrl = true } = {}) {
     year = Math.max(yearMin, Math.min(yearMax, Math.round(Number(next)) || year));
     if (year === 0) year = -1;
-    slider.value = String(year);
+    slider.value = String(scale.yearToSlider(year));
     yearInput.value = String(year);
 
     const locale = getLocale();
     const frame = buildMapFrame(atlas, year, locale);
     const phase = frame.phase;
+    const spinePeriod = spinePeriodForYear(atlas, year);
 
     $("#phase-label").textContent =
-      `${pickName(phase.label)} · ${formatGregorianYear(year)}`;
+      `${periodLabel(atlas, year)} · ${formatGregorianYear(year)}`;
     $("#chrono-gregorian").textContent = formatGregorianYear(year);
     $("#chrono-japan").textContent =
       `${t("chrono.japanPrefix")} ${japanEraLabel(atlas, year)}`;
@@ -159,8 +172,9 @@ async function boot() {
     map.setFrame(frame);
     renderLegend(phase);
 
+    const periodId = spinePeriod && spinePeriod.id;
     [...$("#period-ticks").children].forEach((el) => {
-      el.classList.toggle("is-current", el.dataset.periodId === phase.id);
+      el.classList.toggle("is-current", el.dataset.periodId === periodId);
     });
 
     if (pushUrl) {
@@ -234,7 +248,7 @@ async function boot() {
     lastSelect = null;
   });
 
-  slider.addEventListener("input", () => setYear(slider.value));
+  slider.addEventListener("input", () => setYear(scale.sliderToYear(slider.value)));
   yearInput.addEventListener("change", () => setYear(yearInput.value));
   $("#btn-today").addEventListener("click", () =>
     setYear(new Date().getFullYear())

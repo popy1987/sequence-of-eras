@@ -479,23 +479,67 @@ def export() -> None:
             "names": names_for(conn, "map_layer", row["id"]),
         })
 
-    # attach ordinals to phases
-    for ph in PHASES:
+    # Kofun burial/construction markers from DB (築造时期 → burial horizon, not excavation).
+    kofun_markers = []
+    for row in conn.execute(
+        """
+        SELECT p.id, p.lon, p.lat,
+               ts.preferred_year AS burial_from,
+               te.preferred_year AS burial_to,
+               ts.confidence AS confidence,
+               n.body AS note
+        FROM place p
+        JOIN place_function pf ON pf.place_id = p.id AND pf.function_kind='site_occupation'
+        JOIN time_point ts ON ts.id = pf.start_time_id
+        JOIN time_point te ON te.id = pf.end_time_id
+        LEFT JOIN note n ON n.object_id = p.id AND n.language='zh_hans'
+        WHERE p.kind='kofun'
+        ORDER BY (te.preferred_year - ts.preferred_year) ASC, p.id
+        """
+    ):
+        if row["lon"] is None or row["lat"] is None:
+            continue
+        marker = {
+            "id": row["id"],
+            "lon": row["lon"],
+            "lat": row["lat"],
+            "names": names_for(conn, "place", row["id"]),
+            "kind": "kofun",
+            "burial_from": row["burial_from"],
+            "burial_to": row["burial_to"],
+            "confidence": row["confidence"],
+        }
+        if row["note"]:
+            marker["note"] = row["note"]
+        kofun_markers.append(marker)
+
+    phases = [dict(ph) for ph in PHASES]
+    for ph in phases:
         ph["query_from"] = ordinal(ph["from_year"], 1, 1)
         ph["query_to"] = ordinal(ph["to_year"], 12, 31)
+        base = list(ph.get("markers") or [])
+        # Attach tombs whose burial interval overlaps the phase year span.
+        attached = []
+        for m in kofun_markers:
+            if m["burial_to"] < ph["from_year"] or m["burial_from"] > ph["to_year"]:
+                continue
+            attached.append(m)
+        # Prefer larger / earlier lists already ordered; keep capitals first.
+        ph["markers"] = base + attached
 
     atlas = {
         "meta": {
             "title": {"zh_hans": "时代序列 · 日本历史地图", "ja": "時代序列 · 日本歴史地図", "en": "Sequence of Eras"},
-            "version": "0.1.0",
+            "version": "0.1.1",
             "source_db": "db/sequence_of_eras.sqlite",
-            "note": "疆域几何为示意复原，用于前端联调；精确边界后续替换。",
+            "note": "疆域几何为示意复原，用于前端联调；精确边界后续替换。古坟标记年代为维基築造／埋入区间，非出土年。",
             "year_min": -38000,
             "year_max": 2026,
             # Align first viewport with Xia–Shang–Zhou horizon (~2000 BCE).
             # Japan then is still Jōmon; sparse archaeology is expected.
             "default_year": -2000,
             "default_year_reason": "对齐中国夏商周年代视野；此时日本仍处绳文，考古证据稀少。",
+            "kofun_burial_count": len(kofun_markers),
         },
         "coastline": JAPAN_LAND,
         "periods": periods,
@@ -504,13 +548,20 @@ def export() -> None:
         "eras_china": eras_china,
         "disputes": disputes,
         "layers": layers,
-        "phases": PHASES,
+        "phases": phases,
+        "kofun_burials": kofun_markers,
     }
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(atlas, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"wrote {OUT} ({OUT.stat().st_size // 1024} KB)")
-    print(f"phases={len(PHASES)} periods={len(periods)} disputes={len(disputes)}")
+    kofun_on_phase = sum(
+        1 for ph in phases if ph["id"] == "phase.kofun" for m in ph["markers"] if m.get("kind") == "kofun"
+    )
+    print(
+        f"phases={len(phases)} periods={len(periods)} disputes={len(disputes)} "
+        f"kofun_burials={len(kofun_markers)} kofun_on_phase.kofun={kofun_on_phase}"
+    )
     conn.close()
 
 

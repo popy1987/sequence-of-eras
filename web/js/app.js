@@ -166,12 +166,21 @@ async function boot() {
         []
       );
     } else if (kind === MAP_SELECT_KIND.MARKER) {
-      openInspector(
-        pickName(data.names),
-        data.kind,
-        t("inspect.markerBody"),
-        [t("inspect.coords", { lon: data.lon, lat: data.lat })]
-      );
+      const lines = [t("inspect.coords", { lon: data.lon, lat: data.lat })];
+      let body = t("inspect.markerBody");
+      if (data.kind === "kofun" && data.burial_from != null && data.burial_to != null) {
+        body = data.note || t("inspect.kofunBody");
+        lines.unshift(
+          t("inspect.kofunBurial", {
+            from: data.burial_from,
+            to: data.burial_to,
+          })
+        );
+        if (data.confidence) {
+          lines.push(t("inspect.kofunConfidence", { confidence: data.confidence }));
+        }
+      }
+      openInspector(pickName(data.names), data.kind, body, lines);
     } else if (kind === MAP_SELECT_KIND.DISPUTE) {
       openInspector(
         pickName(data.names) || data.id,

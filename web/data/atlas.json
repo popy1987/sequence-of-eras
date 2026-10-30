@@ -5,13 +5,14 @@
       "ja": "時代序列 · 日本歴史地図",
       "en": "Sequence of Eras"
     },
-    "version": "0.1.0",
+    "version": "0.1.1",
     "source_db": "db/sequence_of_eras.sqlite",
-    "note": "疆域几何为示意复原，用于前端联调；精确边界后续替换。",
+    "note": "疆域几何为示意复原，用于前端联调；精确边界后续替换。古坟标记年代为维基築造／埋入区间，非出土年。",
     "year_min": -38000,
     "year_max": 2026,
     "default_year": -2000,
-    "default_year_reason": "对齐中国夏商周年代视野；此时日本仍处绳文，考古证据稀少。"
+    "default_year_reason": "对齐中国夏商周年代视野；此时日本仍处绳文，考古证据稀少。",
+    "kofun_burial_count": 40
   },
   "coastline": {
     "type": "MultiPolygon",
@@ -1596,6 +1597,21 @@
             "en": "Yoshinogari"
           },
           "kind": "site"
+        },
+        {
+          "id": "place.kofun.hashihaka",
+          "lon": 135.8412,
+          "lat": 34.5393,
+          "names": {
+            "ja": "箸墓古墳",
+            "zh_hans": "箸墓古坟",
+            "en": "Hashihaka Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 240,
+          "burial_to": 300,
+          "confidence": "disputed",
+          "note": "维基：3世纪中叶～后半；历博AMS约240–260，橿考研约280–300，亦有更晚说。卑弥呼墓说与宫内厅治定倭迹迹日百袭媛命并存。取240–300为争议区间（築造／埋入，非出土年）。"
         }
       ],
       "note": "邪马台国位置有争议，默认不画唯一国界。",
@@ -1837,6 +1853,591 @@
             "en": "Nara Basin"
           },
           "kind": "capital"
+        },
+        {
+          "id": "place.kofun.horaiyama",
+          "lon": 135.79,
+          "lat": 34.685,
+          "names": {
+            "ja": "宝来山古墳",
+            "zh_hans": "宝来山古坟",
+            "en": "Hōraiyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 420,
+          "confidence": "estimated",
+          "note": "维基一覧：前期・5C初。宫内厅治定垂仁天皇陵。"
+        },
+        {
+          "id": "place.kofun.kondayama",
+          "lon": 135.609,
+          "lat": 34.5625,
+          "names": {
+            "ja": "誉田御廟山古墳",
+            "zh_hans": "誉田御庙山古坟",
+            "en": "Kondayama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 420,
+          "confidence": "estimated",
+          "note": "维基：5C初。宫内厅治定应神天皇陵。"
+        },
+        {
+          "id": "place.kofun.sakurai_chausuyama",
+          "lon": 135.855,
+          "lat": 34.51,
+          "names": {
+            "ja": "桜井茶臼山古墳",
+            "zh_hans": "樱井茶臼山古坟",
+            "en": "Sakurai Chausuyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 300,
+          "burial_to": 320,
+          "confidence": "estimated",
+          "note": "维基：4C初。"
+        },
+        {
+          "id": "place.kofun.shimanoyama",
+          "lon": 135.78,
+          "lat": 34.53,
+          "names": {
+            "ja": "島の山古墳",
+            "zh_hans": "岛之山古坟",
+            "en": "Shimanoyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 380,
+          "burial_to": 400,
+          "confidence": "estimated",
+          "note": "维基一覧附注：精査后坟丘全长≥200m；时期4C末。"
+        },
+        {
+          "id": "place.kofun.andon_yama",
+          "lon": 135.84,
+          "lat": 34.555,
+          "names": {
+            "ja": "行燈山古墳",
+            "zh_hans": "行灯山古坟",
+            "en": "Andon-yama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 300,
+          "burial_to": 333,
+          "confidence": "estimated",
+          "note": "维基：4C前。宫内厅治定崇神天皇陵。"
+        },
+        {
+          "id": "place.kofun.hakayama",
+          "lon": 135.615,
+          "lat": 34.555,
+          "names": {
+            "ja": "墓山古墳",
+            "zh_hans": "墓山古坟",
+            "en": "Hakayama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 433,
+          "confidence": "estimated",
+          "note": "维基：5C前。誉田御庙山陪冢。"
+        },
+        {
+          "id": "place.kofun.haze_nisanzai",
+          "lon": 135.49,
+          "lat": 34.545,
+          "names": {
+            "ja": "土師ニサンザイ古墳",
+            "zh_hans": "土师二山斋古坟",
+            "en": "Haze Nisanzai Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 467,
+          "burial_to": 500,
+          "confidence": "estimated",
+          "note": "维基：5C後。"
+        },
+        {
+          "id": "place.kofun.hisage",
+          "lon": 135.792,
+          "lat": 34.698,
+          "names": {
+            "ja": "ヒシアゲ古墳",
+            "zh_hans": "菱臀古坟",
+            "en": "Hishiage Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 433,
+          "confidence": "estimated",
+          "note": "维基：5C前。宫内厅治定磐之媛陵。"
+        },
+        {
+          "id": "place.kofun.ichiniwa",
+          "lon": 135.795,
+          "lat": 34.69,
+          "names": {
+            "ja": "市庭古墳",
+            "zh_hans": "市庭古坟",
+            "en": "Ichiniwa Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 467,
+          "burial_to": 500,
+          "confidence": "estimated",
+          "note": "维基：5C後。宫内厅治定平城天皇陵（治定与考古学年代错位，此处从築造编年）。"
+        },
+        {
+          "id": "place.kofun.ichinoyama",
+          "lon": 135.6,
+          "lat": 34.57,
+          "names": {
+            "ja": "市野山古墳",
+            "zh_hans": "市野山古坟",
+            "en": "Ichinoyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 467,
+          "burial_to": 500,
+          "confidence": "estimated",
+          "note": "维基：5C後。宫内厅治定允恭天皇陵。"
+        },
+        {
+          "id": "place.kofun.inariyama_gyoda",
+          "lon": 139.481,
+          "lat": 36.1294,
+          "names": {
+            "ja": "稲荷山古墳",
+            "zh_hans": "稻荷山古坟（行田）",
+            "en": "Inariyama Kofun (Gyōda)"
+          },
+          "kind": "kofun",
+          "burial_from": 467,
+          "burial_to": 500,
+          "confidence": "estimated",
+          "note": "维基：5世纪后半築造。金错铭铁剑「辛亥年」有471／531两说，属铭文干支纪年争议，不等于坟丘築造年。"
+        },
+        {
+          "id": "place.kofun.kamiishizu_misanzai",
+          "lon": 135.482,
+          "lat": 34.5575,
+          "names": {
+            "ja": "上石津ミサンザイ古墳",
+            "zh_hans": "上石津三山斋古坟",
+            "en": "Kamiishizu Misanzai Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 433,
+          "confidence": "estimated",
+          "note": "维基：5C前。宫内厅治定履中天皇陵。"
+        },
+        {
+          "id": "place.kofun.kawachi_otsukayama",
+          "lon": 135.59,
+          "lat": 34.548,
+          "names": {
+            "ja": "河内大塚山古墳",
+            "zh_hans": "河内大冢山古坟",
+            "en": "Kawachi Ōtsukayama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 567,
+          "burial_to": 600,
+          "confidence": "disputed",
+          "note": "维基一覧：后期?・6C後；古市归属有异说。年代取6世纪后半区间。"
+        },
+        {
+          "id": "place.kofun.konabe",
+          "lon": 135.798,
+          "lat": 34.698,
+          "names": {
+            "ja": "コナベ古墳",
+            "zh_hans": "小奈边古坟",
+            "en": "Konabe Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 433,
+          "confidence": "estimated",
+          "note": "维基：5C前。"
+        },
+        {
+          "id": "place.kofun.mayuyama",
+          "lon": 135.39,
+          "lat": 34.45,
+          "names": {
+            "ja": "摩湯山古墳",
+            "zh_hans": "摩汤山古坟",
+            "en": "Mayuyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 367,
+          "burial_to": 400,
+          "confidence": "estimated",
+          "note": "维基：4C後。"
+        },
+        {
+          "id": "place.kofun.mesuri_yama",
+          "lon": 135.86,
+          "lat": 34.52,
+          "names": {
+            "ja": "メスリ山古墳",
+            "zh_hans": "目摺山古坟",
+            "en": "Mesuri-yama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 300,
+          "burial_to": 333,
+          "confidence": "estimated",
+          "note": "维基：4C前。"
+        },
+        {
+          "id": "place.kofun.mise_maruyama",
+          "lon": 135.79,
+          "lat": 34.47,
+          "names": {
+            "ja": "見瀬丸山古墳",
+            "zh_hans": "见濑丸山古坟",
+            "en": "Mise Maruyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 567,
+          "burial_to": 600,
+          "confidence": "estimated",
+          "note": "维基：6C後。钦明天皇・坚盐媛陵说有力。"
+        },
+        {
+          "id": "place.kofun.nakatsuyama",
+          "lon": 135.605,
+          "lat": 34.573,
+          "names": {
+            "ja": "仲津山古墳",
+            "zh_hans": "仲津山古坟",
+            "en": "Nakatsuyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 433,
+          "confidence": "estimated",
+          "note": "维基：5C前。宫内厅治定仲姬命陵。"
+        },
+        {
+          "id": "place.kofun.nishitonozuka",
+          "lon": 135.845,
+          "lat": 34.575,
+          "names": {
+            "ja": "西殿塚古墳",
+            "zh_hans": "西殿冢古坟",
+            "en": "Nishitonozuka Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 300,
+          "burial_to": 333,
+          "confidence": "estimated",
+          "note": "维基：4C前。"
+        },
+        {
+          "id": "place.kofun.oka_misanzai",
+          "lon": 135.61,
+          "lat": 34.565,
+          "names": {
+            "ja": "岡ミサンザイ古墳",
+            "zh_hans": "冈三山斋古坟",
+            "en": "Oka Misanzai Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 467,
+          "burial_to": 500,
+          "confidence": "estimated",
+          "note": "维基一覧：后期・5C後。宫内厅治定仲哀天皇陵。"
+        },
+        {
+          "id": "place.kofun.ota_chausuyama",
+          "lon": 135.555,
+          "lat": 34.82,
+          "names": {
+            "ja": "太田茶臼山古墳",
+            "zh_hans": "太田茶臼山古坟",
+            "en": "Ōta Chausuyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 433,
+          "confidence": "disputed",
+          "note": "维基：5C前。宫内厅治定继体天皇陵，但学界多以今城塚为真继体陵；築造年代早于继体在位。"
+        },
+        {
+          "id": "place.kofun.sairyo",
+          "lon": 135.31,
+          "lat": 34.32,
+          "names": {
+            "ja": "西陵古墳",
+            "zh_hans": "西陵古坟",
+            "en": "Sairyō Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 433,
+          "burial_to": 466,
+          "confidence": "estimated",
+          "note": "维基：5C中。"
+        },
+        {
+          "id": "place.kofun.sakuzan",
+          "lon": 133.83,
+          "lat": 34.67,
+          "names": {
+            "ja": "作山古墳",
+            "zh_hans": "作山古坟",
+            "en": "Sakuzan Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 433,
+          "burial_to": 466,
+          "confidence": "estimated",
+          "note": "维基：5C中。"
+        },
+        {
+          "id": "place.kofun.shibutani_mukoyama",
+          "lon": 135.843,
+          "lat": 34.558,
+          "names": {
+            "ja": "渋谷向山古墳",
+            "zh_hans": "涩谷向山古坟",
+            "en": "Shibutani Mukoyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 367,
+          "burial_to": 400,
+          "confidence": "estimated",
+          "note": "维基：前期・4C後。宫内厅治定景行天皇陵。"
+        },
+        {
+          "id": "place.kofun.shinikiyama",
+          "lon": 135.73,
+          "lat": 34.53,
+          "names": {
+            "ja": "新木山古墳",
+            "zh_hans": "新木山古坟",
+            "en": "Shinikiyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 433,
+          "confidence": "estimated",
+          "note": "维基：5C前。"
+        },
+        {
+          "id": "place.kofun.tsudo_shiroyama",
+          "lon": 135.595,
+          "lat": 34.58,
+          "names": {
+            "ja": "津堂城山古墳",
+            "zh_hans": "津堂城山古坟",
+            "en": "Tsudo Shiroyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 367,
+          "burial_to": 400,
+          "confidence": "estimated",
+          "note": "维基：4C後・末。"
+        },
+        {
+          "id": "place.kofun.tsukuriyama",
+          "lon": 133.9485,
+          "lat": 34.669,
+          "names": {
+            "ja": "造山古墳",
+            "zh_hans": "造山古坟",
+            "en": "Tsukuriyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 433,
+          "confidence": "estimated",
+          "note": "维基：5C前。吉备地区最大前方后圆坟。"
+        },
+        {
+          "id": "place.kofun.uwanabe",
+          "lon": 135.795,
+          "lat": 34.7,
+          "names": {
+            "ja": "ウワナベ古墳",
+            "zh_hans": "宇和奈边古坟",
+            "en": "Uwanabe Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 433,
+          "burial_to": 466,
+          "confidence": "estimated",
+          "note": "维基：5C中。"
+        },
+        {
+          "id": "place.kofun.imashirozuka",
+          "lon": 135.5942,
+          "lat": 34.8503,
+          "names": {
+            "ja": "今城塚古墳",
+            "zh_hans": "今城冢古坟",
+            "en": "Imashirozuka Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 500,
+          "burial_to": 550,
+          "confidence": "estimated",
+          "note": "维基：6世纪前半。学界推定真继体天皇陵；非宫内厅治定。"
+        },
+        {
+          "id": "place.kofun.gosashi",
+          "lon": 135.785,
+          "lat": 34.695,
+          "names": {
+            "ja": "五社神古墳",
+            "zh_hans": "五社神古坟",
+            "en": "Gosashi Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 367,
+          "burial_to": 420,
+          "confidence": "disputed",
+          "note": "维基：4C後・5C初（跨世纪区间）。宫内厅治定神功皇后陵。"
+        },
+        {
+          "id": "place.kofun.saki_misasagiyama",
+          "lon": 135.785,
+          "lat": 34.702,
+          "names": {
+            "ja": "佐紀陵山古墳",
+            "zh_hans": "佐纪陵山古坟",
+            "en": "Saki Misasagiyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 367,
+          "burial_to": 420,
+          "confidence": "disputed",
+          "note": "维基：4C後・5C初。"
+        },
+        {
+          "id": "place.kofun.suyama",
+          "lon": 135.735,
+          "lat": 34.535,
+          "names": {
+            "ja": "巣山古墳",
+            "zh_hans": "巢山古坟",
+            "en": "Suyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 380,
+          "burial_to": 433,
+          "confidence": "disputed",
+          "note": "维基：4C末・5C前。"
+        },
+        {
+          "id": "place.kofun.tsukiyama_yamatotakada",
+          "lon": 135.74,
+          "lat": 34.51,
+          "names": {
+            "ja": "築山古墳",
+            "zh_hans": "筑山古坟",
+            "en": "Tsukiyama Kofun (Yamatotakada)"
+          },
+          "kind": "kofun",
+          "burial_from": 380,
+          "burial_to": 433,
+          "confidence": "disputed",
+          "note": "维基：4C末・5C前。"
+        },
+        {
+          "id": "place.kofun.hashihaka",
+          "lon": 135.8412,
+          "lat": 34.5393,
+          "names": {
+            "ja": "箸墓古墳",
+            "zh_hans": "箸墓古坟",
+            "en": "Hashihaka Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 240,
+          "burial_to": 300,
+          "confidence": "disputed",
+          "note": "维基：3世纪中叶～后半；历博AMS约240–260，橿考研约280–300，亦有更晚说。卑弥呼墓说与宫内厅治定倭迹迹日百袭媛命并存。取240–300为争议区间（築造／埋入，非出土年）。"
+        },
+        {
+          "id": "place.kofun.muro_miyayama",
+          "lon": 135.735,
+          "lat": 34.455,
+          "names": {
+            "ja": "室宮山古墳",
+            "zh_hans": "室宫山古坟",
+            "en": "Muro Miyayama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 390,
+          "burial_to": 450,
+          "confidence": "disputed",
+          "note": "维基：5C前?（带问号），取略放宽区间。"
+        },
+        {
+          "id": "place.kofun.daisenryo",
+          "lon": 135.4875,
+          "lat": 34.564,
+          "names": {
+            "ja": "大仙陵古墳",
+            "zh_hans": "大仙陵古坟",
+            "en": "Daisenryō Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 466,
+          "confidence": "estimated",
+          "note": "维基大规模一覧：中期・5C前・中。宫内厅治定仁德天皇陵，被葬者身份有争议；此处年代指築造／埋入层位。"
+        },
+        {
+          "id": "place.kofun.saki_ishizukayama",
+          "lon": 135.788,
+          "lat": 34.7,
+          "names": {
+            "ja": "佐紀石塚山古墳",
+            "zh_hans": "佐纪石冢山古坟",
+            "en": "Saki Ishizukayama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 367,
+          "burial_to": 433,
+          "confidence": "disputed",
+          "note": "维基：4C後・5C前。宫内厅治定成务天皇陵。"
+        },
+        {
+          "id": "place.kofun.ota_tenjinyama",
+          "lon": 139.355,
+          "lat": 36.305,
+          "names": {
+            "ja": "太田天神山古墳",
+            "zh_hans": "太田天神山古坟",
+            "en": "Ōta Tenjinyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 500,
+          "confidence": "disputed",
+          "note": "大规模一覧时期栏为「?」。关东最大级前方后圆坟，学界多置中期（5世纪）；取400–500争议区间。"
+        },
+        {
+          "id": "place.kofun.shinmeiyama",
+          "lon": 135.13,
+          "lat": 35.65,
+          "names": {
+            "ja": "神明山古墳",
+            "zh_hans": "神明山古坟",
+            "en": "Shinmeiyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 400,
+          "burial_to": 500,
+          "confidence": "disputed",
+          "note": "维基：5C（整世纪）。丹后政权大型坟。"
         }
       ],
       "note": "边界为示意扩展带。",
@@ -2076,6 +2677,51 @@
             "en": "Heijō-kyō"
           },
           "kind": "capital"
+        },
+        {
+          "id": "place.kofun.ishibutai",
+          "lon": 135.8262,
+          "lat": 34.4668,
+          "names": {
+            "ja": "石舞台古墳",
+            "zh_hans": "石舞台古坟",
+            "en": "Ishibutai Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 600,
+          "burial_to": 633,
+          "confidence": "estimated",
+          "note": "维基：7世纪初头。推定苏我马子墓；终末期方坟，位于古坟时代末／飞鸟过渡。"
+        },
+        {
+          "id": "place.kofun.kawachi_otsukayama",
+          "lon": 135.59,
+          "lat": 34.548,
+          "names": {
+            "ja": "河内大塚山古墳",
+            "zh_hans": "河内大冢山古坟",
+            "en": "Kawachi Ōtsukayama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 567,
+          "burial_to": 600,
+          "confidence": "disputed",
+          "note": "维基一覧：后期?・6C後；古市归属有异说。年代取6世纪后半区间。"
+        },
+        {
+          "id": "place.kofun.mise_maruyama",
+          "lon": 135.79,
+          "lat": 34.47,
+          "names": {
+            "ja": "見瀬丸山古墳",
+            "zh_hans": "见濑丸山古坟",
+            "en": "Mise Maruyama Kofun"
+          },
+          "kind": "kofun",
+          "burial_from": 567,
+          "burial_to": 600,
+          "confidence": "estimated",
+          "note": "维基：6C後。钦明天皇・坚盐媛陵说有力。"
         }
       ],
       "note": "北海道尚未纳入令制国。",
@@ -4298,6 +4944,608 @@
       "note": "争议地区以独立图层标出，不作主权裁决。",
       "query_from": 73746843,
       "query_to": 73789211
+    }
+  ],
+  "kofun_burials": [
+    {
+      "id": "place.kofun.horaiyama",
+      "lon": 135.79,
+      "lat": 34.685,
+      "names": {
+        "ja": "宝来山古墳",
+        "zh_hans": "宝来山古坟",
+        "en": "Hōraiyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 420,
+      "confidence": "estimated",
+      "note": "维基一覧：前期・5C初。宫内厅治定垂仁天皇陵。"
+    },
+    {
+      "id": "place.kofun.kondayama",
+      "lon": 135.609,
+      "lat": 34.5625,
+      "names": {
+        "ja": "誉田御廟山古墳",
+        "zh_hans": "誉田御庙山古坟",
+        "en": "Kondayama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 420,
+      "confidence": "estimated",
+      "note": "维基：5C初。宫内厅治定应神天皇陵。"
+    },
+    {
+      "id": "place.kofun.sakurai_chausuyama",
+      "lon": 135.855,
+      "lat": 34.51,
+      "names": {
+        "ja": "桜井茶臼山古墳",
+        "zh_hans": "樱井茶臼山古坟",
+        "en": "Sakurai Chausuyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 300,
+      "burial_to": 320,
+      "confidence": "estimated",
+      "note": "维基：4C初。"
+    },
+    {
+      "id": "place.kofun.shimanoyama",
+      "lon": 135.78,
+      "lat": 34.53,
+      "names": {
+        "ja": "島の山古墳",
+        "zh_hans": "岛之山古坟",
+        "en": "Shimanoyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 380,
+      "burial_to": 400,
+      "confidence": "estimated",
+      "note": "维基一覧附注：精査后坟丘全长≥200m；时期4C末。"
+    },
+    {
+      "id": "place.kofun.andon_yama",
+      "lon": 135.84,
+      "lat": 34.555,
+      "names": {
+        "ja": "行燈山古墳",
+        "zh_hans": "行灯山古坟",
+        "en": "Andon-yama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 300,
+      "burial_to": 333,
+      "confidence": "estimated",
+      "note": "维基：4C前。宫内厅治定崇神天皇陵。"
+    },
+    {
+      "id": "place.kofun.hakayama",
+      "lon": 135.615,
+      "lat": 34.555,
+      "names": {
+        "ja": "墓山古墳",
+        "zh_hans": "墓山古坟",
+        "en": "Hakayama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 433,
+      "confidence": "estimated",
+      "note": "维基：5C前。誉田御庙山陪冢。"
+    },
+    {
+      "id": "place.kofun.haze_nisanzai",
+      "lon": 135.49,
+      "lat": 34.545,
+      "names": {
+        "ja": "土師ニサンザイ古墳",
+        "zh_hans": "土师二山斋古坟",
+        "en": "Haze Nisanzai Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 467,
+      "burial_to": 500,
+      "confidence": "estimated",
+      "note": "维基：5C後。"
+    },
+    {
+      "id": "place.kofun.hisage",
+      "lon": 135.792,
+      "lat": 34.698,
+      "names": {
+        "ja": "ヒシアゲ古墳",
+        "zh_hans": "菱臀古坟",
+        "en": "Hishiage Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 433,
+      "confidence": "estimated",
+      "note": "维基：5C前。宫内厅治定磐之媛陵。"
+    },
+    {
+      "id": "place.kofun.ichiniwa",
+      "lon": 135.795,
+      "lat": 34.69,
+      "names": {
+        "ja": "市庭古墳",
+        "zh_hans": "市庭古坟",
+        "en": "Ichiniwa Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 467,
+      "burial_to": 500,
+      "confidence": "estimated",
+      "note": "维基：5C後。宫内厅治定平城天皇陵（治定与考古学年代错位，此处从築造编年）。"
+    },
+    {
+      "id": "place.kofun.ichinoyama",
+      "lon": 135.6,
+      "lat": 34.57,
+      "names": {
+        "ja": "市野山古墳",
+        "zh_hans": "市野山古坟",
+        "en": "Ichinoyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 467,
+      "burial_to": 500,
+      "confidence": "estimated",
+      "note": "维基：5C後。宫内厅治定允恭天皇陵。"
+    },
+    {
+      "id": "place.kofun.inariyama_gyoda",
+      "lon": 139.481,
+      "lat": 36.1294,
+      "names": {
+        "ja": "稲荷山古墳",
+        "zh_hans": "稻荷山古坟（行田）",
+        "en": "Inariyama Kofun (Gyōda)"
+      },
+      "kind": "kofun",
+      "burial_from": 467,
+      "burial_to": 500,
+      "confidence": "estimated",
+      "note": "维基：5世纪后半築造。金错铭铁剑「辛亥年」有471／531两说，属铭文干支纪年争议，不等于坟丘築造年。"
+    },
+    {
+      "id": "place.kofun.ishibutai",
+      "lon": 135.8262,
+      "lat": 34.4668,
+      "names": {
+        "ja": "石舞台古墳",
+        "zh_hans": "石舞台古坟",
+        "en": "Ishibutai Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 600,
+      "burial_to": 633,
+      "confidence": "estimated",
+      "note": "维基：7世纪初头。推定苏我马子墓；终末期方坟，位于古坟时代末／飞鸟过渡。"
+    },
+    {
+      "id": "place.kofun.kamiishizu_misanzai",
+      "lon": 135.482,
+      "lat": 34.5575,
+      "names": {
+        "ja": "上石津ミサンザイ古墳",
+        "zh_hans": "上石津三山斋古坟",
+        "en": "Kamiishizu Misanzai Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 433,
+      "confidence": "estimated",
+      "note": "维基：5C前。宫内厅治定履中天皇陵。"
+    },
+    {
+      "id": "place.kofun.kawachi_otsukayama",
+      "lon": 135.59,
+      "lat": 34.548,
+      "names": {
+        "ja": "河内大塚山古墳",
+        "zh_hans": "河内大冢山古坟",
+        "en": "Kawachi Ōtsukayama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 567,
+      "burial_to": 600,
+      "confidence": "disputed",
+      "note": "维基一覧：后期?・6C後；古市归属有异说。年代取6世纪后半区间。"
+    },
+    {
+      "id": "place.kofun.konabe",
+      "lon": 135.798,
+      "lat": 34.698,
+      "names": {
+        "ja": "コナベ古墳",
+        "zh_hans": "小奈边古坟",
+        "en": "Konabe Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 433,
+      "confidence": "estimated",
+      "note": "维基：5C前。"
+    },
+    {
+      "id": "place.kofun.mayuyama",
+      "lon": 135.39,
+      "lat": 34.45,
+      "names": {
+        "ja": "摩湯山古墳",
+        "zh_hans": "摩汤山古坟",
+        "en": "Mayuyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 367,
+      "burial_to": 400,
+      "confidence": "estimated",
+      "note": "维基：4C後。"
+    },
+    {
+      "id": "place.kofun.mesuri_yama",
+      "lon": 135.86,
+      "lat": 34.52,
+      "names": {
+        "ja": "メスリ山古墳",
+        "zh_hans": "目摺山古坟",
+        "en": "Mesuri-yama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 300,
+      "burial_to": 333,
+      "confidence": "estimated",
+      "note": "维基：4C前。"
+    },
+    {
+      "id": "place.kofun.mise_maruyama",
+      "lon": 135.79,
+      "lat": 34.47,
+      "names": {
+        "ja": "見瀬丸山古墳",
+        "zh_hans": "见濑丸山古坟",
+        "en": "Mise Maruyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 567,
+      "burial_to": 600,
+      "confidence": "estimated",
+      "note": "维基：6C後。钦明天皇・坚盐媛陵说有力。"
+    },
+    {
+      "id": "place.kofun.nakatsuyama",
+      "lon": 135.605,
+      "lat": 34.573,
+      "names": {
+        "ja": "仲津山古墳",
+        "zh_hans": "仲津山古坟",
+        "en": "Nakatsuyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 433,
+      "confidence": "estimated",
+      "note": "维基：5C前。宫内厅治定仲姬命陵。"
+    },
+    {
+      "id": "place.kofun.nishitonozuka",
+      "lon": 135.845,
+      "lat": 34.575,
+      "names": {
+        "ja": "西殿塚古墳",
+        "zh_hans": "西殿冢古坟",
+        "en": "Nishitonozuka Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 300,
+      "burial_to": 333,
+      "confidence": "estimated",
+      "note": "维基：4C前。"
+    },
+    {
+      "id": "place.kofun.oka_misanzai",
+      "lon": 135.61,
+      "lat": 34.565,
+      "names": {
+        "ja": "岡ミサンザイ古墳",
+        "zh_hans": "冈三山斋古坟",
+        "en": "Oka Misanzai Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 467,
+      "burial_to": 500,
+      "confidence": "estimated",
+      "note": "维基一覧：后期・5C後。宫内厅治定仲哀天皇陵。"
+    },
+    {
+      "id": "place.kofun.ota_chausuyama",
+      "lon": 135.555,
+      "lat": 34.82,
+      "names": {
+        "ja": "太田茶臼山古墳",
+        "zh_hans": "太田茶臼山古坟",
+        "en": "Ōta Chausuyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 433,
+      "confidence": "disputed",
+      "note": "维基：5C前。宫内厅治定继体天皇陵，但学界多以今城塚为真继体陵；築造年代早于继体在位。"
+    },
+    {
+      "id": "place.kofun.sairyo",
+      "lon": 135.31,
+      "lat": 34.32,
+      "names": {
+        "ja": "西陵古墳",
+        "zh_hans": "西陵古坟",
+        "en": "Sairyō Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 433,
+      "burial_to": 466,
+      "confidence": "estimated",
+      "note": "维基：5C中。"
+    },
+    {
+      "id": "place.kofun.sakuzan",
+      "lon": 133.83,
+      "lat": 34.67,
+      "names": {
+        "ja": "作山古墳",
+        "zh_hans": "作山古坟",
+        "en": "Sakuzan Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 433,
+      "burial_to": 466,
+      "confidence": "estimated",
+      "note": "维基：5C中。"
+    },
+    {
+      "id": "place.kofun.shibutani_mukoyama",
+      "lon": 135.843,
+      "lat": 34.558,
+      "names": {
+        "ja": "渋谷向山古墳",
+        "zh_hans": "涩谷向山古坟",
+        "en": "Shibutani Mukoyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 367,
+      "burial_to": 400,
+      "confidence": "estimated",
+      "note": "维基：前期・4C後。宫内厅治定景行天皇陵。"
+    },
+    {
+      "id": "place.kofun.shinikiyama",
+      "lon": 135.73,
+      "lat": 34.53,
+      "names": {
+        "ja": "新木山古墳",
+        "zh_hans": "新木山古坟",
+        "en": "Shinikiyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 433,
+      "confidence": "estimated",
+      "note": "维基：5C前。"
+    },
+    {
+      "id": "place.kofun.tsudo_shiroyama",
+      "lon": 135.595,
+      "lat": 34.58,
+      "names": {
+        "ja": "津堂城山古墳",
+        "zh_hans": "津堂城山古坟",
+        "en": "Tsudo Shiroyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 367,
+      "burial_to": 400,
+      "confidence": "estimated",
+      "note": "维基：4C後・末。"
+    },
+    {
+      "id": "place.kofun.tsukuriyama",
+      "lon": 133.9485,
+      "lat": 34.669,
+      "names": {
+        "ja": "造山古墳",
+        "zh_hans": "造山古坟",
+        "en": "Tsukuriyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 433,
+      "confidence": "estimated",
+      "note": "维基：5C前。吉备地区最大前方后圆坟。"
+    },
+    {
+      "id": "place.kofun.uwanabe",
+      "lon": 135.795,
+      "lat": 34.7,
+      "names": {
+        "ja": "ウワナベ古墳",
+        "zh_hans": "宇和奈边古坟",
+        "en": "Uwanabe Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 433,
+      "burial_to": 466,
+      "confidence": "estimated",
+      "note": "维基：5C中。"
+    },
+    {
+      "id": "place.kofun.imashirozuka",
+      "lon": 135.5942,
+      "lat": 34.8503,
+      "names": {
+        "ja": "今城塚古墳",
+        "zh_hans": "今城冢古坟",
+        "en": "Imashirozuka Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 500,
+      "burial_to": 550,
+      "confidence": "estimated",
+      "note": "维基：6世纪前半。学界推定真继体天皇陵；非宫内厅治定。"
+    },
+    {
+      "id": "place.kofun.gosashi",
+      "lon": 135.785,
+      "lat": 34.695,
+      "names": {
+        "ja": "五社神古墳",
+        "zh_hans": "五社神古坟",
+        "en": "Gosashi Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 367,
+      "burial_to": 420,
+      "confidence": "disputed",
+      "note": "维基：4C後・5C初（跨世纪区间）。宫内厅治定神功皇后陵。"
+    },
+    {
+      "id": "place.kofun.saki_misasagiyama",
+      "lon": 135.785,
+      "lat": 34.702,
+      "names": {
+        "ja": "佐紀陵山古墳",
+        "zh_hans": "佐纪陵山古坟",
+        "en": "Saki Misasagiyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 367,
+      "burial_to": 420,
+      "confidence": "disputed",
+      "note": "维基：4C後・5C初。"
+    },
+    {
+      "id": "place.kofun.suyama",
+      "lon": 135.735,
+      "lat": 34.535,
+      "names": {
+        "ja": "巣山古墳",
+        "zh_hans": "巢山古坟",
+        "en": "Suyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 380,
+      "burial_to": 433,
+      "confidence": "disputed",
+      "note": "维基：4C末・5C前。"
+    },
+    {
+      "id": "place.kofun.tsukiyama_yamatotakada",
+      "lon": 135.74,
+      "lat": 34.51,
+      "names": {
+        "ja": "築山古墳",
+        "zh_hans": "筑山古坟",
+        "en": "Tsukiyama Kofun (Yamatotakada)"
+      },
+      "kind": "kofun",
+      "burial_from": 380,
+      "burial_to": 433,
+      "confidence": "disputed",
+      "note": "维基：4C末・5C前。"
+    },
+    {
+      "id": "place.kofun.hashihaka",
+      "lon": 135.8412,
+      "lat": 34.5393,
+      "names": {
+        "ja": "箸墓古墳",
+        "zh_hans": "箸墓古坟",
+        "en": "Hashihaka Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 240,
+      "burial_to": 300,
+      "confidence": "disputed",
+      "note": "维基：3世纪中叶～后半；历博AMS约240–260，橿考研约280–300，亦有更晚说。卑弥呼墓说与宫内厅治定倭迹迹日百袭媛命并存。取240–300为争议区间（築造／埋入，非出土年）。"
+    },
+    {
+      "id": "place.kofun.muro_miyayama",
+      "lon": 135.735,
+      "lat": 34.455,
+      "names": {
+        "ja": "室宮山古墳",
+        "zh_hans": "室宫山古坟",
+        "en": "Muro Miyayama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 390,
+      "burial_to": 450,
+      "confidence": "disputed",
+      "note": "维基：5C前?（带问号），取略放宽区间。"
+    },
+    {
+      "id": "place.kofun.daisenryo",
+      "lon": 135.4875,
+      "lat": 34.564,
+      "names": {
+        "ja": "大仙陵古墳",
+        "zh_hans": "大仙陵古坟",
+        "en": "Daisenryō Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 466,
+      "confidence": "estimated",
+      "note": "维基大规模一覧：中期・5C前・中。宫内厅治定仁德天皇陵，被葬者身份有争议；此处年代指築造／埋入层位。"
+    },
+    {
+      "id": "place.kofun.saki_ishizukayama",
+      "lon": 135.788,
+      "lat": 34.7,
+      "names": {
+        "ja": "佐紀石塚山古墳",
+        "zh_hans": "佐纪石冢山古坟",
+        "en": "Saki Ishizukayama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 367,
+      "burial_to": 433,
+      "confidence": "disputed",
+      "note": "维基：4C後・5C前。宫内厅治定成务天皇陵。"
+    },
+    {
+      "id": "place.kofun.ota_tenjinyama",
+      "lon": 139.355,
+      "lat": 36.305,
+      "names": {
+        "ja": "太田天神山古墳",
+        "zh_hans": "太田天神山古坟",
+        "en": "Ōta Tenjinyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 500,
+      "confidence": "disputed",
+      "note": "大规模一覧时期栏为「?」。关东最大级前方后圆坟，学界多置中期（5世纪）；取400–500争议区间。"
+    },
+    {
+      "id": "place.kofun.shinmeiyama",
+      "lon": 135.13,
+      "lat": 35.65,
+      "names": {
+        "ja": "神明山古墳",
+        "zh_hans": "神明山古坟",
+        "en": "Shinmeiyama Kofun"
+      },
+      "kind": "kofun",
+      "burial_from": 400,
+      "burial_to": 500,
+      "confidence": "disputed",
+      "note": "维基：5C（整世纪）。丹后政权大型坟。"
     }
   ]
 }

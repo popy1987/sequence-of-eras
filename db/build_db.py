@@ -761,6 +761,12 @@ def seed(b: Builder) -> None:
         """
     )
 
+    # Wikipedia-derived Kofun burial / construction horizons (not excavation years).
+    from seed_kofun_burials import seed_into as seed_kofun_into
+
+    n_kofun = seed_kofun_into(b)
+    print(f"seeded kofun tombs: {n_kofun}")
+
 
 def verify(conn: sqlite3.Connection) -> None:
     tables = conn.execute(

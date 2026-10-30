@@ -245,6 +245,7 @@ button, input { font: inherit; }
 .marker.site circle { fill: #5b7c6a; }
 .marker.capital circle { fill: var(--accent); }
 .marker.castle circle { fill: #6b4e71; }
+.marker.kofun circle { fill: #8b5a2b; }
 .marker text {
   font-family: var(--serif);
   font-size: 11px;

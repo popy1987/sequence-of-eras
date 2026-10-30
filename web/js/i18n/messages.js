@@ -48,6 +48,9 @@ export const MESSAGES = Object.freeze({
     "inspect.polityBody":
       "此色块为示意疆域，用于观察势力消长；精确边界将随数据库几何录入替换。",
     "inspect.markerBody": "地点标记来自当前阶段示意数据。",
+    "inspect.kofunBody": "年代为维基「築造时期」对应的埋入／营建区间，不是发掘出土年份。",
+    "inspect.kofunBurial": "埋入／築造约 {from}–{to} 年",
+    "inspect.kofunConfidence": "年代置信 · {confidence}",
     "inspect.coords": "坐标 {lon}, {lat}",
     "inspect.disputeMeta": "争议地区 · {kind} · {sensitivity}",
     "inspect.disputeBody": "并列各方说法，库不作裁决。",
@@ -108,6 +111,9 @@ export const MESSAGES = Object.freeze({
     "inspect.polityBody":
       "この色面は示意版図です。精密な境界は今後データベースの幾何で置き換えます。",
     "inspect.markerBody": "地点記号は現段階の示意データです。",
+    "inspect.kofunBody": "年はウィキペディアの「築造時期」に基づく埋葬／造営の幅で、発掘年ではありません。",
+    "inspect.kofunBurial": "埋葬／築造 約 {from}–{to} 年",
+    "inspect.kofunConfidence": "年代確度 · {confidence}",
     "inspect.coords": "座標 {lon}, {lat}",
     "inspect.disputeMeta": "係争地 · {kind} · {sensitivity}",
     "inspect.disputeBody": "各方の主張を並記し、裁定しません。",
@@ -168,6 +174,9 @@ export const MESSAGES = Object.freeze({
     "inspect.polityBody":
       "This fill is schematic. Precise borders will replace it once database geometry is ingested.",
     "inspect.markerBody": "Place markers come from the current schematic phase data.",
+    "inspect.kofunBody": "Years are Wikipedia construction/burial horizons, not excavation dates.",
+    "inspect.kofunBurial": "Burial / construction ca. {from}–{to}",
+    "inspect.kofunConfidence": "Dating confidence · {confidence}",
     "inspect.coords": "Coords {lon}, {lat}",
     "inspect.disputeMeta": "Dispute · {kind} · {sensitivity}",
     "inspect.disputeBody": "Claims are listed side by side; the library does not adjudicate.",

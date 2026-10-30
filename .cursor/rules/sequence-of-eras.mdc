@@ -13,6 +13,7 @@ alwaysApply: true
 2. SQLite 单文件库：`db/sequence_of_eras.sqlite`（便于打包进 iOS）
 3. 表结构 / 建库 / 导出：`db/schema.sql`、`db/build_db.py`、`db/export_web_data.py`
 4. Web：`web/` 静态页，数据读 `web/data/atlas.json`
+5. 前端架构（可切换地图引擎）：`doc/前端架构.md`；默认引擎 `svg_mercator`，应用只通过 `MapFrame` 调引擎
 
 ```bash
 python db/build_db.py
@@ -27,6 +28,8 @@ cd web && python -m http.server 8080
 - 势力范围的逻辑真相是**控制记录**，不是整幅快照；快照/色块仅服务展示与性能。
 - **争议地区**单独成表：至少含北方四岛/南千岛、竹岛/独岛、尖阁/钓鱼岛、**琉球**。并列各方管理/主张与来源，**不作主权裁决**。
 - 前端结构参照 [jiangshan-map](https://github.com/DeanChensj/jiangshan-map)（时间轴、图例、点选卡、`?year=`、`atlasAPI`），视觉不要抄宣纸黄主题。
+- **地图引擎可插拔**：业务在 `web/js/app.js` + `core/`；渲染在 `web/js/map/engines/`。换引擎只注册新实现并改 `web/js/config.js` 的 `MAP_ENGINE`，不要把 Leaflet/MapLibre API 写进 app。
+- **中/日/英三语**：`web/js/i18n/`；UI 用 `t()` / `data-i18n`，数据名称用 `names.zh_hans|ja|en`。切换入口在顶栏，并支持 `?lang=zh|ja|en` 与 `atlasAPI.setLang()`。
 - 当前疆域多为**示意几何**，联调用；精确边界后续替换数据库几何后再导出。
 
 ## 改代码时

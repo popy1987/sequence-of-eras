@@ -1,0 +1,4302 @@
+{
+  "meta": {
+    "title": {
+      "zh_hans": "时代序列 · 日本历史地图",
+      "ja": "時代序列 · 日本歴史地図",
+      "en": "Sequence of Eras"
+    },
+    "version": "0.1.0",
+    "source_db": "db/sequence_of_eras.sqlite",
+    "note": "疆域几何为示意复原，用于前端联调；精确边界后续替换。",
+    "year_min": -38000,
+    "year_max": 2026,
+    "default_year": 1600
+  },
+  "coastline": {
+    "type": "MultiPolygon",
+    "coordinates": [
+      [
+        [
+          [
+            139.4,
+            41.4
+          ],
+          [
+            141.6,
+            41.5
+          ],
+          [
+            145.8,
+            43.2
+          ],
+          [
+            145.5,
+            44.5
+          ],
+          [
+            144.0,
+            45.5
+          ],
+          [
+            141.9,
+            45.4
+          ],
+          [
+            140.0,
+            42.6
+          ],
+          [
+            139.4,
+            41.4
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            130.9,
+            34.0
+          ],
+          [
+            131.5,
+            33.6
+          ],
+          [
+            133.0,
+            33.4
+          ],
+          [
+            134.7,
+            33.5
+          ],
+          [
+            135.8,
+            33.4
+          ],
+          [
+            136.9,
+            34.6
+          ],
+          [
+            137.5,
+            34.7
+          ],
+          [
+            138.9,
+            34.6
+          ],
+          [
+            139.8,
+            35.1
+          ],
+          [
+            140.9,
+            35.7
+          ],
+          [
+            140.9,
+            36.9
+          ],
+          [
+            141.0,
+            38.3
+          ],
+          [
+            141.6,
+            39.0
+          ],
+          [
+            141.9,
+            40.5
+          ],
+          [
+            141.4,
+            41.4
+          ],
+          [
+            140.3,
+            41.5
+          ],
+          [
+            139.7,
+            40.5
+          ],
+          [
+            139.8,
+            39.0
+          ],
+          [
+            139.5,
+            38.2
+          ],
+          [
+            138.2,
+            37.2
+          ],
+          [
+            137.0,
+            36.8
+          ],
+          [
+            136.0,
+            36.2
+          ],
+          [
+            135.0,
+            35.7
+          ],
+          [
+            134.0,
+            35.6
+          ],
+          [
+            132.5,
+            35.4
+          ],
+          [
+            131.2,
+            34.8
+          ],
+          [
+            130.9,
+            34.0
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            132.3,
+            32.9
+          ],
+          [
+            134.4,
+            33.0
+          ],
+          [
+            134.7,
+            34.0
+          ],
+          [
+            133.8,
+            34.4
+          ],
+          [
+            132.8,
+            34.0
+          ],
+          [
+            132.1,
+            33.5
+          ],
+          [
+            132.3,
+            32.9
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            129.7,
+            31.2
+          ],
+          [
+            131.2,
+            31.0
+          ],
+          [
+            132.0,
+            31.8
+          ],
+          [
+            131.9,
+            33.2
+          ],
+          [
+            130.9,
+            33.9
+          ],
+          [
+            129.8,
+            33.3
+          ],
+          [
+            129.5,
+            32.5
+          ],
+          [
+            129.7,
+            31.2
+          ]
+        ]
+      ],
+      [
+        [
+          [
+            127.6,
+            26.0
+          ],
+          [
+            128.3,
+            26.1
+          ],
+          [
+            128.3,
+            26.9
+          ],
+          [
+            127.7,
+            26.8
+          ],
+          [
+            127.6,
+            26.0
+          ]
+        ]
+      ]
+    ]
+  },
+  "periods": [
+    {
+      "id": "period.paleolithic",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 10,
+      "query_from": 59881508,
+      "query_to": 67935470,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "旧石器时代",
+        "ja": "旧石器時代",
+        "en": "Paleolithic"
+      },
+      "from_year": -36050,
+      "to_year": -14000
+    },
+    {
+      "id": "period.jomon",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 20,
+      "query_from": 67935105,
+      "query_to": 72902768,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "绳文时代",
+        "ja": "縄文時代",
+        "en": "Jōmon"
+      },
+      "from_year": -14000,
+      "to_year": -400
+    },
+    {
+      "id": "period.yayoi",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 30,
+      "query_from": 72902403,
+      "query_to": 73140175,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "弥生时代",
+        "ja": "弥生時代",
+        "en": "Yayoi"
+      },
+      "from_year": -400,
+      "to_year": 250
+    },
+    {
+      "id": "period.kofun",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 40,
+      "query_from": 73139811,
+      "query_to": 73265089,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "古坟时代",
+        "ja": "古墳時代",
+        "en": "Kofun"
+      },
+      "from_year": 250,
+      "to_year": 592
+    },
+    {
+      "id": "period.asuka",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 50,
+      "query_from": 73264724,
+      "query_to": 73308186,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "飞鸟时代",
+        "ja": "飛鳥時代",
+        "en": "Asuka"
+      },
+      "from_year": 592,
+      "to_year": 710
+    },
+    {
+      "id": "period.nara",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 60,
+      "query_from": 73307822,
+      "query_to": 73338867,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "奈良时代",
+        "ja": "奈良時代",
+        "en": "Nara"
+      },
+      "from_year": 710,
+      "to_year": 794
+    },
+    {
+      "id": "period.heian",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 70,
+      "query_from": 73338503,
+      "query_to": 73481677,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "平安时代",
+        "ja": "平安時代",
+        "en": "Heian"
+      },
+      "from_year": 794,
+      "to_year": 1185
+    },
+    {
+      "id": "period.kamakura",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 80,
+      "query_from": 73481313,
+      "query_to": 73535733,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "镰仓时代",
+        "ja": "鎌倉時代",
+        "en": "Kamakura"
+      },
+      "from_year": 1185,
+      "to_year": 1333
+    },
+    {
+      "id": "period.kemmu",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 90,
+      "query_from": 73535369,
+      "query_to": 73536829,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "建武新政",
+        "ja": "建武の新政",
+        "en": "Kenmu Restoration"
+      },
+      "from_year": 1333,
+      "to_year": 1336
+    },
+    {
+      "id": "period.muromachi",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 100,
+      "query_from": 73536464,
+      "query_to": 73623391,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "室町时代",
+        "ja": "室町時代",
+        "en": "Muromachi"
+      },
+      "from_year": 1336,
+      "to_year": 1573
+    },
+    {
+      "id": "period.nanbokucho",
+      "parent_id": "period.muromachi",
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 105,
+      "query_from": 73536464,
+      "query_to": 73557283,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "南北朝时代",
+        "ja": "南北朝時代",
+        "en": "Nanboku-chō"
+      },
+      "from_year": 1336,
+      "to_year": 1392
+    },
+    {
+      "id": "period.sengoku",
+      "parent_id": "period.muromachi",
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 110,
+      "query_from": 73584311,
+      "query_to": 73629600,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "战国时代",
+        "ja": "戦国時代",
+        "en": "Sengoku"
+      },
+      "from_year": 1467,
+      "to_year": 1590
+    },
+    {
+      "id": "period.azuchi_momoyama",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 120,
+      "query_from": 73623027,
+      "query_to": 73634348,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "安土桃山时代",
+        "ja": "安土桃山時代",
+        "en": "Azuchi–Momoyama"
+      },
+      "from_year": 1573,
+      "to_year": 1603
+    },
+    {
+      "id": "period.edo",
+      "parent_id": null,
+      "kind": "historiographic",
+      "region_id": null,
+      "sort_order": 130,
+      "query_from": 73633984,
+      "query_to": 73731138,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "江户时代",
+        "ja": "江戸時代",
+        "en": "Edo"
+      },
+      "from_year": 1603,
+      "to_year": 1868
+    },
+    {
+      "id": "period.meiji",
+      "parent_id": null,
+      "kind": "regnal",
+      "region_id": null,
+      "sort_order": 140,
+      "query_from": 73730773,
+      "query_to": 73747208,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "明治时代",
+        "ja": "明治時代",
+        "en": "Meiji"
+      },
+      "from_year": 1868,
+      "to_year": 1912
+    },
+    {
+      "id": "period.taisho",
+      "parent_id": null,
+      "kind": "regnal",
+      "region_id": null,
+      "sort_order": 150,
+      "query_from": 73746843,
+      "query_to": 73752321,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "大正时代",
+        "ja": "大正時代",
+        "en": "Taishō"
+      },
+      "from_year": 1912,
+      "to_year": 1926
+    },
+    {
+      "id": "period.showa",
+      "parent_id": null,
+      "kind": "regnal",
+      "region_id": null,
+      "sort_order": 160,
+      "query_from": 73751957,
+      "query_to": 73775332,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "昭和时代",
+        "ja": "昭和時代",
+        "en": "Shōwa"
+      },
+      "from_year": 1926,
+      "to_year": 1989
+    },
+    {
+      "id": "period.heisei",
+      "parent_id": null,
+      "kind": "regnal",
+      "region_id": null,
+      "sort_order": 170,
+      "query_from": 73774975,
+      "query_to": 73786044,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "平成时代",
+        "ja": "平成時代",
+        "en": "Heisei"
+      },
+      "from_year": 1989,
+      "to_year": 2019
+    },
+    {
+      "id": "period.reiwa",
+      "parent_id": null,
+      "kind": "regnal",
+      "region_id": null,
+      "sort_order": 180,
+      "query_from": 73786045,
+      "query_to": null,
+      "open_ended": true,
+      "names": {
+        "zh_hans": "令和时代",
+        "ja": "令和時代",
+        "en": "Reiwa"
+      },
+      "from_year": 2019,
+      "to_year": null
+    },
+    {
+      "id": "period.ryukyu_gusuku",
+      "parent_id": null,
+      "kind": "regional",
+      "region_id": "region.ryukyu",
+      "sort_order": 200,
+      "query_from": 73450267,
+      "query_to": 73570796,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "古斯库时代",
+        "ja": "グスク時代",
+        "en": "Gusuku period"
+      },
+      "from_year": 1100,
+      "to_year": 1429
+    },
+    {
+      "id": "period.ryukyu_sanzan",
+      "parent_id": null,
+      "kind": "regional",
+      "region_id": "region.ryukyu",
+      "sort_order": 210,
+      "query_from": 73531351,
+      "query_to": 73570796,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "三山时代",
+        "ja": "三山時代",
+        "en": "Sanzan period"
+      },
+      "from_year": 1322,
+      "to_year": 1429
+    },
+    {
+      "id": "period.ryukyu_first_sho",
+      "parent_id": null,
+      "kind": "regional",
+      "region_id": "region.ryukyu",
+      "sort_order": 220,
+      "query_from": 73570432,
+      "query_to": 73585406,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "第一尚氏",
+        "ja": "第一尚氏",
+        "en": "First Shō dynasty"
+      },
+      "from_year": 1429,
+      "to_year": 1469
+    },
+    {
+      "id": "period.ryukyu_second_sho",
+      "parent_id": null,
+      "kind": "regional",
+      "region_id": "region.ryukyu",
+      "sort_order": 230,
+      "query_from": 73585042,
+      "query_to": 73735155,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "第二尚氏",
+        "ja": "第二尚氏",
+        "en": "Second Shō dynasty"
+      },
+      "from_year": 1469,
+      "to_year": 1879
+    },
+    {
+      "id": "period.okinawa_uscar",
+      "parent_id": null,
+      "kind": "regional",
+      "region_id": "region.ryukyu",
+      "sort_order": 240,
+      "query_from": 73758897,
+      "query_to": 73769123,
+      "open_ended": false,
+      "names": {
+        "zh_hans": "冲绳美国统治",
+        "ja": "沖縄のアメリカ統治",
+        "en": "US administration of Okinawa"
+      },
+      "from_year": 1945,
+      "to_year": 1972
+    }
+  ],
+  "eras_japan": [
+    {
+      "id": "era.keicho",
+      "names": {
+        "ja": "庆长",
+        "zh_hans": "庆长",
+        "en": "Keichō"
+      },
+      "from": {
+        "year": 1596,
+        "month": 10,
+        "day": 27
+      },
+      "to": {
+        "year": 1615,
+        "month": 7,
+        "day": 13
+      },
+      "query_from": 73631727,
+      "query_to": 73638560,
+      "open_ended": false
+    },
+    {
+      "id": "era.meiji",
+      "names": {
+        "ja": "明治",
+        "zh_hans": "明治",
+        "en": "Meiji"
+      },
+      "from": {
+        "year": 1868,
+        "month": 10,
+        "day": 23
+      },
+      "to": {
+        "year": 1912,
+        "month": 7,
+        "day": 29
+      },
+      "query_from": 73731069,
+      "query_to": 73747053,
+      "open_ended": false
+    },
+    {
+      "id": "era.taisho",
+      "names": {
+        "ja": "大正",
+        "zh_hans": "大正",
+        "en": "Taishō"
+      },
+      "from": {
+        "year": 1912,
+        "month": 7,
+        "day": 30
+      },
+      "to": {
+        "year": 1926,
+        "month": 12,
+        "day": 24
+      },
+      "query_from": 73747054,
+      "query_to": 73752314,
+      "open_ended": false
+    },
+    {
+      "id": "era.showa",
+      "names": {
+        "ja": "昭和",
+        "zh_hans": "昭和",
+        "en": "Shōwa"
+      },
+      "from": {
+        "year": 1926,
+        "month": 12,
+        "day": 25
+      },
+      "to": {
+        "year": 1989,
+        "month": 1,
+        "day": 7
+      },
+      "query_from": 73752315,
+      "query_to": 73774974,
+      "open_ended": false
+    },
+    {
+      "id": "era.heisei",
+      "names": {
+        "ja": "平成",
+        "zh_hans": "平成",
+        "en": "Heisei"
+      },
+      "from": {
+        "year": 1989,
+        "month": 1,
+        "day": 8
+      },
+      "to": {
+        "year": 2019,
+        "month": 4,
+        "day": 30
+      },
+      "query_from": 73774975,
+      "query_to": 73786044,
+      "open_ended": false
+    },
+    {
+      "id": "era.reiwa",
+      "names": {
+        "ja": "令和",
+        "zh_hans": "令和",
+        "en": "Reiwa"
+      },
+      "from": {
+        "year": 2019,
+        "month": 5,
+        "day": 1
+      },
+      "to": null,
+      "query_from": 73786045,
+      "query_to": null,
+      "open_ended": true
+    }
+  ],
+  "dynasties_china": [
+    {
+      "id": "dynasty.zhou",
+      "names": {
+        "zh_hans": "周",
+        "en": "Zhou"
+      },
+      "from_year": -841,
+      "to_year": -256,
+      "query_from": 72741331,
+      "query_to": 72955363,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.qin",
+      "names": {
+        "zh_hans": "秦",
+        "en": "Qin"
+      },
+      "from_year": -256,
+      "to_year": -207,
+      "query_from": 72954998,
+      "query_to": 72973260,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.han_west",
+      "names": {
+        "zh_hans": "汉",
+        "en": "Western Han"
+      },
+      "from_year": -206,
+      "to_year": 8,
+      "query_from": 72973261,
+      "query_to": 73051787,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.tang",
+      "names": {
+        "zh_hans": "唐",
+        "en": "Tang"
+      },
+      "from_year": 618,
+      "to_year": 907,
+      "query_from": 73274220,
+      "query_to": 73380139,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.song",
+      "names": {
+        "zh_hans": "大宋",
+        "en": "Song"
+      },
+      "from_year": 960,
+      "to_year": 1279,
+      "query_from": 73399133,
+      "query_to": 73516010,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.yuan",
+      "names": {
+        "zh_hans": "大元",
+        "en": "Yuan"
+      },
+      "from_year": 1279,
+      "to_year": 1368,
+      "query_from": 73515646,
+      "query_to": 73548517,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.ming",
+      "names": {
+        "zh_hans": "大明",
+        "en": "Ming"
+      },
+      "from_year": 1368,
+      "to_year": 1644,
+      "query_from": 73548152,
+      "query_to": 73649324,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.qing",
+      "names": {
+        "zh_hans": "大清",
+        "en": "Qing"
+      },
+      "from_year": 1644,
+      "to_year": 1911,
+      "query_from": 73648959,
+      "query_to": 73746842,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.roc",
+      "names": {
+        "zh_hans": "民国",
+        "en": "Republic of China"
+      },
+      "from_year": 1912,
+      "to_year": 1949,
+      "query_from": 73746843,
+      "query_to": 73760630,
+      "open_ended": false
+    },
+    {
+      "id": "dynasty.prc",
+      "names": {
+        "zh_hans": "中华人民共和国",
+        "en": "PRC"
+      },
+      "from_year": 1949,
+      "to_year": null,
+      "query_from": 73760631,
+      "query_to": null,
+      "open_ended": true
+    }
+  ],
+  "eras_china": [
+    {
+      "id": "era.shaoxing",
+      "dynasty_id": "dynasty.song",
+      "names": {
+        "zh_hans": "绍兴",
+        "en": "Shaoxing"
+      },
+      "from_year": 1131,
+      "to_year": 1162,
+      "query_from": 73461589,
+      "query_to": 73473276,
+      "open_ended": false
+    },
+    {
+      "id": "era.wanli",
+      "dynasty_id": "dynasty.ming",
+      "names": {
+        "zh_hans": "万历",
+        "en": "Wanli"
+      },
+      "from_year": 1573,
+      "to_year": 1620,
+      "query_from": 73623027,
+      "query_to": 73640558,
+      "open_ended": false
+    }
+  ],
+  "disputes": [
+    {
+      "id": "dispute.northern_territories",
+      "kind": "island_group",
+      "status": "active",
+      "sensitivity": "high",
+      "short_note": "北方四岛 / 南千岛争议区。库并列日俄说法，不作裁决。",
+      "names": {
+        "zh_hans": "北方四岛 / 南千岛争议区",
+        "ja": "北方四岛／南千島",
+        "en": "Northern Territories / Southern Kurils"
+      },
+      "parties": [
+        {
+          "id": "dispute_party.001",
+          "actor_id": "actor.japan",
+          "actor_names": {
+            "zh_hans": "日本国",
+            "ja": "日本国",
+            "en": "Japan"
+          },
+          "role": "claims_sovereignty",
+          "claim_status": "competing"
+        },
+        {
+          "id": "dispute_party.002",
+          "actor_id": "actor.russia",
+          "actor_names": {
+            "zh_hans": "俄罗斯联邦",
+            "ja": "ロシア連邦",
+            "en": "Russian Federation"
+          },
+          "role": "administers",
+          "claim_status": "preferred"
+        },
+        {
+          "id": "dispute_party.003",
+          "actor_id": "actor.russia",
+          "actor_names": {
+            "zh_hans": "俄罗斯联邦",
+            "ja": "ロシア連邦",
+            "en": "Russian Federation"
+          },
+          "role": "claims_sovereignty",
+          "claim_status": "competing"
+        }
+      ],
+      "geometry": {
+        "geojson": {
+          "type": "Point",
+          "coordinates": [
+            147.8,
+            44.5
+          ]
+        },
+        "lon": 147.8,
+        "lat": 44.5
+      },
+      "query_from": 73758897,
+      "query_to": null,
+      "open_ended": true
+    },
+    {
+      "id": "dispute.ryukyu",
+      "kind": "archipelago_status",
+      "status": "active",
+      "sensitivity": "high",
+      "short_note": "琉球列岛地位与历史归属对照区。含王国、处分、美治与返还后的多方叙事；库不作裁决。",
+      "names": {
+        "zh_hans": "琉球列岛地位与历史归属对照区",
+        "ja": "琉球",
+        "en": "Ryukyu"
+      },
+      "parties": [
+        {
+          "id": "dispute_party.011",
+          "actor_id": "actor.japan",
+          "actor_names": {
+            "zh_hans": "日本国",
+            "ja": "日本国",
+            "en": "Japan"
+          },
+          "role": "administers",
+          "claim_status": "preferred"
+        },
+        {
+          "id": "dispute_party.012",
+          "actor_id": "actor.japan",
+          "actor_names": {
+            "zh_hans": "日本国",
+            "ja": "日本国",
+            "en": "Japan"
+          },
+          "role": "claims_sovereignty",
+          "claim_status": "preferred"
+        },
+        {
+          "id": "dispute_party.013",
+          "actor_id": "actor.ryukyu_kingdom",
+          "actor_names": {
+            "zh_hans": "琉球王国",
+            "ja": "琉球王国",
+            "en": "Ryukyu Kingdom"
+          },
+          "role": "claims_historical",
+          "claim_status": "competing"
+        }
+      ],
+      "geometry": {
+        "geojson": {
+          "type": "Point",
+          "coordinates": [
+            127.68,
+            26.21
+          ]
+        },
+        "lon": 127.68,
+        "lat": 26.21
+      },
+      "query_from": 73636176,
+      "query_to": null,
+      "open_ended": true
+    },
+    {
+      "id": "dispute.senkaku_diaoyu",
+      "kind": "island_group",
+      "status": "active",
+      "sensitivity": "high",
+      "short_note": "尖阁 / 钓鱼岛争议区。库并列各方说法，不作裁决。",
+      "names": {
+        "zh_hans": "尖阁 / 钓鱼岛争议区",
+        "ja": "尖閣／釣魚島",
+        "en": "Senkaku / Diaoyu"
+      },
+      "parties": [
+        {
+          "id": "dispute_party.007",
+          "actor_id": "actor.japan",
+          "actor_names": {
+            "zh_hans": "日本国",
+            "ja": "日本国",
+            "en": "Japan"
+          },
+          "role": "administers",
+          "claim_status": "preferred"
+        },
+        {
+          "id": "dispute_party.008",
+          "actor_id": "actor.japan",
+          "actor_names": {
+            "zh_hans": "日本国",
+            "ja": "日本国",
+            "en": "Japan"
+          },
+          "role": "claims_sovereignty",
+          "claim_status": "competing"
+        },
+        {
+          "id": "dispute_party.009",
+          "actor_id": "actor.prc",
+          "actor_names": {
+            "zh_hans": "中华人民共和国",
+            "ja": "中華人民共和国",
+            "en": "People's Republic of China"
+          },
+          "role": "claims_sovereignty",
+          "claim_status": "competing"
+        },
+        {
+          "id": "dispute_party.010",
+          "actor_id": "actor.roc",
+          "actor_names": {
+            "zh_hans": "中华民国",
+            "ja": "中華民国",
+            "en": "Republic of China"
+          },
+          "role": "claims_sovereignty",
+          "claim_status": "competing"
+        }
+      ],
+      "geometry": {
+        "geojson": {
+          "type": "Point",
+          "coordinates": [
+            123.47,
+            25.74
+          ]
+        },
+        "lon": 123.47,
+        "lat": 25.74
+      },
+      "query_from": 73768393,
+      "query_to": null,
+      "open_ended": true
+    },
+    {
+      "id": "dispute.takeshima_dokdo",
+      "kind": "island_group",
+      "status": "active",
+      "sensitivity": "high",
+      "short_note": "竹岛 / 独岛争议区。库并列日韩说法，不作裁决。",
+      "names": {
+        "zh_hans": "竹岛 / 独岛争议区",
+        "ja": "竹島／独島",
+        "en": "Takeshima / Dokdo"
+      },
+      "parties": [
+        {
+          "id": "dispute_party.004",
+          "actor_id": "actor.japan",
+          "actor_names": {
+            "zh_hans": "日本国",
+            "ja": "日本国",
+            "en": "Japan"
+          },
+          "role": "claims_sovereignty",
+          "claim_status": "competing"
+        },
+        {
+          "id": "dispute_party.005",
+          "actor_id": "actor.rok",
+          "actor_names": {
+            "zh_hans": "大韩民国",
+            "ja": "大韓民国",
+            "en": "Republic of Korea"
+          },
+          "role": "administers",
+          "claim_status": "preferred"
+        },
+        {
+          "id": "dispute_party.006",
+          "actor_id": "actor.rok",
+          "actor_names": {
+            "zh_hans": "大韩民国",
+            "ja": "大韓民国",
+            "en": "Republic of Korea"
+          },
+          "role": "claims_sovereignty",
+          "claim_status": "competing"
+        }
+      ],
+      "geometry": {
+        "geojson": {
+          "type": "Point",
+          "coordinates": [
+            131.87,
+            37.24
+          ]
+        },
+        "lon": 131.87,
+        "lat": 37.24
+      },
+      "query_from": 73744287,
+      "query_to": null,
+      "open_ended": true
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer.paleogeography",
+      "sort_order": 10,
+      "default_on": true,
+      "names": {
+        "zh_hans": "古地理",
+        "en": "Paleogeography"
+      }
+    },
+    {
+      "id": "layer.culture",
+      "sort_order": 20,
+      "default_on": true,
+      "names": {
+        "zh_hans": "文化分布",
+        "en": "Culture"
+      }
+    },
+    {
+      "id": "layer.political",
+      "sort_order": 30,
+      "default_on": true,
+      "names": {
+        "zh_hans": "政治范围",
+        "en": "Political"
+      }
+    },
+    {
+      "id": "layer.contested",
+      "sort_order": 40,
+      "default_on": true,
+      "names": {
+        "zh_hans": "争夺与双重从属",
+        "en": "Contested"
+      }
+    },
+    {
+      "id": "layer.dispute",
+      "sort_order": 45,
+      "default_on": true,
+      "names": {
+        "zh_hans": "争议地区",
+        "en": "Disputed regions"
+      }
+    },
+    {
+      "id": "layer.admin",
+      "sort_order": 50,
+      "default_on": false,
+      "names": {
+        "zh_hans": "行政区划",
+        "en": "Administration"
+      }
+    },
+    {
+      "id": "layer.routes",
+      "sort_order": 60,
+      "default_on": false,
+      "names": {
+        "zh_hans": "道路航路",
+        "en": "Routes"
+      }
+    },
+    {
+      "id": "layer.sites",
+      "sort_order": 70,
+      "default_on": true,
+      "names": {
+        "zh_hans": "遗迹",
+        "en": "Sites"
+      }
+    },
+    {
+      "id": "layer.places",
+      "sort_order": 80,
+      "default_on": true,
+      "names": {
+        "zh_hans": "地点",
+        "en": "Places"
+      }
+    },
+    {
+      "id": "layer.events",
+      "sort_order": 90,
+      "default_on": true,
+      "names": {
+        "zh_hans": "事件",
+        "en": "Events"
+      }
+    },
+    {
+      "id": "layer.modern_reference",
+      "sort_order": 100,
+      "default_on": false,
+      "names": {
+        "zh_hans": "现代对照",
+        "en": "Modern reference"
+      }
+    },
+    {
+      "id": "layer.legendary",
+      "sort_order": 110,
+      "default_on": false,
+      "names": {
+        "zh_hans": "传说",
+        "en": "Legendary"
+      }
+    },
+    {
+      "id": "layer.overseas",
+      "sort_order": 120,
+      "default_on": false,
+      "names": {
+        "zh_hans": "海外控制",
+        "en": "Overseas"
+      }
+    }
+  ],
+  "phases": [
+    {
+      "id": "phase.paleolithic",
+      "from_year": -38000,
+      "to_year": -14000,
+      "label": {
+        "zh_hans": "旧石器 · 遗迹点",
+        "ja": "旧石器",
+        "en": "Paleolithic"
+      },
+      "polities": [],
+      "markers": [
+        {
+          "id": "site.iwajuku",
+          "lon": 139.33,
+          "lat": 36.4,
+          "names": {
+            "zh_hans": "岩宿",
+            "ja": "岩宿",
+            "en": "Iwajuku"
+          },
+          "kind": "site"
+        },
+        {
+          "id": "site.ishinomoto",
+          "lon": 130.7,
+          "lat": 32.8,
+          "names": {
+            "zh_hans": "石の本一带",
+            "ja": "石の本",
+            "en": "Ishinomoto area"
+          },
+          "kind": "site"
+        }
+      ],
+      "note": "默认不画政权面，只显示遗迹级标记。",
+      "query_from": 59169285,
+      "query_to": 67935470
+    },
+    {
+      "id": "phase.jomon",
+      "from_year": -14000,
+      "to_year": -400,
+      "label": {
+        "zh_hans": "绳文文化分布（示意）",
+        "ja": "縄文",
+        "en": "Jōmon"
+      },
+      "polities": [
+        {
+          "id": "culture.jomon_east",
+          "names": {
+            "zh_hans": "绳文（东）",
+            "ja": "縄文（東）",
+            "en": "Jōmon East"
+          },
+          "color": "#6b8f71",
+          "mode": "cultural",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  136.0,
+                  34.5
+                ],
+                [
+                  141.5,
+                  35.5
+                ],
+                [
+                  141.5,
+                  41.0
+                ],
+                [
+                  139.0,
+                  41.0
+                ],
+                [
+                  136.0,
+                  37.0
+                ],
+                [
+                  136.0,
+                  34.5
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "culture.jomon_west",
+          "names": {
+            "zh_hans": "绳文（西）",
+            "ja": "縄文（西）",
+            "en": "Jōmon West"
+          },
+          "color": "#8fae7e",
+          "mode": "cultural",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  129.8,
+                  31.5
+                ],
+                [
+                  135.5,
+                  33.5
+                ],
+                [
+                  135.5,
+                  35.5
+                ],
+                [
+                  130.5,
+                  34.5
+                ],
+                [
+                  129.8,
+                  31.5
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "site.sannai",
+          "lon": 140.7,
+          "lat": 40.8,
+          "names": {
+            "zh_hans": "三内丸山",
+            "ja": "三内丸山",
+            "en": "Sannai-Maruyama"
+          },
+          "kind": "site"
+        }
+      ],
+      "note": "文化分布示意，不是国界。",
+      "query_from": 67935105,
+      "query_to": 72902768
+    },
+    {
+      "id": "phase.yayoi",
+      "from_year": -400,
+      "to_year": 250,
+      "label": {
+        "zh_hans": "弥生 · 稻作与区域势力",
+        "ja": "弥生",
+        "en": "Yayoi"
+      },
+      "polities": [
+        {
+          "id": "culture.yayoi_core",
+          "names": {
+            "zh_hans": "弥生文化核心",
+            "ja": "弥生文化",
+            "en": "Yayoi core"
+          },
+          "color": "#c4a35a",
+          "mode": "cultural",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    130.9,
+                    33.5
+                  ],
+                  [
+                    135.5,
+                    34.0
+                  ],
+                  [
+                    135.5,
+                    35.3
+                  ],
+                  [
+                    131.5,
+                    34.8
+                  ],
+                  [
+                    130.9,
+                    33.5
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "site.yoshinogari",
+          "lon": 130.3,
+          "lat": 33.3,
+          "names": {
+            "zh_hans": "吉野ヶ里",
+            "ja": "吉野ヶ里",
+            "en": "Yoshinogari"
+          },
+          "kind": "site"
+        }
+      ],
+      "note": "邪马台国位置有争议，默认不画唯一国界。",
+      "query_from": 72902403,
+      "query_to": 73140175
+    },
+    {
+      "id": "phase.kofun",
+      "from_year": 250,
+      "to_year": 592,
+      "label": {
+        "zh_hans": "古坟 · 大和扩展",
+        "ja": "古墳",
+        "en": "Kofun"
+      },
+      "polities": [
+        {
+          "id": "actor.yamato",
+          "names": {
+            "zh_hans": "大和政权",
+            "ja": "ヤマト王権",
+            "en": "Yamato"
+          },
+          "color": "#2f5d8c",
+          "mode": "approximate",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    131.0,
+                    33.5
+                  ],
+                  [
+                    140.5,
+                    35.0
+                  ],
+                  [
+                    140.5,
+                    36.5
+                  ],
+                  [
+                    136.0,
+                    36.0
+                  ],
+                  [
+                    131.5,
+                    34.8
+                  ],
+                  [
+                    131.0,
+                    33.5
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.emishi",
+          "names": {
+            "zh_hans": "虾夷活动区",
+            "ja": "蝦夷",
+            "en": "Emishi"
+          },
+          "color": "#7a8b6f",
+          "mode": "sphere",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  139.5,
+                  38.0
+                ],
+                [
+                  141.7,
+                  38.5
+                ],
+                [
+                  141.8,
+                  41.3
+                ],
+                [
+                  140.0,
+                  41.2
+                ],
+                [
+                  139.5,
+                  38.0
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.hayato",
+          "names": {
+            "zh_hans": "隼人",
+            "ja": "隼人",
+            "en": "Hayato"
+          },
+          "color": "#9a6b4a",
+          "mode": "sphere",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  130.5,
+                  31.1
+                ],
+                [
+                  131.8,
+                  31.1
+                ],
+                [
+                  131.8,
+                  32.4
+                ],
+                [
+                  130.5,
+                  32.3
+                ],
+                [
+                  130.5,
+                  31.1
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.nara_basin",
+          "lon": 135.8,
+          "lat": 34.5,
+          "names": {
+            "zh_hans": "大和盆地",
+            "ja": "大和盆地",
+            "en": "Nara Basin"
+          },
+          "kind": "capital"
+        }
+      ],
+      "note": "边界为示意扩展带。",
+      "query_from": 73139811,
+      "query_to": 73265089
+    },
+    {
+      "id": "phase.asuka_nara",
+      "from_year": 592,
+      "to_year": 794,
+      "label": {
+        "zh_hans": "飞鸟—奈良 · 律令国家",
+        "ja": "飛鳥・奈良",
+        "en": "Asuka–Nara"
+      },
+      "polities": [
+        {
+          "id": "actor.ritsuryo",
+          "names": {
+            "zh_hans": "律令国家",
+            "ja": "律令国家",
+            "en": "Ritsuryō state"
+          },
+          "color": "#355c7d",
+          "mode": "administered",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    136.0,
+                    34.7
+                  ],
+                  [
+                    138.9,
+                    34.7
+                  ],
+                  [
+                    139.0,
+                    37.0
+                  ],
+                  [
+                    136.5,
+                    36.8
+                  ],
+                  [
+                    136.0,
+                    34.7
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    138.8,
+                    35.0
+                  ],
+                  [
+                    140.9,
+                    35.2
+                  ],
+                  [
+                    140.9,
+                    37.0
+                  ],
+                  [
+                    139.2,
+                    37.0
+                  ],
+                  [
+                    138.8,
+                    35.0
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.emishi",
+          "names": {
+            "zh_hans": "虾夷边疆",
+            "ja": "蝦夷",
+            "en": "Emishi frontier"
+          },
+          "color": "#7a8b6f",
+          "mode": "contested",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  139.5,
+                  37.5
+                ],
+                [
+                  141.5,
+                  38.0
+                ],
+                [
+                  141.8,
+                  41.3
+                ],
+                [
+                  140.2,
+                  41.4
+                ],
+                [
+                  139.5,
+                  39.0
+                ],
+                [
+                  139.5,
+                  37.5
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.fujiwarakyo",
+          "lon": 135.8,
+          "lat": 34.5,
+          "names": {
+            "zh_hans": "藤原京",
+            "ja": "藤原京",
+            "en": "Fujiwara-kyō"
+          },
+          "kind": "capital"
+        },
+        {
+          "id": "place.heijokyo",
+          "lon": 135.8,
+          "lat": 34.69,
+          "names": {
+            "zh_hans": "平城京",
+            "ja": "平城京",
+            "en": "Heijō-kyō"
+          },
+          "kind": "capital"
+        }
+      ],
+      "note": "北海道尚未纳入令制国。",
+      "query_from": 73264724,
+      "query_to": 73338867
+    },
+    {
+      "id": "phase.heian",
+      "from_year": 794,
+      "to_year": 1185,
+      "label": {
+        "zh_hans": "平安",
+        "ja": "平安",
+        "en": "Heian"
+      },
+      "polities": [
+        {
+          "id": "actor.heian_court",
+          "names": {
+            "zh_hans": "平安朝廷支配域",
+            "ja": "朝廷",
+            "en": "Heian court"
+          },
+          "color": "#3d5a80",
+          "mode": "administered",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    136.0,
+                    34.7
+                  ],
+                  [
+                    138.9,
+                    34.7
+                  ],
+                  [
+                    139.0,
+                    37.0
+                  ],
+                  [
+                    136.5,
+                    36.8
+                  ],
+                  [
+                    136.0,
+                    34.7
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    138.8,
+                    35.0
+                  ],
+                  [
+                    140.9,
+                    35.2
+                  ],
+                  [
+                    140.9,
+                    37.0
+                  ],
+                  [
+                    139.2,
+                    37.0
+                  ],
+                  [
+                    138.8,
+                    35.0
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    139.5,
+                    37.5
+                  ],
+                  [
+                    141.5,
+                    38.0
+                  ],
+                  [
+                    141.8,
+                    41.3
+                  ],
+                  [
+                    140.2,
+                    41.4
+                  ],
+                  [
+                    139.5,
+                    39.0
+                  ],
+                  [
+                    139.5,
+                    37.5
+                  ]
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.heiankyo",
+          "lon": 135.77,
+          "lat": 35.01,
+          "names": {
+            "zh_hans": "平安京",
+            "ja": "平安京",
+            "en": "Heian-kyō"
+          },
+          "kind": "capital"
+        }
+      ],
+      "note": "东北边疆仍在变动。",
+      "query_from": 73338503,
+      "query_to": 73481677
+    },
+    {
+      "id": "phase.kamakura",
+      "from_year": 1185,
+      "to_year": 1333,
+      "label": {
+        "zh_hans": "镰仓幕府",
+        "ja": "鎌倉",
+        "en": "Kamakura"
+      },
+      "polities": [
+        {
+          "id": "actor.kamakura",
+          "names": {
+            "zh_hans": "镰仓幕府",
+            "ja": "鎌倉幕府",
+            "en": "Kamakura shogunate"
+          },
+          "color": "#4a6741",
+          "mode": "direct",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    136.0,
+                    34.7
+                  ],
+                  [
+                    138.9,
+                    34.7
+                  ],
+                  [
+                    139.0,
+                    37.0
+                  ],
+                  [
+                    136.5,
+                    36.8
+                  ],
+                  [
+                    136.0,
+                    34.7
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    138.8,
+                    35.0
+                  ],
+                  [
+                    140.9,
+                    35.2
+                  ],
+                  [
+                    140.9,
+                    37.0
+                  ],
+                  [
+                    139.2,
+                    37.0
+                  ],
+                  [
+                    138.8,
+                    35.0
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    139.5,
+                    37.5
+                  ],
+                  [
+                    141.5,
+                    38.0
+                  ],
+                  [
+                    141.8,
+                    41.3
+                  ],
+                  [
+                    140.2,
+                    41.4
+                  ],
+                  [
+                    139.5,
+                    39.0
+                  ],
+                  [
+                    139.5,
+                    37.5
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.court",
+          "names": {
+            "zh_hans": "朝廷（名义）",
+            "ja": "朝廷",
+            "en": "Imperial court"
+          },
+          "color": "#8b7355",
+          "mode": "nominal",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  135.0,
+                  34.2
+                ],
+                [
+                  136.2,
+                  34.4
+                ],
+                [
+                  136.2,
+                  35.2
+                ],
+                [
+                  135.2,
+                  35.1
+                ],
+                [
+                  135.0,
+                  34.2
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.kamakura",
+          "lon": 139.55,
+          "lat": 35.32,
+          "names": {
+            "zh_hans": "镰仓",
+            "ja": "鎌倉",
+            "en": "Kamakura"
+          },
+          "kind": "capital"
+        },
+        {
+          "id": "place.kyoto",
+          "lon": 135.77,
+          "lat": 35.01,
+          "names": {
+            "zh_hans": "京都",
+            "ja": "京都",
+            "en": "Kyoto"
+          },
+          "kind": "capital"
+        }
+      ],
+      "note": "朝廷名义与幕府实控并存。",
+      "query_from": 73481313,
+      "query_to": 73535733
+    },
+    {
+      "id": "phase.muromachi",
+      "from_year": 1336,
+      "to_year": 1467,
+      "label": {
+        "zh_hans": "室町",
+        "ja": "室町",
+        "en": "Muromachi"
+      },
+      "polities": [
+        {
+          "id": "actor.ashikaga",
+          "names": {
+            "zh_hans": "室町幕府",
+            "ja": "室町幕府",
+            "en": "Ashikaga shogunate"
+          },
+          "color": "#5c6b73",
+          "mode": "delegated",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    136.0,
+                    34.7
+                  ],
+                  [
+                    138.9,
+                    34.7
+                  ],
+                  [
+                    139.0,
+                    37.0
+                  ],
+                  [
+                    136.5,
+                    36.8
+                  ],
+                  [
+                    136.0,
+                    34.7
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    138.8,
+                    35.0
+                  ],
+                  [
+                    140.9,
+                    35.2
+                  ],
+                  [
+                    140.9,
+                    37.0
+                  ],
+                  [
+                    139.2,
+                    37.0
+                  ],
+                  [
+                    138.8,
+                    35.0
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    139.5,
+                    37.5
+                  ],
+                  [
+                    141.5,
+                    38.0
+                  ],
+                  [
+                    141.8,
+                    41.3
+                  ],
+                  [
+                    140.2,
+                    41.4
+                  ],
+                  [
+                    139.5,
+                    39.0
+                  ],
+                  [
+                    139.5,
+                    37.5
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.ryukyu",
+          "names": {
+            "zh_hans": "琉球（古斯库/三山）",
+            "ja": "琉球",
+            "en": "Ryukyu"
+          },
+          "color": "#c17f59",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  127.5,
+                  26.0
+                ],
+                [
+                  128.4,
+                  26.0
+                ],
+                [
+                  128.4,
+                  26.9
+                ],
+                [
+                  127.5,
+                  26.8
+                ],
+                [
+                  127.5,
+                  26.0
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.kyoto",
+          "lon": 135.77,
+          "lat": 35.01,
+          "names": {
+            "zh_hans": "京都",
+            "ja": "京都",
+            "en": "Kyoto"
+          },
+          "kind": "capital"
+        }
+      ],
+      "note": "守护分权，后期进入战国。",
+      "query_from": 73536464,
+      "query_to": 73584675
+    },
+    {
+      "id": "phase.sengoku",
+      "from_year": 1467,
+      "to_year": 1573,
+      "label": {
+        "zh_hans": "战国并立",
+        "ja": "戦国",
+        "en": "Sengoku"
+      },
+      "polities": [
+        {
+          "id": "daimyo.oda",
+          "names": {
+            "zh_hans": "织田",
+            "ja": "織田",
+            "en": "Oda"
+          },
+          "color": "#c0392b",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  135.5,
+                  34.5
+                ],
+                [
+                  137.2,
+                  34.7
+                ],
+                [
+                  137.2,
+                  35.6
+                ],
+                [
+                  135.6,
+                  35.5
+                ],
+                [
+                  135.5,
+                  34.5
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "daimyo.takeda",
+          "names": {
+            "zh_hans": "武田",
+            "ja": "武田",
+            "en": "Takeda"
+          },
+          "color": "#8e44ad",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  137.8,
+                  35.2
+                ],
+                [
+                  139.0,
+                  35.3
+                ],
+                [
+                  139.0,
+                  36.5
+                ],
+                [
+                  137.8,
+                  36.4
+                ],
+                [
+                  137.8,
+                  35.2
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "daimyo.uesugi",
+          "names": {
+            "zh_hans": "上杉",
+            "ja": "上杉",
+            "en": "Uesugi"
+          },
+          "color": "#2980b9",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  138.0,
+                  36.5
+                ],
+                [
+                  139.8,
+                  36.8
+                ],
+                [
+                  139.8,
+                  38.2
+                ],
+                [
+                  138.0,
+                  37.8
+                ],
+                [
+                  138.0,
+                  36.5
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "daimyo.hojo",
+          "names": {
+            "zh_hans": "后北条",
+            "ja": "後北条",
+            "en": "Hōjō"
+          },
+          "color": "#16a085",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  138.9,
+                  34.8
+                ],
+                [
+                  140.2,
+                  35.0
+                ],
+                [
+                  140.2,
+                  36.0
+                ],
+                [
+                  139.0,
+                  35.9
+                ],
+                [
+                  138.9,
+                  34.8
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "daimyo.mori",
+          "names": {
+            "zh_hans": "毛利",
+            "ja": "毛利",
+            "en": "Mōri"
+          },
+          "color": "#d35400",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  130.9,
+                  33.8
+                ],
+                [
+                  133.5,
+                  34.0
+                ],
+                [
+                  133.5,
+                  35.2
+                ],
+                [
+                  131.5,
+                  34.9
+                ],
+                [
+                  130.9,
+                  33.8
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "daimyo.shimazu",
+          "names": {
+            "zh_hans": "岛津",
+            "ja": "島津",
+            "en": "Shimazu"
+          },
+          "color": "#2c3e50",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  129.8,
+                  31.1
+                ],
+                [
+                  131.9,
+                  31.2
+                ],
+                [
+                  131.8,
+                  32.8
+                ],
+                [
+                  129.9,
+                  32.5
+                ],
+                [
+                  129.8,
+                  31.1
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "daimyo.date",
+          "names": {
+            "zh_hans": "伊达",
+            "ja": "伊達",
+            "en": "Date"
+          },
+          "color": "#7f8c8d",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  140.2,
+                  37.5
+                ],
+                [
+                  141.7,
+                  38.0
+                ],
+                [
+                  141.6,
+                  39.5
+                ],
+                [
+                  140.3,
+                  39.0
+                ],
+                [
+                  140.2,
+                  37.5
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "daimyo.imagawa",
+          "names": {
+            "zh_hans": "今川",
+            "ja": "今川",
+            "en": "Imagawa"
+          },
+          "color": "#f39c12",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  137.5,
+                  34.6
+                ],
+                [
+                  139.0,
+                  34.7
+                ],
+                [
+                  139.0,
+                  35.4
+                ],
+                [
+                  137.6,
+                  35.3
+                ],
+                [
+                  137.5,
+                  34.6
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.ryukyu",
+          "names": {
+            "zh_hans": "琉球王国",
+            "ja": "琉球王国",
+            "en": "Ryukyu Kingdom"
+          },
+          "color": "#c17f59",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  127.5,
+                  26.0
+                ],
+                [
+                  128.4,
+                  26.0
+                ],
+                [
+                  128.4,
+                  26.9
+                ],
+                [
+                  127.5,
+                  26.8
+                ],
+                [
+                  127.5,
+                  26.0
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [],
+      "note": "郡级势力的概略色块，非精确版图。",
+      "query_from": 73584311,
+      "query_to": 73623391
+    },
+    {
+      "id": "phase.azuchi",
+      "from_year": 1573,
+      "to_year": 1602,
+      "label": {
+        "zh_hans": "织丰统一进程",
+        "ja": "安土桃山",
+        "en": "Azuchi–Momoyama"
+      },
+      "polities": [
+        {
+          "id": "actor.toyotomi",
+          "names": {
+            "zh_hans": "丰臣政权",
+            "ja": "豊臣政権",
+            "en": "Toyotomi"
+          },
+          "color": "#c0392b",
+          "mode": "direct",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    136.0,
+                    34.7
+                  ],
+                  [
+                    138.9,
+                    34.7
+                  ],
+                  [
+                    139.0,
+                    37.0
+                  ],
+                  [
+                    136.5,
+                    36.8
+                  ],
+                  [
+                    136.0,
+                    34.7
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    138.8,
+                    35.0
+                  ],
+                  [
+                    140.9,
+                    35.2
+                  ],
+                  [
+                    140.9,
+                    37.0
+                  ],
+                  [
+                    139.2,
+                    37.0
+                  ],
+                  [
+                    138.8,
+                    35.0
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    139.5,
+                    37.5
+                  ],
+                  [
+                    141.5,
+                    38.0
+                  ],
+                  [
+                    141.8,
+                    41.3
+                  ],
+                  [
+                    140.2,
+                    41.4
+                  ],
+                  [
+                    139.5,
+                    39.0
+                  ],
+                  [
+                    139.5,
+                    37.5
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.tokugawa",
+          "names": {
+            "zh_hans": "德川领",
+            "ja": "徳川",
+            "en": "Tokugawa"
+          },
+          "color": "#2c3e50",
+          "mode": "vassal",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  138.8,
+                  35.0
+                ],
+                [
+                  140.9,
+                  35.2
+                ],
+                [
+                  140.9,
+                  37.0
+                ],
+                [
+                  139.2,
+                  37.0
+                ],
+                [
+                  138.8,
+                  35.0
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.ryukyu",
+          "names": {
+            "zh_hans": "琉球王国",
+            "ja": "琉球王国",
+            "en": "Ryukyu Kingdom"
+          },
+          "color": "#c17f59",
+          "mode": "direct",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  127.5,
+                  26.0
+                ],
+                [
+                  128.4,
+                  26.0
+                ],
+                [
+                  128.4,
+                  26.9
+                ],
+                [
+                  127.5,
+                  26.8
+                ],
+                [
+                  127.5,
+                  26.0
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.azuchi",
+          "lon": 136.14,
+          "lat": 35.14,
+          "names": {
+            "zh_hans": "安土",
+            "ja": "安土",
+            "en": "Azuchi"
+          },
+          "kind": "castle"
+        },
+        {
+          "id": "place.osaka",
+          "lon": 135.5,
+          "lat": 34.68,
+          "names": {
+            "zh_hans": "大坂",
+            "ja": "大坂",
+            "en": "Osaka"
+          },
+          "kind": "castle"
+        }
+      ],
+      "note": "统一进程示意；北海道仍大体在幕藩体系外。",
+      "query_from": 73623027,
+      "query_to": 73633983
+    },
+    {
+      "id": "phase.edo",
+      "from_year": 1603,
+      "to_year": 1868,
+      "label": {
+        "zh_hans": "江户幕藩",
+        "ja": "江戸",
+        "en": "Edo"
+      },
+      "polities": [
+        {
+          "id": "actor.bakufu",
+          "names": {
+            "zh_hans": "江户幕府支配域",
+            "ja": "江戸幕府",
+            "en": "Tokugawa bakufu"
+          },
+          "color": "#34495e",
+          "mode": "direct",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    136.0,
+                    34.7
+                  ],
+                  [
+                    138.9,
+                    34.7
+                  ],
+                  [
+                    139.0,
+                    37.0
+                  ],
+                  [
+                    136.5,
+                    36.8
+                  ],
+                  [
+                    136.0,
+                    34.7
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    138.8,
+                    35.0
+                  ],
+                  [
+                    140.9,
+                    35.2
+                  ],
+                  [
+                    140.9,
+                    37.0
+                  ],
+                  [
+                    139.2,
+                    37.0
+                  ],
+                  [
+                    138.8,
+                    35.0
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    139.5,
+                    37.5
+                  ],
+                  [
+                    141.5,
+                    38.0
+                  ],
+                  [
+                    141.8,
+                    41.3
+                  ],
+                  [
+                    140.2,
+                    41.4
+                  ],
+                  [
+                    139.5,
+                    39.0
+                  ],
+                  [
+                    139.5,
+                    37.5
+                  ]
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.matsumae",
+          "names": {
+            "zh_hans": "松前藩进出",
+            "ja": "松前",
+            "en": "Matsumae"
+          },
+          "color": "#7f8c8d",
+          "mode": "sphere",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  139.5,
+                  41.5
+                ],
+                [
+                  145.5,
+                  43.0
+                ],
+                [
+                  145.2,
+                  45.3
+                ],
+                [
+                  141.5,
+                  45.2
+                ],
+                [
+                  140.0,
+                  42.7
+                ],
+                [
+                  139.5,
+                  41.5
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "id": "actor.ryukyu",
+          "names": {
+            "zh_hans": "琉球（双重从属）",
+            "ja": "琉球",
+            "en": "Ryukyu (dual)"
+          },
+          "color": "#c17f59",
+          "mode": "dual",
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  127.5,
+                  26.0
+                ],
+                [
+                  128.4,
+                  26.0
+                ],
+                [
+                  128.4,
+                  26.9
+                ],
+                [
+                  127.5,
+                  26.8
+                ],
+                [
+                  127.5,
+                  26.0
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.edo",
+          "lon": 139.75,
+          "lat": 35.68,
+          "names": {
+            "zh_hans": "江户",
+            "ja": "江戸",
+            "en": "Edo"
+          },
+          "kind": "capital"
+        },
+        {
+          "id": "place.kyoto",
+          "lon": 135.77,
+          "lat": 35.01,
+          "names": {
+            "zh_hans": "京都",
+            "ja": "京都",
+            "en": "Kyoto"
+          },
+          "kind": "capital"
+        }
+      ],
+      "note": "琉球对萨摩与明清双重从属，见争议地区卡片。",
+      "query_from": 73633984,
+      "query_to": 73731138
+    },
+    {
+      "id": "phase.meiji",
+      "from_year": 1868,
+      "to_year": 1912,
+      "label": {
+        "zh_hans": "明治国家",
+        "ja": "明治",
+        "en": "Meiji"
+      },
+      "polities": [
+        {
+          "id": "actor.japan",
+          "names": {
+            "zh_hans": "大日本帝国（本土）",
+            "ja": "日本",
+            "en": "Japan"
+          },
+          "color": "#1f4e79",
+          "mode": "direct",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    139.5,
+                    41.5
+                  ],
+                  [
+                    145.5,
+                    43.0
+                  ],
+                  [
+                    145.2,
+                    45.3
+                  ],
+                  [
+                    141.5,
+                    45.2
+                  ],
+                  [
+                    140.0,
+                    42.7
+                  ],
+                  [
+                    139.5,
+                    41.5
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    139.5,
+                    37.5
+                  ],
+                  [
+                    141.5,
+                    38.0
+                  ],
+                  [
+                    141.8,
+                    41.3
+                  ],
+                  [
+                    140.2,
+                    41.4
+                  ],
+                  [
+                    139.5,
+                    39.0
+                  ],
+                  [
+                    139.5,
+                    37.5
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    138.8,
+                    35.0
+                  ],
+                  [
+                    140.9,
+                    35.2
+                  ],
+                  [
+                    140.9,
+                    37.0
+                  ],
+                  [
+                    139.2,
+                    37.0
+                  ],
+                  [
+                    138.8,
+                    35.0
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    136.0,
+                    34.7
+                  ],
+                  [
+                    138.9,
+                    34.7
+                  ],
+                  [
+                    139.0,
+                    37.0
+                  ],
+                  [
+                    136.5,
+                    36.8
+                  ],
+                  [
+                    136.0,
+                    34.7
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    127.5,
+                    26.0
+                  ],
+                  [
+                    128.4,
+                    26.0
+                  ],
+                  [
+                    128.4,
+                    26.9
+                  ],
+                  [
+                    127.5,
+                    26.8
+                  ],
+                  [
+                    127.5,
+                    26.0
+                  ]
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.tokyo",
+          "lon": 139.75,
+          "lat": 35.68,
+          "names": {
+            "zh_hans": "东京",
+            "ja": "東京",
+            "en": "Tokyo"
+          },
+          "kind": "capital"
+        }
+      ],
+      "note": "1879 年后冲绳县入图；境外控制另图层。",
+      "query_from": 73730773,
+      "query_to": 73747208
+    },
+    {
+      "id": "phase.modern",
+      "from_year": 1912,
+      "to_year": 2027,
+      "label": {
+        "zh_hans": "近现代日本",
+        "ja": "近現代",
+        "en": "Modern"
+      },
+      "polities": [
+        {
+          "id": "actor.japan",
+          "names": {
+            "zh_hans": "日本国",
+            "ja": "日本国",
+            "en": "Japan"
+          },
+          "color": "#1f4e79",
+          "mode": "direct",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    139.5,
+                    41.5
+                  ],
+                  [
+                    145.5,
+                    43.0
+                  ],
+                  [
+                    145.2,
+                    45.3
+                  ],
+                  [
+                    141.5,
+                    45.2
+                  ],
+                  [
+                    140.0,
+                    42.7
+                  ],
+                  [
+                    139.5,
+                    41.5
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    139.5,
+                    37.5
+                  ],
+                  [
+                    141.5,
+                    38.0
+                  ],
+                  [
+                    141.8,
+                    41.3
+                  ],
+                  [
+                    140.2,
+                    41.4
+                  ],
+                  [
+                    139.5,
+                    39.0
+                  ],
+                  [
+                    139.5,
+                    37.5
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    138.8,
+                    35.0
+                  ],
+                  [
+                    140.9,
+                    35.2
+                  ],
+                  [
+                    140.9,
+                    37.0
+                  ],
+                  [
+                    139.2,
+                    37.0
+                  ],
+                  [
+                    138.8,
+                    35.0
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    136.0,
+                    34.7
+                  ],
+                  [
+                    138.9,
+                    34.7
+                  ],
+                  [
+                    139.0,
+                    37.0
+                  ],
+                  [
+                    136.5,
+                    36.8
+                  ],
+                  [
+                    136.0,
+                    34.7
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    134.5,
+                    33.6
+                  ],
+                  [
+                    136.5,
+                    34.0
+                  ],
+                  [
+                    136.5,
+                    35.6
+                  ],
+                  [
+                    134.8,
+                    35.5
+                  ],
+                  [
+                    134.5,
+                    33.6
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    130.9,
+                    33.9
+                  ],
+                  [
+                    134.5,
+                    33.8
+                  ],
+                  [
+                    134.5,
+                    35.5
+                  ],
+                  [
+                    132.0,
+                    35.3
+                  ],
+                  [
+                    130.9,
+                    33.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    132.3,
+                    32.9
+                  ],
+                  [
+                    134.5,
+                    33.0
+                  ],
+                  [
+                    134.6,
+                    34.2
+                  ],
+                  [
+                    132.8,
+                    34.0
+                  ],
+                  [
+                    132.3,
+                    32.9
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    129.7,
+                    31.2
+                  ],
+                  [
+                    131.8,
+                    31.2
+                  ],
+                  [
+                    131.9,
+                    33.6
+                  ],
+                  [
+                    129.8,
+                    33.2
+                  ],
+                  [
+                    129.7,
+                    31.2
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    127.5,
+                    26.0
+                  ],
+                  [
+                    128.4,
+                    26.0
+                  ],
+                  [
+                    128.4,
+                    26.9
+                  ],
+                  [
+                    127.5,
+                    26.8
+                  ],
+                  [
+                    127.5,
+                    26.0
+                  ]
+                ]
+              ]
+            ]
+          }
+        }
+      ],
+      "markers": [
+        {
+          "id": "place.tokyo",
+          "lon": 139.75,
+          "lat": 35.68,
+          "names": {
+            "zh_hans": "东京",
+            "ja": "東京",
+            "en": "Tokyo"
+          },
+          "kind": "capital"
+        }
+      ],
+      "note": "争议地区以独立图层标出，不作主权裁决。",
+      "query_from": 73746843,
+      "query_to": 73789211
+    }
+  ]
+}

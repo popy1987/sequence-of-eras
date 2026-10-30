@@ -465,8 +465,9 @@ def seed(b: Builder) -> None:
     b.name("chronology_track", "chronology.japan_official", "en", "Japanese official eras")
     b.name("chronology_track", "chronology.china_main", "en", "Chinese main-dynasty chronology")
 
-    # Seed a few modern Japanese eras (day precision) as examples; full list later
+    # Seed sample Japanese eras (day/year precision). Full nengō list comes later.
     modern_eras = [
+        ("era.keicho", "庆长", "Keichō", 1596, 10, 27, 1615, 7, 13),
         ("era.meiji", "明治", "Meiji", 1868, 10, 23, 1912, 7, 29),
         ("era.taisho", "大正", "Taishō", 1912, 7, 30, 1926, 12, 24),
         ("era.showa", "昭和", "Shōwa", 1926, 12, 25, 1989, 1, 7),
@@ -533,18 +534,10 @@ def seed(b: Builder) -> None:
         s = b.day_point(y0, m0, d0, id_hint=f"{eid}.start")
         if y1 is None:
             e, qf, qt, oe = None, ordinal(y0, m0, d0), OPEN_TO, 1
-            cal = "gregorian"
         else:
             e = b.day_point(y1, m1, d1, id_hint=f"{eid}.end")
             qf, qt, oe = ordinal(y0, m0, d0), ordinal(y1, m1, d1), 0
-            cal = "gregorian" if y0 >= 1873 else "japanese_lunisolar"
-            if eid == "era.meiji":
-                cal = "japanese_lunisolar"  # starts before calendar reform; year-start rule still tracked
-        # Meiji spans calendar reform; store gregorian after 1873 in year_start separately later.
-        if eid != "era.meiji":
-            cal = "gregorian"
-        else:
-            cal = "gregorian"  # display conversion handled later; seed uses gregorian endpoints
+        cal = "gregorian" if y0 >= 1873 else "japanese_lunisolar"
         c.execute(
             """
             INSERT INTO era_name(
@@ -759,6 +752,8 @@ def seed(b: Builder) -> None:
         ) VALUES
         ('bind.era.meiji', 'era_name', 'era.meiji', 'source.wikipedia_ja.era_names',
          'fact_spine', '明治年号端点', 1),
+        ('bind.era.keicho', 'era_name', 'era.keicho', 'source.wikipedia_ja.era_names',
+         'fact_spine', '庆长年号样例', 1),
         ('bind.period.jomon', 'period', 'period.jomon', 'source.wikipedia_ja.history_of_japan',
          'fact_spine', '绳文章节骨架', 1),
         ('bind.dispute.ryukyu', 'disputed_region', 'dispute.ryukyu', 'source.design.doc',

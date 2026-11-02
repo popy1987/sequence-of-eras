@@ -1,10 +1,19 @@
 /**
  * MapLibre GL JS engine — same MapFrame contract as svg_mercator.
  * Loads maplibre-gl from CDN on first use (no bundler required).
+ * Optional GLB terrain underlay via Custom Layer + Three.js.
  */
 import { MAP_ENGINE_EVENTS, MAP_SELECT_KIND } from "../contract.js";
 import { pickName } from "../../core/names.js";
 import { getLocale } from "../../i18n/index.js";
+import {
+  resolveTerrainEnabled,
+  resolveTerrainCalibMode,
+} from "../../config.js";
+import {
+  createTerrainGlbLayer,
+  TERRAIN_LAYER_ID,
+} from "./terrain_glb_layer.js";
 
 const MAPLIBRE_VERSION = "4.7.1";
 const MAPLIBRE_JS = `https://unpkg.com/maplibre-gl@${MAPLIBRE_VERSION}/dist/maplibre-gl.js`;
@@ -156,7 +165,17 @@ export function createMapLibreEngine(host, options = {}) {
   let map = null;
   let pendingFrame = null;
   let destroyed = false;
+  let terrainLayer = null;
+  let terrainReady = false;
   const polityById = new Map();
+  const terrainEnabled =
+    options.terrain !== undefined
+      ? !!options.terrain
+      : resolveTerrainEnabled();
+  const calibMode =
+    options.terrainCalib !== undefined
+      ? !!options.terrainCalib
+      : resolveTerrainCalibMode();
 
   host.innerHTML = "";
   const container = document.createElement("div");
@@ -167,6 +186,42 @@ export function createMapLibreEngine(host, options = {}) {
     options.ariaLabel || "可拖动缩放的日本历史地图"
   );
   host.appendChild(container);
+
+  // Overlay on host (not map container) — MapLibre owns container children.
+  const progressEl = document.createElement("div");
+  progressEl.className = "soe-terrain-progress";
+  progressEl.hidden = true;
+  progressEl.innerHTML =
+    '<div class="soe-terrain-progress__label">Terrain 0%</div>' +
+    '<div class="soe-terrain-progress__track">' +
+    '<div class="soe-terrain-progress__bar" style="width:0%"></div>' +
+    "</div>";
+  host.appendChild(progressEl);
+
+  function setProgress(pct, label) {
+    progressEl.hidden = false;
+    const bar = progressEl.querySelector(".soe-terrain-progress__bar");
+    const text = progressEl.querySelector(".soe-terrain-progress__label");
+    if (bar) bar.style.width = `${pct}%`;
+    if (text) text.textContent = label || `Terrain ${pct}%`;
+  }
+
+  function hideProgress() {
+    progressEl.hidden = true;
+  }
+
+  function setCoastTerrainMode(active) {
+    if (!map || !map.getLayer(LAYER.coastFill)) return;
+    if (active) {
+      map.setPaintProperty(LAYER.coastFill, "fill-opacity", 0);
+      map.setPaintProperty(LAYER.coastLine, "line-opacity", 0.18);
+      map.setPaintProperty(LAYER.coastLine, "line-width", 0.6);
+    } else {
+      map.setPaintProperty(LAYER.coastFill, "fill-opacity", 0.95);
+      map.setPaintProperty(LAYER.coastLine, "line-opacity", 1);
+      map.setPaintProperty(LAYER.coastLine, "line-width", 1.1);
+    }
+  }
 
   function emit(type, payload) {
     (listeners[type] || []).forEach((fn) => fn(payload));
@@ -425,6 +480,38 @@ export function createMapLibreEngine(host, options = {}) {
           ensureSources();
           bindClicks();
           fitHome();
+
+          if (terrainEnabled) {
+            setProgress(0, "Terrain…");
+            terrainLayer = createTerrainGlbLayer({
+              maplibregl,
+              calibMode,
+              onProgress: ({ pct }) => setProgress(pct),
+              onReady: (info) => {
+                if (destroyed) return;
+                terrainReady = true;
+                setCoastTerrainMode(true);
+                hideProgress();
+                console.info(
+                  `[terrain] ready mode=${info.mode}`,
+                  info.aabb
+                );
+              },
+              onError: (err) => {
+                hideProgress();
+                setCoastTerrainMode(false);
+                console.error("[terrain]", err);
+                const tip = document.createElement("p");
+                tip.className = "soe-terrain-fallback";
+                tip.textContent = `Terrain failed: ${err.message}`;
+                host.appendChild(tip);
+                setTimeout(() => tip.remove(), 6000);
+              },
+            });
+            // Under coast / polity / markers so GeoJSON stays interactive on top.
+            map.addLayer(terrainLayer, LAYER.coastFill);
+          }
+
           if (pendingFrame) {
             applyFrame(pendingFrame);
             pendingFrame = null;
@@ -442,12 +529,24 @@ export function createMapLibreEngine(host, options = {}) {
   return {
     id: "maplibre",
     ready,
+    terrainEnabled,
+    isTerrainReady: () => terrainReady,
+    getTerrainCalib() {
+      return terrainLayer?.getCalib?.() ?? null;
+    },
+    dumpTerrainCalib() {
+      return terrainLayer?.dumpTerrainCalib?.() ?? null;
+    },
+    getTerrainAffine() {
+      return terrainLayer?.getAffineInfo?.() ?? null;
+    },
     setFrame(frame) {
       if (!map || !map.isStyleLoaded()) {
         pendingFrame = frame;
         return;
       }
       applyFrame(frame);
+      if (terrainReady) setCoastTerrainMode(true);
     },
     fitHome,
     on(type, fn) {
@@ -456,9 +555,17 @@ export function createMapLibreEngine(host, options = {}) {
     destroy() {
       destroyed = true;
       if (map) {
+        if (terrainLayer && map.getLayer(TERRAIN_LAYER_ID)) {
+          try {
+            map.removeLayer(TERRAIN_LAYER_ID);
+          } catch (_) {
+            /* ignore */
+          }
+        }
         map.remove();
         map = null;
       }
+      terrainLayer = null;
       host.innerHTML = "";
     },
   };

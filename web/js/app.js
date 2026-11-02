@@ -337,12 +337,26 @@ async function boot() {
     listEngines() {
       return { current: engineId };
     },
+    getTerrainCalib() {
+      return map.getTerrainCalib?.() ?? null;
+    },
+    dumpTerrainCalib() {
+      const dump = map.dumpTerrainCalib?.() ?? null;
+      if (dump) console.log(dump);
+      return dump;
+    },
+    getTerrainAffine() {
+      return map.getTerrainAffine?.() ?? null;
+    },
   };
 
   finishBoot();
 
   console.info(
-    `atlasAPI ready (engine=${engineId}, lang=${getLocale()}): atlasAPI.setLang('ja'), atlasAPI.gotoYear(-2000)`
+    `atlasAPI ready (engine=${engineId}, lang=${getLocale()}): atlasAPI.setLang('ja'), atlasAPI.gotoYear(-2000)` +
+      (map.terrainEnabled
+        ? "; terrain on — atlasAPI.dumpTerrainCalib() / ?terrain=0 / ?terrain_calib=1"
+        : "")
   );
 }
 

@@ -24,13 +24,14 @@
 | 飞鸟–平安事件 | `db/data/asuka_nara_heian_events.json` · `db/seed_asuka_nara_heian_events.py` |
 | Web 应用 | `web/js/app.js` · `web/js/core/` · `web/js/map/engines/` |
 | 三语 | `web/js/i18n/` |
-| 3D 模型资源（备用，如 GLB） | `web/models/` |
+| 3D 地形 GLB + 校准 | `web/models/Japan_3D_Map.glb` · `web/models/Japan_3D_Map.calib.json` |
 
 ## 数据约定速记
 
 - 古坟年代 = 维基**築造／埋入**区间，**不是**出土年；争议用闭区间。
 - 事件含 `conflict_class`：`civil_war` / `coup` / `pacification` / `external_war` / `intrigue`；争议年用区间 + `alignment=disputed`。
 - 地图业务只经 `MapFrame`；换引擎改 `web/js/config.js` 的 `MAP_ENGINE`（默认 `maplibre`，`svg_mercator` 仍可用，URL `?engine=svg_mercator`）。
+- MapLibre 默认垫 `Japan_3D_Map.glb`（Custom Layer + Three）；`?terrain=0` 关闭；校准改 `web/models/Japan_3D_Map.calib.json` 或 `?terrain_calib=1` + `atlasAPI.dumpTerrainCalib()`。
 - 名称：`names.zh_hans` / `ja` / `en`；UI 文案走 `t()` / `data-i18n`。
 
 ## 快捷操作

@@ -28,7 +28,7 @@ python db/export_web_data.py
 
 静态本地页，结构参照[江山时序](https://github.com/DeanChensj/jiangshan-map)：顶栏三行纪年、主地图、底时间轴、图例、点选卡片、`?year=` 深链与 `window.atlasAPI`。
 
-地图引擎与业务解耦，见 `doc/前端架构.md`。默认 `maplibre`；切回 SVG 或换引擎只需改 `web/js/config.js`（或 URL `?engine=`）。
+地图引擎与业务解耦，见 `doc/前端架构.md`。默认 `maplibre`（可垫 `web/models/Japan_3D_Map.glb`）；`?terrain=0` 关底图，`?terrain_calib=1` 采校准锚点；切回 SVG：`?engine=svg_mercator`。
 
 ```bash
 python db/export_web_data.py

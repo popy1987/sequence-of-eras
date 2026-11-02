@@ -1,0 +1,40 @@
+{
+  "url": "Japan_3D_Map.glb",
+  "fallbackBounds": {
+    "sw": [127.5, 26.0],
+    "ne": [145.8, 45.5]
+  },
+  "anchors": [
+    {
+      "id": "sapporo",
+      "names": { "zh_hans": "札幌", "ja": "札幌", "en": "Sapporo" },
+      "lon": 141.3544,
+      "lat": 43.0618,
+      "model": null
+    },
+    {
+      "id": "tokyo",
+      "names": { "zh_hans": "东京", "ja": "東京", "en": "Tokyo" },
+      "lon": 139.6917,
+      "lat": 35.6895,
+      "model": null
+    },
+    {
+      "id": "naha",
+      "names": { "zh_hans": "那霸", "ja": "那覇", "en": "Naha" },
+      "lon": 127.6792,
+      "lat": 26.2124,
+      "model": null
+    },
+    {
+      "id": "fukuoka",
+      "names": { "zh_hans": "福冈", "ja": "福岡", "en": "Fukuoka" },
+      "lon": 130.4017,
+      "lat": 33.5904,
+      "model": null
+    }
+  ],
+  "altitudeScale": 1,
+  "exaggeration": 1.2,
+  "notes": "model: [x,y,z] are world coords after GLTF node bake. Leave null to use fallbackBounds. Fill via ?terrain_calib=1 raycast, then paste into this file."
+}

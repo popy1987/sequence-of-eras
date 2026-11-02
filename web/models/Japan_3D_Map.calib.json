@@ -10,14 +10,35 @@
       "names": { "zh_hans": "札幌", "ja": "札幌", "en": "Sapporo" },
       "lon": 141.3544,
       "lat": 43.0618,
-      "model": null
+      "model": [0.215046, 0.3323896, 0.0]
+    },
+    {
+      "id": "nemuro",
+      "names": { "zh_hans": "根室", "ja": "根室", "en": "Nemuro" },
+      "lon": 145.5828,
+      "lat": 43.33,
+      "model": [0.4473912, 0.3483734, 0.0]
+    },
+    {
+      "id": "aomori",
+      "names": { "zh_hans": "青森", "ja": "青森", "en": "Aomori" },
+      "lon": 140.74,
+      "lat": 40.8244,
+      "model": [0.1814648, 0.1893752, 0.0]
     },
     {
       "id": "tokyo",
       "names": { "zh_hans": "东京", "ja": "東京", "en": "Tokyo" },
       "lon": 139.6917,
       "lat": 35.6895,
-      "model": null
+      "model": [0.1242756, -0.1389481, 0.0]
+    },
+    {
+      "id": "osaka",
+      "names": { "zh_hans": "大阪", "ja": "大阪", "en": "Osaka" },
+      "lon": 135.5023,
+      "lat": 34.6937,
+      "model": [-0.1058671, -0.2015066, 0.0]
     },
     {
       "id": "naha",
@@ -31,7 +52,14 @@
       "names": { "zh_hans": "福冈", "ja": "福岡", "en": "Fukuoka" },
       "lon": 130.4017,
       "lat": 33.5904,
-      "model": null
+      "model": [-0.386075, -0.2706906, 0.0]
+    },
+    {
+      "id": "kagoshima",
+      "names": { "zh_hans": "鹿儿岛", "ja": "鹿児島", "en": "Kagoshima" },
+      "lon": 130.5581,
+      "lat": 31.5966,
+      "model": [-0.3773175, -0.3983305, 0.0]
     }
   ],
   "altitudeScale": 1,

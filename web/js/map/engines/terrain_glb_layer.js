@@ -49,34 +49,32 @@ function computeWorldAabb(THREE, root) {
 }
 
 /**
- * Sketchfab/OSG exports often leave "up" on X or Y. Rotate so the thinnest
- * AABB axis becomes +Z (height), leaving XY as the map plane for calib.
+ * Restore the source mesh grid: X=east, Y=north, Z=elevation.
+ * The Sketchfab export wraps every tile in the same display transform; keeping
+ * that transform makes the AABB heuristic mistake a tilted map plane for up.
  */
-function orientThinnestAxisToZ(THREE, root) {
+function orientSourceGridToMap(THREE, root) {
   root.updateMatrixWorld(true);
-  const box = new THREE.Box3().setFromObject(root);
-  const size = new THREE.Vector3();
-  box.getSize(size);
-  const dims = [
-    { axis: "x", len: size.x },
-    { axis: "y", len: size.y },
-    { axis: "z", len: size.z },
-  ].sort((a, b) => a.len - b.len);
-  const up = dims[0].axis;
-  if (up === "z") return root;
+  let firstMesh = null;
+  root.traverse((obj) => {
+    if (!firstMesh && obj.isMesh) firstMesh = obj;
+  });
+  if (!firstMesh) return root;
 
+  const elements = firstMesh.matrixWorld.elements;
+  const elevationScale = Math.hypot(elements[8], elements[9], elements[10]);
   const wrapper = new THREE.Group();
-  wrapper.name = "soe-terrain-orient";
-  if (up === "x") {
-    // +X up → +Z up: rotate -90° about Y
-    wrapper.rotation.y = -Math.PI / 2;
-  } else {
-    // +Y up → +Z up: rotate +90° about X
-    wrapper.rotation.x = Math.PI / 2;
-  }
+  wrapper.name = "soe-terrain-source-grid";
+  wrapper.matrixAutoUpdate = false;
+  wrapper.matrix.copy(firstMesh.matrixWorld).invert();
   wrapper.add(root);
-  wrapper.updateMatrixWorld(true);
-  return wrapper;
+
+  const oriented = new THREE.Group();
+  oriented.name = "soe-terrain-orient";
+  oriented.scale.z = elevationScale;
+  oriented.add(wrapper);
+  oriented.updateMatrixWorld(true);
+  return oriented;
 }
 
 /**
@@ -198,7 +196,7 @@ export function createTerrainGlbLayer(options = {}) {
                 }
               });
             });
-            modelRoot = orientThinnestAxisToZ(THREE, raw);
+            modelRoot = orientSourceGridToMap(THREE, raw);
             scene.add(modelRoot);
 
             const aabb = computeWorldAabb(THREE, modelRoot);

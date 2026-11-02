@@ -9,9 +9,8 @@ import {
   formatAnchorsDump,
 } from "./terrain_calib.js";
 
-const THREE_VERSION = "0.160.0";
-const THREE_MOD = `https://unpkg.com/three@${THREE_VERSION}/build/three.module.js`;
-const GLTF_MOD = `https://unpkg.com/three@${THREE_VERSION}/examples/jsm/loaders/GLTFLoader.js`;
+const THREE_MOD = new URL("../../../vendor/three/build/three.module.js", import.meta.url).href;
+const GLTF_MOD = new URL("../../../vendor/three/examples/jsm/loaders/GLTFLoader.js", import.meta.url).href;
 
 export const TERRAIN_LAYER_ID = "soe-terrain-glb";
 
@@ -161,9 +160,9 @@ export function createTerrainGlbLayer(options = {}) {
         raycaster = new THREE.Raycaster();
         pointer = new THREE.Vector2();
 
-        const light = new THREE.AmbientLight(0xffffff, 0.85);
+        const light = new THREE.AmbientLight(0xffffff, 1.8);
         scene.add(light);
-        const dir = new THREE.DirectionalLight(0xffffff, 0.65);
+        const dir = new THREE.DirectionalLight(0xffffff, 0.9);
         dir.position.set(0.4, 0.8, 1).normalize();
         scene.add(dir);
 
@@ -187,6 +186,18 @@ export function createTerrainGlbLayer(options = {}) {
           (gltf) => {
             if (destroyed) return;
             const raw = gltf.scene || gltf.scenes[0];
+            // glTF 未声明 metalness 时默认为 1；无环境贴图会让地形接近全黑。
+            raw.traverse((obj) => {
+              if (!obj.isMesh) return;
+              const materials = Array.isArray(obj.material)
+                ? obj.material
+                : [obj.material];
+              materials.forEach((material) => {
+                if (material && "metalness" in material) {
+                  material.metalness = 0;
+                }
+              });
+            });
             modelRoot = orientThinnestAxisToZ(THREE, raw);
             scene.add(modelRoot);
 

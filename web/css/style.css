@@ -249,6 +249,13 @@ button, input { font: inherit; }
   white-space: pre-wrap;
 }
 
+.soe-prefecture-toggle {
+  position: absolute;
+  top: 12px;
+  right: 56px;
+  z-index: 3;
+}
+
 .soe-terrain-progress {
   position: absolute;
   left: 16px;

@@ -5,7 +5,7 @@
  */
 import { MAP_ENGINE_EVENTS, MAP_SELECT_KIND } from "../contract.js";
 import { pickName } from "../../core/names.js";
-import { getLocale } from "../../i18n/index.js";
+import { getLocale, t } from "../../i18n/index.js";
 import {
   resolveTerrainEnabled,
   resolveTerrainCalibMode,
@@ -15,9 +15,9 @@ import {
   TERRAIN_LAYER_ID,
 } from "./terrain_glb_layer.js";
 
-const MAPLIBRE_VERSION = "4.7.1";
-const MAPLIBRE_JS = `https://unpkg.com/maplibre-gl@${MAPLIBRE_VERSION}/dist/maplibre-gl.js`;
-const MAPLIBRE_CSS = `https://unpkg.com/maplibre-gl@${MAPLIBRE_VERSION}/dist/maplibre-gl.css`;
+const MAPLIBRE_JS = new URL("../../../vendor/maplibre-gl/maplibre-gl.js", import.meta.url).href;
+const MAPLIBRE_CSS = new URL("../../../vendor/maplibre-gl/maplibre-gl.css", import.meta.url).href;
+const PREFECTURES_URL = new URL("../../../data/japan_prefectures.json", import.meta.url).href;
 
 /** Japan schematic home view (WGS84). */
 const HOME_BOUNDS = [
@@ -30,6 +30,7 @@ const SRC = {
   polities: "soe-polities",
   markers: "soe-markers",
   disputes: "soe-disputes",
+  prefectures: "soe-prefectures",
 };
 
 const LAYER = {
@@ -41,6 +42,8 @@ const LAYER = {
   markerLabel: "soe-marker-label",
   disputeCircle: "soe-dispute-circle",
   disputeLabel: "soe-dispute-label",
+  prefectureLine: "soe-prefecture-line",
+  prefectureLabel: "soe-prefecture-label",
 };
 
 let loadPromise = null;
@@ -197,6 +200,19 @@ export function createMapLibreEngine(host, options = {}) {
     '<div class="soe-terrain-progress__bar" style="width:0%"></div>' +
     "</div>";
   host.appendChild(progressEl);
+
+  let prefecturesVisible = true;
+  const prefectureButton = document.createElement("button");
+  prefectureButton.type = "button";
+  prefectureButton.className = "ghost-btn soe-prefecture-toggle";
+  prefectureButton.textContent = t("map.prefectures");
+  prefectureButton.setAttribute("aria-pressed", "true");
+  prefectureButton.addEventListener("click", () => {
+    prefecturesVisible = !prefecturesVisible;
+    prefectureButton.setAttribute("aria-pressed", String(prefecturesVisible));
+    setPrefectureVisibility();
+  });
+  host.appendChild(prefectureButton);
 
   function setProgress(pct, label) {
     progressEl.hidden = false;
@@ -356,6 +372,80 @@ export function createMapLibreEngine(host, options = {}) {
     }
   }
 
+  function prefectureLabelName(locale) {
+    const key = locale === "ja" ? "name_ja" : locale === "en" ? "name_en" : "name_zh";
+    return ["coalesce", ["get", key], ["get", "name_ja"], ["get", "name_en"]];
+  }
+
+  function updatePrefectureLocale(locale) {
+    prefectureButton.textContent = t("map.prefectures");
+    if (map.getLayer(LAYER.prefectureLabel)) {
+      map.setLayoutProperty(
+        LAYER.prefectureLabel,
+        "text-field",
+        prefectureLabelName(locale)
+      );
+    }
+  }
+
+  function setPrefectureVisibility() {
+    if (!map) return;
+    const visibility = prefecturesVisible ? "visible" : "none";
+    [LAYER.prefectureLine, LAYER.prefectureLabel].forEach((id) => {
+      if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", visibility);
+    });
+  }
+
+  async function loadPrefectures() {
+    try {
+      const res = await fetch(PREFECTURES_URL);
+      if (!res.ok) throw new Error(`prefectures HTTP ${res.status}`);
+      const data = await res.json();
+      if (destroyed || !map || map.getSource(SRC.prefectures)) return;
+      map.addSource(SRC.prefectures, {
+        type: "geojson",
+        data,
+        attribution: "© geoBoundaries (ODbL 1.0)",
+      });
+      map.addLayer(
+        {
+          id: LAYER.prefectureLine,
+          type: "line",
+          source: SRC.prefectures,
+          paint: {
+            "line-color": "#152238",
+            "line-width": 0.9,
+            "line-opacity": 0.72,
+          },
+        },
+        LAYER.markerCircle
+      );
+      map.addLayer(
+        {
+          id: LAYER.prefectureLabel,
+          type: "symbol",
+          source: SRC.prefectures,
+          layout: {
+            "text-field": prefectureLabelName(getLocale()),
+            "text-size": 11,
+            "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
+            "text-optional": true,
+          },
+          paint: {
+            "text-color": "#152238",
+            "text-halo-color": "rgba(244,249,252,0.95)",
+            "text-halo-width": 1.4,
+          },
+        },
+        LAYER.markerCircle
+      );
+      setPrefectureVisibility();
+    } catch (err) {
+      prefectureButton.hidden = true;
+      console.error("[prefectures]", err);
+    }
+  }
+
   function applyFrame(frame) {
     if (!map || !frame) return;
     const locale = frame.locale || getLocale();
@@ -381,6 +471,7 @@ export function createMapLibreEngine(host, options = {}) {
     map.getSource(SRC.polities).setData(polityCollection(frame.polities));
     map.getSource(SRC.markers).setData(markerCollection(frame.markers, locale));
     map.getSource(SRC.disputes).setData(disputeCollection(frame.disputes, locale));
+    updatePrefectureLocale(locale);
   }
 
   function fitHome() {
@@ -478,6 +569,7 @@ export function createMapLibreEngine(host, options = {}) {
         map.on("load", () => {
           if (destroyed) return;
           ensureSources();
+          loadPrefectures();
           bindClicks();
           fitHome();
 

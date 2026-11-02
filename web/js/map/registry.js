@@ -1,9 +1,10 @@
 import { createSvgMercatorEngine } from "./engines/svg_mercator.js";
+import { createMapLibreEngine } from "./engines/maplibre.js";
 
 const factories = {
   svg_mercator: createSvgMercatorEngine,
+  maplibre: createMapLibreEngine,
   // Future:
-  // maplibre: createMapLibreEngine,
   // leaflet: createLeafletEngine,
 };
 

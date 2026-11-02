@@ -98,6 +98,16 @@ async function boot() {
   const map = createMapEngine(engineId, host, {
     ariaLabel: t("map.aria"),
   });
+  // MapLibre (and future CDN engines) expose ready; SVG resolves immediately.
+  if (map.ready) {
+    try {
+      await map.ready;
+    } catch (err) {
+      console.error(err);
+      setBootMessage(err.message || t("error.atlasMissing"), { error: true });
+      throw err;
+    }
+  }
 
   const yearMin = atlas.meta.year_min;
   const yearMax = atlas.meta.year_max;

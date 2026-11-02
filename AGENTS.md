@@ -30,7 +30,7 @@
 
 - 古坟年代 = 维基**築造／埋入**区间，**不是**出土年；争议用闭区间。
 - 事件含 `conflict_class`：`civil_war` / `coup` / `pacification` / `external_war` / `intrigue`；争议年用区间 + `alignment=disputed`。
-- 地图业务只经 `MapFrame`；换引擎改 `web/js/config.js` 的 `MAP_ENGINE`（`svg_mercator` 默认，`maplibre` 已注册，URL 可用 `?engine=maplibre`）。
+- 地图业务只经 `MapFrame`；换引擎改 `web/js/config.js` 的 `MAP_ENGINE`（默认 `maplibre`，`svg_mercator` 仍可用，URL `?engine=svg_mercator`）。
 - 名称：`names.zh_hans` / `ja` / `en`；UI 文案走 `t()` / `data-i18n`。
 
 ## 快捷操作

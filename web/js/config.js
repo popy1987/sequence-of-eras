@@ -1,10 +1,10 @@
 /** Runtime switches. Change MAP_ENGINE to swap implementations without touching app logic. */
-export const MAP_ENGINE = "svg_mercator";
+export const MAP_ENGINE = "maplibre";
 
 /**
  * Allow URL override for local comparison:
- *   ?engine=svg_mercator
  *   ?engine=maplibre
+ *   ?engine=svg_mercator
  */
 export function resolveMapEngineId() {
   const q = new URLSearchParams(location.search).get("engine");

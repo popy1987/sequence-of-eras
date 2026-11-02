@@ -13,7 +13,7 @@ alwaysApply: true
 2. SQLite 单文件库：`db/sequence_of_eras.sqlite`（便于打包进 iOS）
 3. 表结构 / 建库 / 导出：`db/schema.sql`、`db/build_db.py`、`db/export_web_data.py`
 4. Web：`web/` 静态页，数据读 `web/data/atlas.json`
-5. 前端架构（可切换地图引擎）：`doc/前端架构.md`；默认引擎 `svg_mercator`，应用只通过 `MapFrame` 调引擎
+5. 前端架构（可切换地图引擎）：`doc/前端架构.md`；默认引擎 `maplibre`，应用只通过 `MapFrame` 调引擎
 
 ```bash
 python db/build_db.py

@@ -28,7 +28,7 @@ python db/export_web_data.py
 
 静态本地页，结构参照[江山时序](https://github.com/DeanChensj/jiangshan-map)：顶栏三行纪年、主地图、底时间轴、图例、点选卡片、`?year=` 深链与 `window.atlasAPI`。
 
-地图引擎与业务解耦，见 `doc/前端架构.md`。默认 `svg_mercator`；以后换 MapLibre 等只需加引擎实现并改 `web/js/config.js`。
+地图引擎与业务解耦，见 `doc/前端架构.md`。默认 `maplibre`；切回 SVG 或换引擎只需改 `web/js/config.js`（或 URL `?engine=`）。
 
 ```bash
 python db/export_web_data.py
@@ -36,7 +36,7 @@ cd web
 python -m http.server 8080
 ```
 
-浏览器打开 `http://localhost:8080/`。默认起点约公元前 2000 年（对齐夏商周视野；日本仍为绳文示意）。可用 `?year=-2000`、`?lang=ja`、`?engine=svg_mercator`。顶栏可切换中 / 日 / EN。控制台：`atlasAPI.setLang('en')`、`atlasAPI.inspectYear()`、`atlasAPI.gotoYear(1185)`。
+浏览器打开 `http://localhost:8080/`。默认起点约公元前 2000 年（对齐夏商周视野；日本仍为绳文示意）。可用 `?year=-2000`、`?lang=ja`、`?engine=svg_mercator`（默认已是 maplibre）。顶栏可切换中 / 日 / EN。控制台：`atlasAPI.setLang('en')`、`atlasAPI.inspectYear()`、`atlasAPI.gotoYear(1185)`。
 
 疆域色块目前是示意复原，用于联调交互；精确边界后续用数据库几何替换。
 

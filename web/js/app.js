@@ -53,7 +53,7 @@ function openInspector(title, meta, body, parties) {
   });
 }
 
-function renderLegend(phase) {
+function renderLegend(phase, year) {
   const list = $("#legend-list");
   list.innerHTML = "";
   (phase.polities || []).forEach((p) => {
@@ -68,6 +68,18 @@ function renderLegend(phase) {
     li.innerHTML =
       `<span class="swatch" style="background:#5b7c6a"></span><span>${t("legend.empty")}</span>`;
     list.appendChild(li);
+  }
+  if (year >= 1635 && year <= 1862) {
+    [
+      ["#6d5c4a", "legend.sankinRoads"],
+      ["#c45c26", "legend.sankinSatsuma"],
+      ["#2f6f7e", "legend.sankinKaga"],
+    ].forEach(([color, key]) => {
+      const li = document.createElement("li");
+      li.innerHTML = `<span class="swatch" style="background:${color}"></span><span></span>`;
+      li.querySelector("span:last-child").textContent = t(key);
+      list.appendChild(li);
+    });
   }
 }
 
@@ -201,7 +213,7 @@ async function boot() {
       `${t("chrono.periodPrefix")} ${periodLabel(atlas, year)}`;
 
     map.setFrame(frame);
-    renderLegend(phase);
+    renderLegend(phase, year);
 
     const periodId = spinePeriod && spinePeriod.id;
     [...$("#period-ticks").children].forEach((el) => {
@@ -294,6 +306,27 @@ async function boot() {
           (p) =>
             `${pickName(p.actor_names) || p.actor_id} · ${p.role} · ${p.claim_status}`
         )
+      );
+    } else if (kind === MAP_SELECT_KIND.SANKIN) {
+      const stops = data.stops || [];
+      const lines = [
+        t("inspect.sankinYears", {
+          from: data.from_year,
+          to: data.to_year,
+        }),
+        t("inspect.sankinStops", { n: stops.length }),
+      ];
+      if (data.length_km_approx != null) {
+        lines.push(t("inspect.sankinKm", { km: data.length_km_approx }));
+      }
+      (data.sources || []).forEach((s) => {
+        if (s?.title) lines.push(s.title);
+      });
+      openInspector(
+        pickName(data.names) || data.id,
+        t("inspect.sankinMeta"),
+        data.note || t("inspect.sankinBody"),
+        lines
       );
     }
   }

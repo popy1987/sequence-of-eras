@@ -18,12 +18,23 @@ import {
 const MAPLIBRE_JS = new URL("../../../vendor/maplibre-gl/maplibre-gl.js", import.meta.url).href;
 const MAPLIBRE_CSS = new URL("../../../vendor/maplibre-gl/maplibre-gl.css", import.meta.url).href;
 const PREFECTURES_URL = new URL("../../../data/japan_prefectures.json", import.meta.url).href;
+const EDO_ROADS_URL = new URL("../../../data/edo_roads_subset.geojson", import.meta.url).href;
+const SANKIN_ROUTES_URL = new URL("../../../data/sankin_routes.json", import.meta.url).href;
 
 /** Japan schematic home view (WGS84). */
 const HOME_BOUNDS = [
   [122.5, 24.0],
   [146.0, 46.5],
 ];
+
+/** Sankin MVP window (参勤交代制度化～文久緩和). */
+const SANKIN_YEAR_MIN = 1635;
+const SANKIN_YEAR_MAX = 1862;
+
+const ROUTE_COLORS = {
+  "sankin.satsuma.izumi_saigoku_tokaido": "#c45c26",
+  "sankin.kaga.hokkoku_shimo_nakasendo": "#2f6f7e",
+};
 
 const SRC = {
   coast: "soe-coast",
@@ -32,6 +43,9 @@ const SRC = {
   disputes: "soe-disputes",
   prefectures: "soe-prefectures",
   prefectureLabels: "soe-prefecture-labels",
+  edoRoads: "soe-edo-roads",
+  sankinRoutes: "soe-sankin-routes",
+  sankinStops: "soe-sankin-stops",
 };
 
 const LAYER = {
@@ -39,6 +53,9 @@ const LAYER = {
   coastLine: "soe-coast-line",
   polityFill: "soe-polity-fill",
   polityLine: "soe-polity-line",
+  edoRoads: "soe-edo-roads-line",
+  sankinRoute: "soe-sankin-route-line",
+  sankinStop: "soe-sankin-stop-circle",
   markerCircle: "soe-marker-circle",
   markerLabel: "soe-marker-label",
   disputeCircle: "soe-dispute-circle",
@@ -255,6 +272,7 @@ export function createMapLibreEngine(host, options = {}) {
   let destroyed = false;
   let terrainLayer = null;
   let terrainReady = false;
+  let sankinDoc = null;
   const polityById = new Map();
   const terrainEnabled =
     options.terrain !== undefined
@@ -617,6 +635,157 @@ export function createMapLibreEngine(host, options = {}) {
     });
   }
 
+  function setSankinVisibility(year) {
+    if (!map) return;
+    const on =
+      Number.isFinite(year) && year >= SANKIN_YEAR_MIN && year <= SANKIN_YEAR_MAX;
+    const visibility = on ? "visible" : "none";
+    [LAYER.edoRoads, LAYER.sankinRoute, LAYER.sankinStop].forEach((id) => {
+      if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", visibility);
+    });
+  }
+
+  function sankinCollections(doc, locale) {
+    const routes = doc?.routes || [];
+    const routeFc = {
+      type: "FeatureCollection",
+      features: routes.map((r) => ({
+        type: "Feature",
+        properties: {
+          id: r.id,
+          color: ROUTE_COLORS[r.id] || "#8a4b2e",
+          label: pickName(r.names, locale) || r.id,
+          payload: JSON.stringify(r),
+        },
+        geometry: r.geometry,
+      })),
+    };
+    const stopFc = {
+      type: "FeatureCollection",
+      features: routes.flatMap((r) =>
+        (r.stops || []).map((s, i) => ({
+          type: "Feature",
+          properties: {
+            route_id: r.id,
+            color: ROUTE_COLORS[r.id] || "#8a4b2e",
+            name: s.name,
+            index: i,
+            payload: JSON.stringify(r),
+          },
+          geometry: { type: "Point", coordinates: [s.lon, s.lat] },
+        }))
+      ),
+    };
+    return { routeFc, stopFc, attribution: doc?.meta?.attribution || "" };
+  }
+
+  async function loadSankin() {
+    try {
+      const [roadsRes, routesRes] = await Promise.all([
+        fetch(EDO_ROADS_URL),
+        fetch(SANKIN_ROUTES_URL),
+      ]);
+      if (!roadsRes.ok || !routesRes.ok) {
+        throw new Error(
+          `sankin HTTP roads=${roadsRes.status} routes=${routesRes.status}`
+        );
+      }
+      const roads = await roadsRes.json();
+      const routesDoc = await routesRes.json();
+      if (destroyed || !map || map.getSource(SRC.edoRoads)) return;
+      sankinDoc = routesDoc;
+      const { routeFc, stopFc, attribution } = sankinCollections(
+        sankinDoc,
+        getLocale()
+      );
+      const attr =
+        attribution ||
+        "江戸主要街道・宿場データセット（ROIS-DS CODH）CC BY 4.0";
+      map.addSource(SRC.edoRoads, {
+        type: "geojson",
+        data: roads,
+        attribution: attr,
+      });
+      map.addSource(SRC.sankinRoutes, { type: "geojson", data: routeFc });
+      map.addSource(SRC.sankinStops, { type: "geojson", data: stopFc });
+      // Above polity fills so routes stay readable; under markers.
+      map.addLayer(
+        {
+          id: LAYER.edoRoads,
+          type: "line",
+          source: SRC.edoRoads,
+          layout: { "line-cap": "round", "line-join": "round", visibility: "none" },
+          paint: {
+            "line-color": "#6d5c4a",
+            "line-width": 1.15,
+            "line-opacity": 0.45,
+          },
+        },
+        LAYER.markerCircle
+      );
+      map.addLayer(
+        {
+          id: LAYER.sankinRoute,
+          type: "line",
+          source: SRC.sankinRoutes,
+          layout: { "line-cap": "round", "line-join": "round", visibility: "none" },
+          paint: {
+            "line-color": ["get", "color"],
+            "line-width": 3.2,
+            "line-opacity": 0.88,
+          },
+        },
+        LAYER.markerCircle
+      );
+      map.addLayer(
+        {
+          id: LAYER.sankinStop,
+          type: "circle",
+          source: SRC.sankinStops,
+          layout: { visibility: "none" },
+          paint: {
+            "circle-radius": 3.2,
+            "circle-color": ["get", "color"],
+            "circle-stroke-width": 1,
+            "circle-stroke-color": "#f4f9fc",
+            "circle-opacity": 0.92,
+          },
+        },
+        LAYER.markerCircle
+      );
+      bindSankinClicks();
+      if (pendingFrame?.year != null) setSankinVisibility(pendingFrame.year);
+    } catch (err) {
+      console.warn("[sankin]", err);
+    }
+  }
+
+  function bindSankinClicks() {
+    if (!map) return;
+    [LAYER.sankinRoute, LAYER.sankinStop].forEach((id) => {
+      map.on("click", id, (e) => {
+        const f = e.features && e.features[0];
+        if (!f?.properties?.payload) return;
+        try {
+          const data = JSON.parse(f.properties.payload);
+          emit(MAP_ENGINE_EVENTS.SELECT, {
+            kind: MAP_SELECT_KIND.SANKIN,
+            data,
+          });
+          e.originalEvent?.stopPropagation?.();
+        } catch (_) {
+          /* ignore */
+        }
+      });
+      map.on("mouseenter", id, () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", id, () => {
+        map.getCanvas().style.cursor = "";
+      });
+    });
+  }
+
   function applyFrame(frame) {
     if (!map || !frame) return;
     const locale = frame.locale || getLocale();
@@ -643,6 +812,12 @@ export function createMapLibreEngine(host, options = {}) {
     map.getSource(SRC.markers).setData(markerCollection(frame.markers, locale));
     map.getSource(SRC.disputes).setData(disputeCollection(frame.disputes, locale));
     updatePrefectureLocale(locale);
+    if (sankinDoc && map.getSource(SRC.sankinRoutes)) {
+      const { routeFc, stopFc } = sankinCollections(sankinDoc, locale);
+      map.getSource(SRC.sankinRoutes).setData(routeFc);
+      map.getSource(SRC.sankinStops).setData(stopFc);
+    }
+    setSankinVisibility(frame.year);
   }
 
   function fitHome() {
@@ -741,6 +916,7 @@ export function createMapLibreEngine(host, options = {}) {
           if (destroyed) return;
           ensureSources();
           loadPrefectures();
+          loadSankin();
           bindClicks();
           fitHome();
 

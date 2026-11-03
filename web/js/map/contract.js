@@ -32,7 +32,7 @@
  * }
  *
  * MapSelectEvent — engine → app:
- * { kind: "polity" | "marker" | "dispute" | "prefecture", data: object }
+ * { kind: "polity" | "marker" | "dispute" | "prefecture" | "sankin", data: object }
  *
  * Engine instance methods:
  *   setFrame(frame: MapFrame): void
@@ -51,4 +51,5 @@ export const MAP_SELECT_KIND = Object.freeze({
   DISPUTE: "dispute",
   EVENT: "event",
   PREFECTURE: "prefecture",
+  SANKIN: "sankin",
 });

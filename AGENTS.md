@@ -26,6 +26,7 @@
 | 三语 | `web/js/i18n/` |
 | 3D 地形 GLB + 校准 | `web/models/Japan_3D_Map.glb` · `web/models/Japan_3D_Map.calib.json` |
 | 都道府县地名×时间索引 | `db/data/prefecture_name_spans.json` · `db/data/build_prefecture_name_spans.py` → `web/data/prefecture_name_spans.json` |
+| 参勤交代试点（萨摩・加贺） | `db/data/build_sankin_routes.py` → `web/data/sankin_routes.json` · `web/data/edo_roads_subset.geojson`（CODH CC BY） |
 
 ## 数据约定速记
 
@@ -72,6 +73,13 @@ python db/export_web_data.py
 ```bash
 python db/seed_asuka_nara_heian_events.py
 python db/export_web_data.py
+```
+
+### 重建参勤交代试点路线（萨摩・加贺 + CODH 街道）
+
+```bash
+python db/data/build_sankin_routes.py
+# 预览江户年：python scripts/restart_preview.py --no-export --year 1700
 ```
 
 ### 重启预览（一键看最新效果）

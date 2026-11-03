@@ -313,12 +313,33 @@ button, input { font: inherit; }
   white-space: nowrap;
 }
 
-.lang-switch {
+.lang-switch,
+.speed-switch {
   display: inline-flex;
   border: 1px solid var(--hairline);
   border-radius: 999px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.55);
+}
+
+.speed-btn {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 7px 10px;
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.speed-btn + .speed-btn {
+  border-left: 1px solid var(--hairline);
+}
+
+.speed-btn[aria-pressed="true"] {
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 .lang-btn {

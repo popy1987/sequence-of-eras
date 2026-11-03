@@ -115,9 +115,15 @@ async function boot() {
   let year = atlas.meta.default_year;
   let playing = false;
   let playTimer = null;
-  /** Play mode: advance +1 calendar year, re-render map, every N ms. */
+  /** Play mode: +1 year per tick; interval depends on speed multiplier. */
   const PLAY_STEP_YEARS = 1;
-  const PLAY_INTERVAL_MS = 10_000;
+  const PLAY_INTERVAL_BY_SPEED = {
+    1: 10_000,
+    2: 5_000,
+    4: 2_500,
+    10: 1_000,
+  };
+  let playSpeed = 1;
   let lastSelect = null;
 
   const slider = $("#year-slider");
@@ -266,12 +272,27 @@ async function boot() {
   $("#btn-today").addEventListener("click", () =>
     setYear(new Date().getFullYear())
   );
-  function stopPlayback() {
-    playing = false;
+  function playIntervalMs() {
+    return PLAY_INTERVAL_BY_SPEED[playSpeed] ?? PLAY_INTERVAL_BY_SPEED[1];
+  }
+
+  function syncSpeedButtons() {
+    document.querySelectorAll(".speed-btn").forEach((btn) => {
+      const on = Number(btn.dataset.speed) === playSpeed;
+      btn.setAttribute("aria-pressed", String(on));
+    });
+  }
+
+  function clearPlayTimer() {
     if (playTimer) {
       clearInterval(playTimer);
       playTimer = null;
     }
+  }
+
+  function stopPlayback() {
+    playing = false;
+    clearPlayTimer();
     const btn = $("#btn-play");
     btn.setAttribute("aria-pressed", "false");
     btn.textContent = t("nav.play");
@@ -287,6 +308,19 @@ async function boot() {
     setYear(n); // rebuilds MapFrame + map.setFrame once per tick
   }
 
+  function startPlayTimer() {
+    clearPlayTimer();
+    playTimer = setInterval(tickPlayback, playIntervalMs());
+  }
+
+  function setPlaySpeed(speed) {
+    const next = Number(speed);
+    if (!PLAY_INTERVAL_BY_SPEED[next]) return;
+    playSpeed = next;
+    syncSpeedButtons();
+    if (playing) startPlayTimer();
+  }
+
   $("#btn-play").addEventListener("click", () => {
     if (playing) {
       stopPlayback();
@@ -296,9 +330,13 @@ async function boot() {
     const btn = $("#btn-play");
     btn.setAttribute("aria-pressed", "true");
     btn.textContent = t("nav.pause");
-    // First step after one interval so the cadence is a steady 10s/year.
-    playTimer = setInterval(tickPlayback, PLAY_INTERVAL_MS);
+    startPlayTimer();
   });
+
+  document.querySelectorAll(".speed-btn").forEach((btn) => {
+    btn.addEventListener("click", () => setPlaySpeed(btn.dataset.speed));
+  });
+  syncSpeedButtons();
 
   onLocaleChange(() => {
     applyDocumentLocale();

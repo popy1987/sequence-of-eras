@@ -31,6 +31,7 @@ const SRC = {
   markers: "soe-markers",
   disputes: "soe-disputes",
   prefectures: "soe-prefectures",
+  prefectureLabels: "soe-prefecture-labels",
 };
 
 const LAYER = {
@@ -47,6 +48,89 @@ const LAYER = {
 };
 
 let loadPromise = null;
+
+/** Strip 都/府/県/县; keep 北海道 as-is. */
+function shortPrefectureName(name) {
+  if (!name) return "";
+  if (name === "北海道" || name === "Hokkaido") return name;
+  return String(name).replace(/(都|道|府|県|县)$/u, "");
+}
+
+/** Planar ring area (signed); lon/lat degrees OK for ranking parts. */
+function ringArea(ring) {
+  let sum = 0;
+  for (let i = 0, n = ring.length; i < n - 1; i++) {
+    sum += ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1];
+  }
+  return sum / 2;
+}
+
+function ringCentroid(ring) {
+  let a = 0;
+  let cx = 0;
+  let cy = 0;
+  for (let i = 0, n = ring.length; i < n - 1; i++) {
+    const cross = ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1];
+    a += cross;
+    cx += (ring[i][0] + ring[i + 1][0]) * cross;
+    cy += (ring[i][1] + ring[i + 1][1]) * cross;
+  }
+  a *= 0.5;
+  if (Math.abs(a) < 1e-18) {
+    let sx = 0;
+    let sy = 0;
+    const m = Math.max(1, ring.length - 1);
+    for (let i = 0; i < m; i++) {
+      sx += ring[i][0];
+      sy += ring[i][1];
+    }
+    return [sx / m, sy / m];
+  }
+  return [cx / (6 * a), cy / (6 * a)];
+}
+
+/** Largest polygon part → one label point (drops offshore island labels). */
+function largestPartLabelPoint(geometry) {
+  const polys =
+    geometry.type === "Polygon"
+      ? [geometry.coordinates]
+      : geometry.type === "MultiPolygon"
+        ? geometry.coordinates
+        : [];
+  let best = null;
+  let bestAbs = -1;
+  for (const poly of polys) {
+    const outer = poly[0];
+    if (!outer || outer.length < 3) continue;
+    const abs = Math.abs(ringArea(outer));
+    if (abs > bestAbs) {
+      bestAbs = abs;
+      best = ringCentroid(outer);
+    }
+  }
+  return { point: best, area: bestAbs };
+}
+
+function buildPrefectureLabelPoints(fc) {
+  const features = [];
+  for (const f of fc.features || []) {
+    const { point, area } = largestPartLabelPoint(f.geometry);
+    if (!point) continue;
+    const p = f.properties || {};
+    features.push({
+      type: "Feature",
+      properties: {
+        code: p.code,
+        short_zh: shortPrefectureName(p.name_zh),
+        short_ja: shortPrefectureName(p.name_ja),
+        short_en: shortPrefectureName(p.name_en),
+        area,
+      },
+      geometry: { type: "Point", coordinates: point },
+    });
+  }
+  return { type: "FeatureCollection", features };
+}
 
 function ensureCss() {
   if (document.querySelector(`link[data-soe-maplibre]`)) return;
@@ -373,8 +457,18 @@ export function createMapLibreEngine(host, options = {}) {
   }
 
   function prefectureLabelName(locale) {
-    const key = locale === "ja" ? "name_ja" : locale === "en" ? "name_en" : "name_zh";
-    return ["coalesce", ["get", key], ["get", "name_ja"], ["get", "name_en"]];
+    const key =
+      locale === "ja"
+        ? "short_ja"
+        : locale === "en"
+          ? "short_en"
+          : "short_zh";
+    return [
+      "coalesce",
+      ["get", key],
+      ["get", "short_ja"],
+      ["get", "short_en"],
+    ];
   }
 
   function updatePrefectureLocale(locale) {
@@ -402,10 +496,15 @@ export function createMapLibreEngine(host, options = {}) {
       if (!res.ok) throw new Error(`prefectures HTTP ${res.status}`);
       const data = await res.json();
       if (destroyed || !map || map.getSource(SRC.prefectures)) return;
+      const labelPoints = buildPrefectureLabelPoints(data);
       map.addSource(SRC.prefectures, {
         type: "geojson",
         data,
         attribution: "© geoBoundaries (ODbL 1.0)",
+      });
+      map.addSource(SRC.prefectureLabels, {
+        type: "geojson",
+        data: labelPoints,
       });
       map.addLayer(
         {
@@ -420,16 +519,21 @@ export function createMapLibreEngine(host, options = {}) {
         },
         LAYER.markerCircle
       );
+      // One short label per prefecture (main island only) — not every offshore part.
       map.addLayer(
         {
           id: LAYER.prefectureLabel,
           type: "symbol",
-          source: SRC.prefectures,
+          source: SRC.prefectureLabels,
           layout: {
             "text-field": prefectureLabelName(getLocale()),
             "text-size": 11,
             "text-font": ["Open Sans Regular", "Arial Unicode MS Regular"],
             "text-optional": true,
+            "text-allow-overlap": false,
+            "text-ignore-placement": false,
+            // Lower key wins collision — prefer mainlands over tiny prefs.
+            "symbol-sort-key": ["-", 0, ["get", "area"]],
           },
           paint: {
             "text-color": "#152238",

@@ -585,10 +585,9 @@ def export() -> None:
             "note": "疆域几何为示意复原；古坟为築造／埋入区间；飞鸟–平安事件含内战与平乱，争议年份用区间。",
             "year_min": -38000,
             "year_max": 2026,
-            # Align first viewport with Xia–Shang–Zhou horizon (~2000 BCE).
-            # Japan then is still Jōmon; sparse archaeology is expected.
-            "default_year": -2000,
-            "default_year_reason": "对齐中国夏商周年代视野；此时日本仍处绳文，考古证据稀少。",
+            # Cao Wei Record of Wa (魏志倭人伝): Himiko / Yamatai embassy era.
+            "default_year": 239,
+            "default_year_reason": "《魏志·倭人传》所记倭国／邪马台（卑弥呼遣使曹魏，景初三年／约公元239年）。",
             "kofun_burial_count": len(kofun_markers),
             "event_count": len(events),
         },

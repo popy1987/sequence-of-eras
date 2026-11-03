@@ -411,7 +411,7 @@ async function boot() {
   finishBoot();
 
   console.info(
-    `atlasAPI ready (engine=${engineId}, lang=${getLocale()}): atlasAPI.setLang('ja'), atlasAPI.gotoYear(-2000)` +
+    `atlasAPI ready (engine=${engineId}, lang=${getLocale()}): atlasAPI.setLang('ja'), atlasAPI.gotoYear(239)` +
       (map.terrainEnabled
         ? "; terrain on — atlasAPI.dumpTerrainCalib() / ?terrain=0 / ?terrain_calib=1"
         : "")

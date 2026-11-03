@@ -99,6 +99,27 @@
         <p id="inspector-body"></p>
         <ul id="inspector-parties"></ul>
       </aside>
+
+      <aside id="place-name-panel" class="glass-card place-name-panel" hidden>
+        <button
+          type="button"
+          id="place-name-close"
+          class="icon-btn"
+          data-i18n="inspector.close"
+          data-i18n-attr="aria-label"
+          aria-label="关闭"
+        >×</button>
+        <h2 id="place-name-title">—</h2>
+        <div id="place-name-meta" class="meta-line"></div>
+        <p class="hint" data-i18n="placeName.hint">色条长度与年代跨度成正比；点击可跳到该段起点。</p>
+        <ul id="place-name-legend" class="pn-legend"></ul>
+        <div class="pn-axis">
+          <span id="place-name-axis-min"></span>
+          <span id="place-name-axis-max"></span>
+        </div>
+        <div id="place-name-track" class="pn-track" role="img" data-i18n="placeName.trackAria" data-i18n-attr="aria-label" aria-label="地名时间比例"></div>
+        <ul id="place-name-list" class="pn-list"></ul>
+      </aside>
     </main>
 
     <footer id="timeline">

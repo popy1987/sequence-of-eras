@@ -1,0 +1,3478 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "year_min": -14000,
+    "year_max": 2026,
+    "note": "现代都道府县范围内的地名／政区沿革示意索引；考古与令制国为示意标签，非精确边界。对齐日文维基大框架。"
+  },
+  "kinds": {
+    "archaeology": {
+      "zh_hans": "考古",
+      "ja": "考古",
+      "en": "Archaeology"
+    },
+    "province": {
+      "zh_hans": "令制国",
+      "ja": "令制国",
+      "en": "Province"
+    },
+    "domain": {
+      "zh_hans": "藩领",
+      "ja": "藩領",
+      "en": "Domain"
+    },
+    "prefecture": {
+      "zh_hans": "近代县",
+      "ja": "近代県",
+      "en": "Prefecture"
+    }
+  },
+  "prefectures": {
+    "JP-01": {
+      "code": "JP-01",
+      "names": {
+        "zh_hans": "北海道",
+        "ja": "北海道",
+        "en": "Hokkaido"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 700,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "虾夷地／阿伊努居住域（示意）",
+            "ja": "蝦夷地・アイヌ居住域（示意）",
+            "en": "Ezo / Ainu lands (schematic)"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1869,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "松前藩／虾夷地（示意）",
+            "ja": "松前藩・蝦夷地（示意）",
+            "en": "Matsumae / Ezo (schematic)"
+          }
+        },
+        {
+          "from_year": 1869,
+          "to_year": 1886,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "开拓使／三县（过渡）",
+            "ja": "開拓使・三県（過渡）",
+            "en": "Kaitakushi / 3 prefs"
+          }
+        },
+        {
+          "from_year": 1886,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "北海道",
+            "ja": "北海道",
+            "en": "Hokkaido"
+          }
+        }
+      ]
+    },
+    "JP-02": {
+      "code": "JP-02",
+      "names": {
+        "zh_hans": "青森县",
+        "ja": "青森県",
+        "en": "Aomori"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "陆奥国",
+            "ja": "陸奥国",
+            "en": "Mutsu"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 陆奥国域（示意）",
+            "ja": "幕藩領・陸奥国域（示意）",
+            "en": "Bakuhan · Mutsu (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "青森县",
+            "ja": "青森県",
+            "en": "Aomori"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-03": {
+      "code": "JP-03",
+      "names": {
+        "zh_hans": "岩手县",
+        "ja": "岩手県",
+        "en": "Iwate"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "陆奥国",
+            "ja": "陸奥国",
+            "en": "Mutsu"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 陆奥国域（示意）",
+            "ja": "幕藩領・陸奥国域（示意）",
+            "en": "Bakuhan · Mutsu (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "岩手县",
+            "ja": "岩手県",
+            "en": "Iwate"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-04": {
+      "code": "JP-04",
+      "names": {
+        "zh_hans": "宫城县",
+        "ja": "宮城県",
+        "en": "Miyagi"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "陆奥国",
+            "ja": "陸奥国",
+            "en": "Mutsu"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 陆奥国域（示意）",
+            "ja": "幕藩領・陸奥国域（示意）",
+            "en": "Bakuhan · Mutsu (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "宫城县",
+            "ja": "宮城県",
+            "en": "Miyagi"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-05": {
+      "code": "JP-05",
+      "names": {
+        "zh_hans": "秋田县",
+        "ja": "秋田県",
+        "en": "Akita"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 708,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "出羽国",
+            "ja": "出羽国",
+            "en": "Dewa"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 出羽国域（示意）",
+            "ja": "幕藩領・出羽国域（示意）",
+            "en": "Bakuhan · Dewa (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "秋田县",
+            "ja": "秋田県",
+            "en": "Akita"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-06": {
+      "code": "JP-06",
+      "names": {
+        "zh_hans": "山形县",
+        "ja": "山形県",
+        "en": "Yamagata"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 708,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "出羽国",
+            "ja": "出羽国",
+            "en": "Dewa"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 出羽国域（示意）",
+            "ja": "幕藩領・出羽国域（示意）",
+            "en": "Bakuhan · Dewa (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "山形县",
+            "ja": "山形県",
+            "en": "Yamagata"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-07": {
+      "code": "JP-07",
+      "names": {
+        "zh_hans": "福岛县",
+        "ja": "福島県",
+        "en": "Fukushima"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "陆奥国（岩代・磐城）",
+            "ja": "陸奥国（岩代・磐城）",
+            "en": "Mutsu (Iwashiro/Iwaki)"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 陆奥国（岩代・磐城）域（示意）",
+            "ja": "幕藩領・陸奥国（岩代・磐城）域（示意）",
+            "en": "Bakuhan · Mutsu (Iwashiro/Iwaki) (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "福岛县",
+            "ja": "福島県",
+            "en": "Fukushima"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-08": {
+      "code": "JP-08",
+      "names": {
+        "zh_hans": "茨城县",
+        "ja": "茨城県",
+        "en": "Ibaraki"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "常陆国",
+            "ja": "常陸国",
+            "en": "Hitachi"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 常陆国域（示意）",
+            "ja": "幕藩領・常陸国域（示意）",
+            "en": "Bakuhan · Hitachi (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "茨城县",
+            "ja": "茨城県",
+            "en": "Ibaraki"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-09": {
+      "code": "JP-09",
+      "names": {
+        "zh_hans": "栃木县",
+        "ja": "栃木県",
+        "en": "Tochigi"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "下野国",
+            "ja": "下野国",
+            "en": "Shimotsuke"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 下野国域（示意）",
+            "ja": "幕藩領・下野国域（示意）",
+            "en": "Bakuhan · Shimotsuke (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "栃木县",
+            "ja": "栃木県",
+            "en": "Tochigi"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-10": {
+      "code": "JP-10",
+      "names": {
+        "zh_hans": "群马县",
+        "ja": "群馬県",
+        "en": "Gunma"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "上野国",
+            "ja": "上野国",
+            "en": "Kōzuke"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 上野国域（示意）",
+            "ja": "幕藩領・上野国域（示意）",
+            "en": "Bakuhan · Kōzuke (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "群马县",
+            "ja": "群馬県",
+            "en": "Gunma"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-11": {
+      "code": "JP-11",
+      "names": {
+        "zh_hans": "埼玉县",
+        "ja": "埼玉県",
+        "en": "Saitama"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "武藏国",
+            "ja": "武蔵国",
+            "en": "Musashi"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 武藏国域（示意）",
+            "ja": "幕藩領・武蔵国域（示意）",
+            "en": "Bakuhan · Musashi (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "埼玉县",
+            "ja": "埼玉県",
+            "en": "Saitama"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-12": {
+      "code": "JP-12",
+      "names": {
+        "zh_hans": "千叶县",
+        "ja": "千葉県",
+        "en": "Chiba"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "下总・上总・安房",
+            "ja": "下総・上総・安房",
+            "en": "Shimōsa / Kazusa / Awa"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 下总・上总・安房域（示意）",
+            "ja": "幕藩領・下総・上総・安房域（示意）",
+            "en": "Bakuhan · Shimōsa / Kazusa / Awa (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "千叶县",
+            "ja": "千葉県",
+            "en": "Chiba"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-13": {
+      "code": "JP-13",
+      "names": {
+        "zh_hans": "东京都",
+        "ja": "東京都",
+        "en": "Tokyo"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "武藏国",
+            "ja": "武蔵国",
+            "en": "Musashi"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1868,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "江户（幕府所在）",
+            "ja": "江戸（幕府所在）",
+            "en": "Edo (shogunal seat)"
+          }
+        },
+        {
+          "from_year": 1868,
+          "to_year": 1943,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "东京府",
+            "ja": "東京府",
+            "en": "Tokyo-fu"
+          }
+        },
+        {
+          "from_year": 1943,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "东京都",
+            "ja": "東京都",
+            "en": "Tokyo-to"
+          }
+        }
+      ]
+    },
+    "JP-14": {
+      "code": "JP-14",
+      "names": {
+        "zh_hans": "神奈川县",
+        "ja": "神奈川県",
+        "en": "Kanagawa"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "相模国",
+            "ja": "相模国",
+            "en": "Sagami"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 相模国域（示意）",
+            "ja": "幕藩領・相模国域（示意）",
+            "en": "Bakuhan · Sagami (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "神奈川县",
+            "ja": "神奈川県",
+            "en": "Kanagawa"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-15": {
+      "code": "JP-15",
+      "names": {
+        "zh_hans": "新潟县",
+        "ja": "新潟県",
+        "en": "Niigata"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "越后国・佐渡国",
+            "ja": "越後国・佐渡国",
+            "en": "Echigo / Sado"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 越后国・佐渡国域（示意）",
+            "ja": "幕藩領・越後国・佐渡国域（示意）",
+            "en": "Bakuhan · Echigo / Sado (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "新潟县",
+            "ja": "新潟県",
+            "en": "Niigata"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-16": {
+      "code": "JP-16",
+      "names": {
+        "zh_hans": "富山县",
+        "ja": "富山県",
+        "en": "Toyama"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "越中国",
+            "ja": "越中国",
+            "en": "Etchū"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 越中国域（示意）",
+            "ja": "幕藩領・越中国域（示意）",
+            "en": "Bakuhan · Etchū (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "富山县",
+            "ja": "富山県",
+            "en": "Toyama"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-17": {
+      "code": "JP-17",
+      "names": {
+        "zh_hans": "石川县",
+        "ja": "石川県",
+        "en": "Ishikawa"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 823,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "加贺国・能登国",
+            "ja": "加賀国・能登国",
+            "en": "Kaga / Noto"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 加贺国・能登国域（示意）",
+            "ja": "幕藩領・加賀国・能登国域（示意）",
+            "en": "Bakuhan · Kaga / Noto (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "石川县",
+            "ja": "石川県",
+            "en": "Ishikawa"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-18": {
+      "code": "JP-18",
+      "names": {
+        "zh_hans": "福井县",
+        "ja": "福井県",
+        "en": "Fukui"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "越前国",
+            "ja": "越前国",
+            "en": "Echizen"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 越前国域（示意）",
+            "ja": "幕藩領・越前国域（示意）",
+            "en": "Bakuhan · Echizen (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "福井县",
+            "ja": "福井県",
+            "en": "Fukui"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-19": {
+      "code": "JP-19",
+      "names": {
+        "zh_hans": "山梨县",
+        "ja": "山梨県",
+        "en": "Yamanashi"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "甲斐国",
+            "ja": "甲斐国",
+            "en": "Kai"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 甲斐国域（示意）",
+            "ja": "幕藩領・甲斐国域（示意）",
+            "en": "Bakuhan · Kai (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "山梨县",
+            "ja": "山梨県",
+            "en": "Yamanashi"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-20": {
+      "code": "JP-20",
+      "names": {
+        "zh_hans": "长野县",
+        "ja": "長野県",
+        "en": "Nagano"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "信浓国",
+            "ja": "信濃国",
+            "en": "Shinano"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 信浓国域（示意）",
+            "ja": "幕藩領・信濃国域（示意）",
+            "en": "Bakuhan · Shinano (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "长野县",
+            "ja": "長野県",
+            "en": "Nagano"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-21": {
+      "code": "JP-21",
+      "names": {
+        "zh_hans": "岐阜县",
+        "ja": "岐阜県",
+        "en": "Gifu"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "美浓国・飞驒国",
+            "ja": "美濃国・飛騨国",
+            "en": "Mino / Hida"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 美浓国・飞驒国域（示意）",
+            "ja": "幕藩領・美濃国・飛騨国域（示意）",
+            "en": "Bakuhan · Mino / Hida (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "岐阜县",
+            "ja": "岐阜県",
+            "en": "Gifu"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-22": {
+      "code": "JP-22",
+      "names": {
+        "zh_hans": "静冈县",
+        "ja": "静岡県",
+        "en": "Shizuoka"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "骏河・远江・伊豆",
+            "ja": "駿河・遠江・伊豆",
+            "en": "Suruga / Tōtōmi / Izu"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 骏河・远江・伊豆域（示意）",
+            "ja": "幕藩領・駿河・遠江・伊豆域（示意）",
+            "en": "Bakuhan · Suruga / Tōtōmi / Izu (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "静冈县",
+            "ja": "静岡県",
+            "en": "Shizuoka"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-23": {
+      "code": "JP-23",
+      "names": {
+        "zh_hans": "爱知县",
+        "ja": "愛知県",
+        "en": "Aichi"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "尾张国・三河国",
+            "ja": "尾張国・三河国",
+            "en": "Owari / Mikawa"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 尾张国・三河国域（示意）",
+            "ja": "幕藩領・尾張国・三河国域（示意）",
+            "en": "Bakuhan · Owari / Mikawa (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "爱知县",
+            "ja": "愛知県",
+            "en": "Aichi"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-24": {
+      "code": "JP-24",
+      "names": {
+        "zh_hans": "三重县",
+        "ja": "三重県",
+        "en": "Mie"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "伊势・伊贺・志摩",
+            "ja": "伊勢・伊賀・志摩",
+            "en": "Ise / Iga / Shima"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 伊势・伊贺・志摩域（示意）",
+            "ja": "幕藩領・伊勢・伊賀・志摩域（示意）",
+            "en": "Bakuhan · Ise / Iga / Shima (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "三重县",
+            "ja": "三重県",
+            "en": "Mie"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-25": {
+      "code": "JP-25",
+      "names": {
+        "zh_hans": "滋贺县",
+        "ja": "滋賀県",
+        "en": "Shiga"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "近江国",
+            "ja": "近江国",
+            "en": "Ōmi"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 近江国域（示意）",
+            "ja": "幕藩領・近江国域（示意）",
+            "en": "Bakuhan · Ōmi (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "滋贺县",
+            "ja": "滋賀県",
+            "en": "Shiga"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-26": {
+      "code": "JP-26",
+      "names": {
+        "zh_hans": "京都府",
+        "ja": "京都府",
+        "en": "Kyoto"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 794,
+          "kind": "province",
+          "names": {
+            "zh_hans": "山城国",
+            "ja": "山城国",
+            "en": "Yamashiro"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 794,
+          "to_year": 1868,
+          "kind": "province",
+          "names": {
+            "zh_hans": "山城国（平安京所在）",
+            "ja": "山城国（平安京所在）",
+            "en": "Yamashiro (Heian-kyō)"
+          }
+        },
+        {
+          "from_year": 1868,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "京都府",
+            "ja": "京都府",
+            "en": "Kyoto-fu"
+          }
+        }
+      ]
+    },
+    "JP-27": {
+      "code": "JP-27",
+      "names": {
+        "zh_hans": "大阪府",
+        "ja": "大阪府",
+        "en": "Osaka"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1868,
+          "kind": "province",
+          "names": {
+            "zh_hans": "摄津国",
+            "ja": "摂津国",
+            "en": "Settsu"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1868,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领（示意）",
+            "ja": "幕藩領（示意）",
+            "en": "Bakuhan domains (schematic)"
+          }
+        },
+        {
+          "from_year": 1868,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "大阪府",
+            "ja": "大阪府",
+            "en": "Osaka-fu"
+          }
+        }
+      ]
+    },
+    "JP-28": {
+      "code": "JP-28",
+      "names": {
+        "zh_hans": "兵库县",
+        "ja": "兵庫県",
+        "en": "Hyogo"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "播磨・但马・丹波等",
+            "ja": "播磨・但馬・丹波等",
+            "en": "Harima / Tajima / Tanba…"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 播磨・但马・丹波等域（示意）",
+            "ja": "幕藩領・播磨・但馬・丹波等域（示意）",
+            "en": "Bakuhan · Harima / Tajima / Tanba… (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "兵库县",
+            "ja": "兵庫県",
+            "en": "Hyogo"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-29": {
+      "code": "JP-29",
+      "names": {
+        "zh_hans": "奈良县",
+        "ja": "奈良県",
+        "en": "Nara"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "大和国",
+            "ja": "大和国",
+            "en": "Yamato"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 大和国域（示意）",
+            "ja": "幕藩領・大和国域（示意）",
+            "en": "Bakuhan · Yamato (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "奈良县",
+            "ja": "奈良県",
+            "en": "Nara"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-30": {
+      "code": "JP-30",
+      "names": {
+        "zh_hans": "和歌山县",
+        "ja": "和歌山県",
+        "en": "Wakayama"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "纪伊国",
+            "ja": "紀伊国",
+            "en": "Kii"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 纪伊国域（示意）",
+            "ja": "幕藩領・紀伊国域（示意）",
+            "en": "Bakuhan · Kii (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "和歌山县",
+            "ja": "和歌山県",
+            "en": "Wakayama"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-31": {
+      "code": "JP-31",
+      "names": {
+        "zh_hans": "鸟取县",
+        "ja": "鳥取県",
+        "en": "Tottori"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "因幡国・伯耆国",
+            "ja": "因幡国・伯耆国",
+            "en": "Inaba / Hōki"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 因幡国・伯耆国域（示意）",
+            "ja": "幕藩領・因幡国・伯耆国域（示意）",
+            "en": "Bakuhan · Inaba / Hōki (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "鸟取县",
+            "ja": "鳥取県",
+            "en": "Tottori"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-32": {
+      "code": "JP-32",
+      "names": {
+        "zh_hans": "岛根县",
+        "ja": "島根県",
+        "en": "Shimane"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "出云・石见・隐岐",
+            "ja": "出雲・石見・隠岐",
+            "en": "Izumo / Iwami / Oki"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 出云・石见・隐岐域（示意）",
+            "ja": "幕藩領・出雲・石見・隠岐域（示意）",
+            "en": "Bakuhan · Izumo / Iwami / Oki (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "岛根县",
+            "ja": "島根県",
+            "en": "Shimane"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-33": {
+      "code": "JP-33",
+      "names": {
+        "zh_hans": "冈山县",
+        "ja": "岡山県",
+        "en": "Okayama"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "备前・备中・美作",
+            "ja": "備前・備中・美作",
+            "en": "Bizen / Bitchū / Mimasaka"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 备前・备中・美作域（示意）",
+            "ja": "幕藩領・備前・備中・美作域（示意）",
+            "en": "Bakuhan · Bizen / Bitchū / Mimasaka (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "冈山县",
+            "ja": "岡山県",
+            "en": "Okayama"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-34": {
+      "code": "JP-34",
+      "names": {
+        "zh_hans": "广岛县",
+        "ja": "広島県",
+        "en": "Hiroshima"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "安艺国・备后国",
+            "ja": "安芸国・備後国",
+            "en": "Aki / Bingo"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 安艺国・备后国域（示意）",
+            "ja": "幕藩領・安芸国・備後国域（示意）",
+            "en": "Bakuhan · Aki / Bingo (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "广岛县",
+            "ja": "広島県",
+            "en": "Hiroshima"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-35": {
+      "code": "JP-35",
+      "names": {
+        "zh_hans": "山口县",
+        "ja": "山口県",
+        "en": "Yamaguchi"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "周防国・长门国",
+            "ja": "周防国・長門国",
+            "en": "Suo / Nagato"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 周防国・长门国域（示意）",
+            "ja": "幕藩領・周防国・長門国域（示意）",
+            "en": "Bakuhan · Suo / Nagato (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "山口县",
+            "ja": "山口県",
+            "en": "Yamaguchi"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-36": {
+      "code": "JP-36",
+      "names": {
+        "zh_hans": "德岛县",
+        "ja": "徳島県",
+        "en": "Tokushima"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "阿波国",
+            "ja": "阿波国",
+            "en": "Awa"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 阿波国域（示意）",
+            "ja": "幕藩領・阿波国域（示意）",
+            "en": "Bakuhan · Awa (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "德岛县",
+            "ja": "徳島県",
+            "en": "Tokushima"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-37": {
+      "code": "JP-37",
+      "names": {
+        "zh_hans": "香川县",
+        "ja": "香川県",
+        "en": "Kagawa"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "赞岐国",
+            "ja": "讃岐国",
+            "en": "Sanuki"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 赞岐国域（示意）",
+            "ja": "幕藩領・讃岐国域（示意）",
+            "en": "Bakuhan · Sanuki (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "香川县",
+            "ja": "香川県",
+            "en": "Kagawa"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-38": {
+      "code": "JP-38",
+      "names": {
+        "zh_hans": "爱媛县",
+        "ja": "愛媛県",
+        "en": "Ehime"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "伊予国",
+            "ja": "伊予国",
+            "en": "Iyo"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 伊予国域（示意）",
+            "ja": "幕藩領・伊予国域（示意）",
+            "en": "Bakuhan · Iyo (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "爱媛县",
+            "ja": "愛媛県",
+            "en": "Ehime"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-39": {
+      "code": "JP-39",
+      "names": {
+        "zh_hans": "高知县",
+        "ja": "高知県",
+        "en": "Kochi"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "土佐国",
+            "ja": "土佐国",
+            "en": "Tosa"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 土佐国域（示意）",
+            "ja": "幕藩領・土佐国域（示意）",
+            "en": "Bakuhan · Tosa (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "高知县",
+            "ja": "高知県",
+            "en": "Kochi"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-40": {
+      "code": "JP-40",
+      "names": {
+        "zh_hans": "福冈县",
+        "ja": "福岡県",
+        "en": "Fukuoka"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "筑前国・筑后国",
+            "ja": "筑前国・筑後国",
+            "en": "Chikuzen / Chikugo"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 筑前国・筑后国域（示意）",
+            "ja": "幕藩領・筑前国・筑後国域（示意）",
+            "en": "Bakuhan · Chikuzen / Chikugo (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "福冈县",
+            "ja": "福岡県",
+            "en": "Fukuoka"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-41": {
+      "code": "JP-41",
+      "names": {
+        "zh_hans": "佐贺县",
+        "ja": "佐賀県",
+        "en": "Saga"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "肥前国",
+            "ja": "肥前国",
+            "en": "Hizen"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 肥前国域（示意）",
+            "ja": "幕藩領・肥前国域（示意）",
+            "en": "Bakuhan · Hizen (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "佐贺县",
+            "ja": "佐賀県",
+            "en": "Saga"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-42": {
+      "code": "JP-42",
+      "names": {
+        "zh_hans": "长崎县",
+        "ja": "長崎県",
+        "en": "Nagasaki"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "肥前国（含壹岐・对马）",
+            "ja": "肥前国（含壱岐・対馬）",
+            "en": "Hizen (w/ Iki·Tsushima)"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 肥前国（含壹岐・对马）域（示意）",
+            "ja": "幕藩領・肥前国（含壱岐・対馬）域（示意）",
+            "en": "Bakuhan · Hizen (w/ Iki·Tsushima) (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "长崎县",
+            "ja": "長崎県",
+            "en": "Nagasaki"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-43": {
+      "code": "JP-43",
+      "names": {
+        "zh_hans": "熊本县",
+        "ja": "熊本県",
+        "en": "Kumamoto"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "肥后国",
+            "ja": "肥後国",
+            "en": "Higo"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 肥后国域（示意）",
+            "ja": "幕藩領・肥後国域（示意）",
+            "en": "Bakuhan · Higo (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "熊本县",
+            "ja": "熊本県",
+            "en": "Kumamoto"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-44": {
+      "code": "JP-44",
+      "names": {
+        "zh_hans": "大分县",
+        "ja": "大分県",
+        "en": "Oita"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "丰后国",
+            "ja": "豊後国",
+            "en": "Bungo"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 丰后国域（示意）",
+            "ja": "幕藩領・豊後国域（示意）",
+            "en": "Bakuhan · Bungo (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "大分县",
+            "ja": "大分県",
+            "en": "Oita"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-45": {
+      "code": "JP-45",
+      "names": {
+        "zh_hans": "宫崎县",
+        "ja": "宮崎県",
+        "en": "Miyazaki"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "日向国",
+            "ja": "日向国",
+            "en": "Hyūga"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 日向国域（示意）",
+            "ja": "幕藩領・日向国域（示意）",
+            "en": "Bakuhan · Hyūga (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "宫崎县",
+            "ja": "宮崎県",
+            "en": "Miyazaki"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-46": {
+      "code": "JP-46",
+      "names": {
+        "zh_hans": "鹿儿岛县",
+        "ja": "鹿児島県",
+        "en": "Kagoshima"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 701,
+          "to_year": 1603,
+          "kind": "province",
+          "names": {
+            "zh_hans": "萨摩国・大隅国",
+            "ja": "薩摩国・大隅国",
+            "en": "Satsuma / Ōsumi"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1603,
+          "to_year": 1871,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "幕藩领 · 萨摩国・大隅国域（示意）",
+            "ja": "幕藩領・薩摩国・大隅国域（示意）",
+            "en": "Bakuhan · Satsuma / Ōsumi (schematic)"
+          }
+        },
+        {
+          "from_year": 1871,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "鹿儿岛县",
+            "ja": "鹿児島県",
+            "en": "Kagoshima"
+          },
+          "note": "废藩置县以后的近代县名（示意；合并改名从略）"
+        }
+      ]
+    },
+    "JP-47": {
+      "code": "JP-47",
+      "names": {
+        "zh_hans": "冲绳县",
+        "ja": "沖縄県",
+        "en": "Okinawa"
+      },
+      "spans": [
+        {
+          "from_year": -14000,
+          "to_year": -400,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "绳文文化分布（示意）",
+            "ja": "縄文文化分布（示意）",
+            "en": "Jōmon (schematic)"
+          },
+          "note": "考古阶段示意，非政区名"
+        },
+        {
+          "from_year": -400,
+          "to_year": 250,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "弥生文化圈（示意）",
+            "ja": "弥生文化圏（示意）",
+            "en": "Yayoi (schematic)"
+          }
+        },
+        {
+          "from_year": 250,
+          "to_year": 701,
+          "kind": "archaeology",
+          "names": {
+            "zh_hans": "古坟时代地域社会（示意）",
+            "ja": "古墳時代の地域社会（示意）",
+            "en": "Kofun-era local societies"
+          }
+        },
+        {
+          "from_year": 1187,
+          "to_year": 1872,
+          "kind": "province",
+          "names": {
+            "zh_hans": "琉球（国／按司联立示意）",
+            "ja": "琉球（国・按司聯立示意）",
+            "en": "Ryukyu (schematic)"
+          },
+          "note": "令制国骨架（示意）"
+        },
+        {
+          "from_year": 1872,
+          "to_year": 1879,
+          "kind": "domain",
+          "names": {
+            "zh_hans": "琉球藩",
+            "ja": "琉球藩",
+            "en": "Ryukyu Domain"
+          }
+        },
+        {
+          "from_year": 1879,
+          "to_year": 2026,
+          "kind": "prefecture",
+          "names": {
+            "zh_hans": "冲绳县",
+            "ja": "沖縄県",
+            "en": "Okinawa"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -25,6 +25,7 @@
 | Web 应用 | `web/js/app.js` · `web/js/core/` · `web/js/map/engines/` |
 | 三语 | `web/js/i18n/` |
 | 3D 地形 GLB + 校准 | `web/models/Japan_3D_Map.glb` · `web/models/Japan_3D_Map.calib.json` |
+| 都道府县地名×时间索引 | `db/data/prefecture_name_spans.json` · `db/data/build_prefecture_name_spans.py` → `web/data/prefecture_name_spans.json` |
 
 ## 数据约定速记
 

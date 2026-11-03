@@ -19,6 +19,11 @@ import {
   phaseForYear,
 } from "./core/atlas_model.js";
 import { createTimelineScale } from "./core/timeline_scale.js";
+import {
+  loadPlaceNameIndex,
+  getPrefectureEntry,
+} from "./core/place_name_index.js";
+import { createPlaceNamePanel } from "./ui/place_name_panel.js";
 import { createMapEngine } from "./map/registry.js";
 import { MAP_ENGINE_EVENTS, MAP_SELECT_KIND } from "./map/contract.js";
 import {
@@ -92,6 +97,13 @@ async function boot() {
 
   const atlas = await loadAtlas();
   setBootMessage(t("boot.rendering"));
+
+  let placeNameIndex = null;
+  try {
+    placeNameIndex = await loadPlaceNameIndex();
+  } catch (err) {
+    console.warn("[place-name-index]", err);
+  }
 
   const engineId = resolveMapEngineId();
   const host = $("#map-host");
@@ -204,8 +216,34 @@ async function boot() {
     }
   }
 
+  const placeNamePanel = createPlaceNamePanel({
+    root: $("#place-name-panel"),
+    formatYear: formatGregorianYear,
+    onJumpYear: (y) => setYear(y),
+    onClose: () => {
+      if (lastSelect?.kind === MAP_SELECT_KIND.PREFECTURE) lastSelect = null;
+    },
+  });
+
   function showSelect(kind, data) {
     lastSelect = { kind, data };
+    if (kind === MAP_SELECT_KIND.PREFECTURE) {
+      $("#inspector").hidden = true;
+      const entry = getPrefectureEntry(placeNameIndex, data.code);
+      if (entry) {
+        placeNamePanel.show(placeNameIndex, entry);
+      } else {
+        placeNamePanel.hide();
+        openInspector(
+          pickName(data.names) || data.code,
+          data.code || "",
+          t("placeName.missing"),
+          []
+        );
+      }
+      return;
+    }
+    placeNamePanel.hide();
     if (kind === MAP_SELECT_KIND.POLITY) {
       openInspector(
         pickName(data.names),
@@ -344,6 +382,7 @@ async function boot() {
     rebuildTicks();
     setYear(year, { pushUrl: true });
     if (lastSelect) showSelect(lastSelect.kind, lastSelect.data);
+    else placeNamePanel.hide();
   });
 
   refreshChrome();

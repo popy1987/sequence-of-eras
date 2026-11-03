@@ -501,7 +501,8 @@ button, input { font: inherit; }
 
 #inspector[hidden] { display: none; }
 
-#inspector-close {
+#inspector-close,
+#place-name-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -509,6 +510,135 @@ button, input { font: inherit; }
   height: 28px;
   padding: 0;
   border-radius: 50%;
+}
+
+.place-name-panel {
+  top: 16px;
+  right: 16px;
+  width: min(380px, calc(100vw - 32px));
+  max-height: min(70vh, 560px);
+  overflow: auto;
+  z-index: 4;
+  animation: card-in 420ms ease both;
+}
+
+.place-name-panel[hidden] {
+  display: none;
+}
+
+.place-name-panel h2 {
+  padding-right: 28px;
+}
+
+.pn-legend {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.pn-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pn-swatch,
+.pn-row-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(21, 34, 56, 0.2);
+}
+
+.pn-axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.68rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.pn-track {
+  position: relative;
+  min-height: 56px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(21, 34, 56, 0.06),
+    rgba(21, 34, 56, 0.12)
+  );
+  border: 1px solid var(--hairline);
+  overflow: hidden;
+}
+
+.pn-bar {
+  position: absolute;
+  border: 0;
+  border-radius: 4px;
+  color: #f4f9fc;
+  font: inherit;
+  font-size: 0.62rem;
+  line-height: 1.15;
+  padding: 0 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0.92;
+  text-align: left;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.pn-bar:hover,
+.pn-bar:focus-visible {
+  opacity: 1;
+  outline: 2px solid rgba(21, 34, 56, 0.45);
+  outline-offset: 1px;
+  z-index: 2;
+}
+
+.pn-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.pn-row {
+  display: grid;
+  grid-template-columns: 10px 1fr auto;
+  gap: 8px;
+  align-items: start;
+}
+
+.pn-row-body {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.pn-row-body strong {
+  font-size: 0.86rem;
+}
+
+.pn-row-meta,
+.pn-row-note {
+  font-size: 0.7rem;
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.pn-jump {
+  padding: 4px 8px;
+  font-size: 0.7rem;
 }
 
 .meta-line {

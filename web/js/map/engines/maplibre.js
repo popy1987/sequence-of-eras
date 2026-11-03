@@ -43,6 +43,7 @@ const LAYER = {
   markerLabel: "soe-marker-label",
   disputeCircle: "soe-dispute-circle",
   disputeLabel: "soe-dispute-label",
+  prefectureFill: "soe-prefecture-fill",
   prefectureLine: "soe-prefecture-line",
   prefectureLabel: "soe-prefecture-label",
 };
@@ -485,9 +486,11 @@ export function createMapLibreEngine(host, options = {}) {
   function setPrefectureVisibility() {
     if (!map) return;
     const visibility = prefecturesVisible ? "visible" : "none";
-    [LAYER.prefectureLine, LAYER.prefectureLabel].forEach((id) => {
-      if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", visibility);
-    });
+    [LAYER.prefectureFill, LAYER.prefectureLine, LAYER.prefectureLabel].forEach(
+      (id) => {
+        if (map.getLayer(id)) map.setLayoutProperty(id, "visibility", visibility);
+      }
+    );
   }
 
   async function loadPrefectures() {
@@ -506,6 +509,19 @@ export function createMapLibreEngine(host, options = {}) {
         type: "geojson",
         data: labelPoints,
       });
+      // Invisible hit target so whole prefecture is clickable.
+      map.addLayer(
+        {
+          id: LAYER.prefectureFill,
+          type: "fill",
+          source: SRC.prefectures,
+          paint: {
+            "fill-color": "#152238",
+            "fill-opacity": 0.01,
+          },
+        },
+        LAYER.markerCircle
+      );
       map.addLayer(
         {
           id: LAYER.prefectureLine,
@@ -543,11 +559,62 @@ export function createMapLibreEngine(host, options = {}) {
         },
         LAYER.markerCircle
       );
+      bindPrefectureClicks();
       setPrefectureVisibility();
     } catch (err) {
       prefectureButton.hidden = true;
       console.error("[prefectures]", err);
     }
+  }
+
+  function emitPrefecture(f) {
+    if (!f || !f.properties) return;
+    const p = f.properties;
+    emit(MAP_ENGINE_EVENTS.SELECT, {
+      kind: MAP_SELECT_KIND.PREFECTURE,
+      data: {
+        code: p.code,
+        names: {
+          zh_hans: p.name_zh || p.short_zh,
+          ja: p.name_ja || p.short_ja,
+          en: p.name_en || p.short_en,
+        },
+      },
+    });
+  }
+
+  function bindPrefectureClicks() {
+    if (!map) return;
+    const hit = [LAYER.prefectureFill, LAYER.prefectureLine, LAYER.prefectureLabel];
+    hit.forEach((id) => {
+      map.on("click", id, (e) => {
+        const f = e.features && e.features[0];
+        if (!f) return;
+        // Label points only carry short_* — resolve code from feature.
+        if (f.properties && f.properties.code) {
+          // Prefer polygon props when clicking fill/line.
+          if (id === LAYER.prefectureLabel) {
+            emitPrefecture({
+              properties: {
+                code: f.properties.code,
+                name_zh: f.properties.short_zh,
+                name_ja: f.properties.short_ja,
+                name_en: f.properties.short_en,
+              },
+            });
+          } else {
+            emitPrefecture(f);
+          }
+          e.originalEvent?.stopPropagation?.();
+        }
+      });
+      map.on("mouseenter", id, () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", id, () => {
+        map.getCanvas().style.cursor = "";
+      });
+    });
   }
 
   function applyFrame(frame) {

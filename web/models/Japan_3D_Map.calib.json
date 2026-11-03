@@ -64,5 +64,5 @@
   ],
   "altitudeScale": 1,
   "exaggeration": 1.2,
-  "notes": "model: [x,y,z] are world coords after GLTF node bake. Leave null to use fallbackBounds. Fill via ?terrain_calib=1 raycast, then paste into this file."
+  "notes": "model [x,y,z] = source-grid coords after orientSourceGridToMap (X east, Y north, Z up). Runtime placement: lon/lat affine from anchors, then per-vertex Web Mercator bake (not a single mercator affine). Fill via ?terrain_calib=1 + atlasAPI.dumpTerrainCalib()."
 }

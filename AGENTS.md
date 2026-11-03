@@ -31,7 +31,7 @@
 - 古坟年代 = 维基**築造／埋入**区间，**不是**出土年；争议用闭区间。
 - 事件含 `conflict_class`：`civil_war` / `coup` / `pacification` / `external_war` / `intrigue`；争议年用区间 + `alignment=disputed`。
 - 地图业务只经 `MapFrame`；换引擎改 `web/js/config.js` 的 `MAP_ENGINE`（默认 `maplibre`，`svg_mercator` 仍可用，URL `?engine=svg_mercator`）。
-- MapLibre 默认垫 `Japan_3D_Map.glb`（Custom Layer + Three）；`?terrain=0` 关闭；校准改 `web/models/Japan_3D_Map.calib.json` 或 `?terrain_calib=1` + `atlasAPI.dumpTerrainCalib()`。
+- MapLibre 默认垫 `Japan_3D_Map.glb`（Custom Layer + Three）；放置=锚点→经纬度仿射再**逐顶点 Mercator 烘焙**（勿用单次墨卡托仿射）；`?terrain=0` 关闭；校准改 `web/models/Japan_3D_Map.calib.json` 或 `?terrain_calib=1` + `atlasAPI.dumpTerrainCalib()`。
 - 名称：`names.zh_hans` / `ja` / `en`；UI 文案走 `t()` / `data-i18n`。
 
 ## 快捷操作

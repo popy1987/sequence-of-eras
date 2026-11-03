@@ -4,7 +4,9 @@
 import {
   loadTerrainCalib,
   resolveModelUrl,
+  resolveLonLatAffine,
   resolveAffine,
+  bakeRootToMercator,
   affineToMatrix4,
   formatAnchorsDump,
 } from "./terrain_calib.js";
@@ -200,26 +202,51 @@ export function createTerrainGlbLayer(options = {}) {
             scene.add(modelRoot);
 
             const aabb = computeWorldAabb(THREE, modelRoot);
-            const resolved = resolveAffine(calib, aabb, maplibregl);
-            affineInfo = {
-              mode: resolved.mode,
-              affine: resolved.affine,
-              aabb,
-            };
-            modelMatrix.fromArray(affineToMatrix4(resolved.affine));
+            const lonLat = resolveLonLatAffine(calib, aabb);
 
             if (calibMode) {
+              // Keep source-grid vertices for raycast; preview with legacy
+              // mercator affine (warped) so picking stays in model space.
+              const legacy = resolveAffine(calib, aabb, maplibregl);
+              affineInfo = {
+                mode: lonLat.mode,
+                placement: "legacy_affine_mercator",
+                lonLatAffine: lonLat.lonLatAffine,
+                affine: legacy.affine,
+                aabb,
+              };
+              modelMatrix.fromArray(affineToMatrix4(legacy.affine));
               clickHandler = (e) => handleCalibClick(e);
               map.on("click", clickHandler);
               console.info(
                 "[terrain_calib] click the 3D mesh to capture model+[lon,lat]. Then atlasAPI.dumpTerrainCalib()"
               );
+            } else {
+              // Correct placement: lon/lat affine → per-vertex Mercator bake.
+              const baked = bakeRootToMercator(
+                THREE,
+                modelRoot,
+                lonLat.lonLatAffine,
+                maplibregl
+              );
+              affineInfo = {
+                mode: lonLat.mode,
+                placement: "bake_mercator",
+                lonLatAffine: lonLat.lonLatAffine,
+                aabb,
+                vertexCount: baked.vertexCount,
+              };
+              modelMatrix.identity();
+              console.info(
+                `[terrain] baked ${baked.vertexCount} verts via ${lonLat.mode} lon/lat affine`
+              );
             }
 
             onReady?.({
-              mode: resolved.mode,
+              mode: lonLat.mode,
+              placement: affineInfo.placement,
               aabb,
-              affine: resolved.affine,
+              lonLatAffine: lonLat.lonLatAffine,
               calib,
             });
             map.triggerRepaint();

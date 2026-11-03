@@ -115,6 +115,9 @@ async function boot() {
   let year = atlas.meta.default_year;
   let playing = false;
   let playTimer = null;
+  /** Play mode: advance +1 calendar year, re-render map, every N ms. */
+  const PLAY_STEP_YEARS = 1;
+  const PLAY_INTERVAL_MS = 10_000;
   let lastSelect = null;
 
   const slider = $("#year-slider");
@@ -263,21 +266,38 @@ async function boot() {
   $("#btn-today").addEventListener("click", () =>
     setYear(new Date().getFullYear())
   );
-  $("#btn-play").addEventListener("click", () => {
-    playing = !playing;
-    $("#btn-play").setAttribute("aria-pressed", String(playing));
-    $("#btn-play").textContent = playing ? t("nav.pause") : t("nav.play");
-    if (playing) {
-      playTimer = setInterval(() => {
-        const step = year < 500 ? 20 : year < 1500 ? 5 : 1;
-        let n = year + step;
-        if (n > yearMax) n = yearMin;
-        setYear(n);
-      }, 700);
-    } else if (playTimer) {
+  function stopPlayback() {
+    playing = false;
+    if (playTimer) {
       clearInterval(playTimer);
       playTimer = null;
     }
+    const btn = $("#btn-play");
+    btn.setAttribute("aria-pressed", "false");
+    btn.textContent = t("nav.play");
+  }
+
+  function tickPlayback() {
+    let n = year + PLAY_STEP_YEARS;
+    if (n === 0) n = 1; // no year 0
+    if (n > yearMax) {
+      stopPlayback();
+      return;
+    }
+    setYear(n); // rebuilds MapFrame + map.setFrame once per tick
+  }
+
+  $("#btn-play").addEventListener("click", () => {
+    if (playing) {
+      stopPlayback();
+      return;
+    }
+    playing = true;
+    const btn = $("#btn-play");
+    btn.setAttribute("aria-pressed", "true");
+    btn.textContent = t("nav.pause");
+    // First step after one interval so the cadence is a steady 10s/year.
+    playTimer = setInterval(tickPlayback, PLAY_INTERVAL_MS);
   });
 
   onLocaleChange(() => {

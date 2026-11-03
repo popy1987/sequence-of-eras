@@ -94,7 +94,7 @@ export const MESSAGES = Object.freeze({
     "nav.jump": "移動",
     "nav.today": "今日",
     "nav.play": "再生",
-    "nav.pause": "停止",
+    "nav.pause": "一時停止",
     "nav.engine": "エンジン · {id}",
     "legend.title": "凡例",
     "legend.hint": "色面は示意範囲。斜線は係争・二重従属・係争対照を表します。",

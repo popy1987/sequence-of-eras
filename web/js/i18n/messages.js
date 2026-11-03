@@ -74,12 +74,16 @@ export const MESSAGES = Object.freeze({
     "inspect.sankinMeta": "参勤交代路线（史料级试点）",
     "inspect.sankinBody":
       "宿次折线示意，非逐里实测；底图街道来自 CODH（CC BY 4.0）。",
+    "inspect.sankinDisclaimer":
+      "免责：本路线以公开史料叙述为骨架，用 CODH 宿场坐标串联，仅供学习示意；非某次行列的实测轨迹，缺名宿场以邻近点代替，不作日程、路权或主权裁决。",
     "inspect.sankinYears": "示意年代 · {from}–{to}",
     "inspect.sankinStops": "宿次 · {n} 站",
     "inspect.sankinKm": "折线约 {km} km",
     "legend.sankinRoads": "江户街道底图（CODH）",
     "legend.sankinSatsuma": "萨摩藩参勤（示意）",
     "legend.sankinKaga": "加贺藩参勤（示意）",
+    "legend.sankinDisclaimer":
+      "参勤路线为示意折线（史料骨架 + CODH 宿场），非实测轨迹；不作日程／路权／主权裁决。街道底图 © CODH CC BY 4.0。",
     "mode.direct": "直辖",
     "mode.administered": "管治",
     "mode.delegated": "委托",
@@ -165,12 +169,16 @@ export const MESSAGES = Object.freeze({
     "inspect.sankinMeta": "参勤交代ルート（史料級パイロット）",
     "inspect.sankinBody":
       "宿次をつなぐ示意折線であり、実測軌跡ではありません。街道底図は CODH（CC BY 4.0）。",
+    "inspect.sankinDisclaimer":
+      "免責：公開史料の叙述を骨格とし、CODH 宿場座標を結んだ学習用の示意です。特定回の実測軌跡ではなく、欠名の宿は近傍点で代用します。日程・路権・主権の裁定は行いません。",
     "inspect.sankinYears": "示意年代 · {from}–{to}",
     "inspect.sankinStops": "宿次 · {n} 駅",
     "inspect.sankinKm": "折線 約 {km} km",
     "legend.sankinRoads": "江戸街道底図（CODH）",
     "legend.sankinSatsuma": "薩摩藩参勤（示意）",
     "legend.sankinKaga": "加賀藩参勤（示意）",
+    "legend.sankinDisclaimer":
+      "参勤ルートは示意折線（史料骨格＋CODH 宿場）であり実測ではありません。日程・路権・主権は裁定しません。街道底図 © CODH CC BY 4.0。",
     "mode.direct": "直轄",
     "mode.administered": "統治",
     "mode.delegated": "委任",
@@ -256,12 +264,16 @@ export const MESSAGES = Object.freeze({
     "inspect.sankinMeta": "Sankin-kōtai route (sourced MVP)",
     "inspect.sankinBody":
       "Stop-to-stop schematic polyline, not a surveyed track. Road underlay: CODH (CC BY 4.0).",
+    "inspect.sankinDisclaimer":
+      "Disclaimer: Built from published itinerary outlines linked via CODH post coordinates for learning only—not a surveyed path of any single procession; missing posts use nearby substitutes. No adjudication of schedules, road rights, or sovereignty.",
     "inspect.sankinYears": "Shown · {from}–{to}",
     "inspect.sankinStops": "Stops · {n}",
     "inspect.sankinKm": "Polyline ≈ {km} km",
     "legend.sankinRoads": "Edo roads underlay (CODH)",
     "legend.sankinSatsuma": "Satsuma sankin (schematic)",
     "legend.sankinKaga": "Kaga sankin (schematic)",
+    "legend.sankinDisclaimer":
+      "Sankin lines are schematic (sourced outline + CODH posts), not surveyed tracks; no schedule, road-right, or sovereignty claims. Roads © CODH CC BY 4.0.",
     "mode.direct": "direct",
     "mode.administered": "administered",
     "mode.delegated": "delegated",

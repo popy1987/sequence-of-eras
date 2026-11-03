@@ -493,6 +493,32 @@ button, input { font: inherit; }
   line-height: 1.45;
 }
 
+.inspector-body {
+  margin: 8px 0 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.inspector-body > p {
+  margin: 0 0 0.55em;
+}
+
+.inspector-body > p:last-child {
+  margin-bottom: 0;
+}
+
+.sankin-disclaimer {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+#legend-sankin-disclaimer.sankin-disclaimer {
+  margin-top: 8px;
+  border-top: 1px solid rgba(21, 34, 56, 0.12);
+  padding-top: 8px;
+}
+
 #inspector {
   top: 16px;
   right: 16px;

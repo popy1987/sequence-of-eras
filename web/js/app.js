@@ -69,7 +69,8 @@ function renderLegend(phase, year) {
       `<span class="swatch" style="background:#5b7c6a"></span><span>${t("legend.empty")}</span>`;
     list.appendChild(li);
   }
-  if (year >= 1635 && year <= 1862) {
+  const sankinOn = year >= 1635 && year <= 1862;
+  if (sankinOn) {
     [
       ["#6d5c4a", "legend.sankinRoads"],
       ["#c45c26", "legend.sankinSatsuma"],
@@ -80,6 +81,11 @@ function renderLegend(phase, year) {
       li.querySelector("span:last-child").textContent = t(key);
       list.appendChild(li);
     });
+  }
+  const sankinDisc = $("#legend-sankin-disclaimer");
+  if (sankinDisc) {
+    sankinDisc.hidden = !sankinOn;
+    sankinDisc.textContent = sankinOn ? t("legend.sankinDisclaimer") : "";
   }
 }
 
@@ -328,6 +334,15 @@ async function boot() {
         data.note || t("inspect.sankinBody"),
         lines
       );
+      const bodyEl = $("#inspector-body");
+      if (bodyEl) {
+        const note = document.createElement("p");
+        note.textContent = data.note || t("inspect.sankinBody");
+        const disc = document.createElement("p");
+        disc.className = "sankin-disclaimer";
+        disc.textContent = t("inspect.sankinDisclaimer");
+        bodyEl.replaceChildren(note, disc);
+      }
     }
   }
 
